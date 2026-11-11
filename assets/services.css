@@ -13,7 +13,6 @@
 .services-intro,.service-row{display:grid;grid-template-columns:1.7fr 1fr;gap:clamp(35px,6vw,90px)}
 .services-intro{align-items:end;margin:var(--services-title-offset) 0 50px}
 .services-intro h1{align-self:start;font-size:clamp(64px,8.2vw,118px);font-weight:570;line-height:1;letter-spacing:-.075em}
-.services-intro h1 span{color:var(--purple)}
 .services-intro p{justify-self:start;margin:0 0 6px;font-size:clamp(16px,1.4vw,19px);line-height:1.5;letter-spacing:-.035em;color:#68737c}
 .service-row{padding:36px 0 42px;border-top:1px solid #e0e6ed;scroll-margin-top:28px}
 .service-heading{display:flex;align-items:center;gap:16px;min-height:66px}
