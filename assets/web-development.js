@@ -266,3 +266,45 @@
   document.addEventListener('visibilitychange', updatePlayback);
   reducedMotion.addEventListener('change', updatePlayback);
 })();
+
+(() => {
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  for (const details of document.querySelectorAll('.dev-faq details')) {
+    const summary = details.querySelector('summary');
+    if (!summary || !details.animate) continue;
+
+    let animation;
+    let expanding = false;
+
+    summary.addEventListener('click', event => {
+      event.preventDefault();
+      const expand = !(animation ? expanding : details.open);
+      const startHeight = details.getBoundingClientRect().height;
+      animation?.cancel();
+      animation = undefined;
+
+      if (reducedMotion.matches) {
+        details.open = expand;
+        return;
+      }
+
+      details.open = true;
+      expanding = expand;
+      const styles = getComputedStyle(details);
+      const borderHeight = parseFloat(styles.borderTopWidth) + parseFloat(styles.borderBottomWidth);
+      const endHeight = expand ? details.getBoundingClientRect().height
+        : summary.getBoundingClientRect().height + borderHeight;
+
+      animation = details.animate([
+        { height: startHeight + 'px', overflow: 'hidden' },
+        { height: endHeight + 'px', overflow: 'hidden' },
+      ], { duration: 360, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' });
+      animation.onfinish = () => {
+        details.open = expand;
+        animation.cancel();
+        animation = undefined;
+      };
+    });
+  }
+})();

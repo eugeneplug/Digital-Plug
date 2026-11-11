@@ -803,6 +803,7 @@
 .dev-faq details {
   padding-inline: clamp(12px, 2.4vw, 32px);
   border-bottom: 1px solid var(--dev-line);
+  transition: background-color .36s var(--ease);
 }
 
 .dev-faq details[open] {
