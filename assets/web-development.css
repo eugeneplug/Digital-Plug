@@ -306,21 +306,6 @@
   background: var(--dev-blue-soft);
 }
 
-.dev-slide-index {
-  display: inline-grid;
-  min-width: 34px;
-  height: 32px;
-  place-items: center;
-  padding: 0 6px;
-  border-radius: 9px;
-  background: var(--dev-blue-soft);
-  color: var(--purple);
-  font-size: 12px;
-  font-weight: 650;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-
 .dev-offer h3,
 .dev-benefit h3,
 .dev-slide h3 {
@@ -697,7 +682,6 @@
   position: relative;
   display: flex;
   flex: 0 0 clamp(260px, 31%, 395px);
-  min-height: 310px;
   min-width: 0;
   flex-direction: column;
   align-items: flex-start;
@@ -717,42 +701,14 @@
   background: #f7faff;
 }
 
-.dev-slide-index {
-  position: relative;
-}
-
-.dev-slide-art {
-  display: grid;
-  width: 100%;
-  height: 112px;
-  flex: 0 0 112px;
-  place-items: center;
-  margin: 3px 0 9px;
-  color: var(--purple);
-}
-
-.dev-slide-art svg,
-svg.dev-slide-art {
-  display: block;
-  width: min(118px, 100%);
-  height: 100%;
-  max-height: 112px;
-  margin-inline: auto;
-}
-
 .dev-carousel--results .dev-slide:first-child {
   border-color: var(--purple);
   background: var(--purple);
   color: #fff;
 }
 
-.dev-carousel--results .dev-slide:first-child :is(.dev-slide-art, p) {
+.dev-carousel--results .dev-slide:first-child p {
   color: #edf4ff;
-}
-
-.dev-carousel--results .dev-slide:first-child .dev-slide-index {
-  background: #ffffff24;
-  color: #fff;
 }
 
 .dev-benefits {
@@ -1003,7 +959,6 @@ svg.dev-slide-art {
 
   .dev-slide {
     flex-basis: 86%;
-    min-height: 290px;
   }
 
   .dev-benefits {
