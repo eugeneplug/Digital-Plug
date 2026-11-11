@@ -1,0 +1,65 @@
+.services-viewport.viewport{height:auto}
+.services-viewport>.studio{min-height:0}
+.services-surface{background:#fff}
+.services-surface .header{padding-inline:clamp(24px,3.2vw,44px);height:96px}
+.services-surface .nav-link:is([aria-current=page],[aria-current=true]){color:var(--purple)}
+.services-surface .nav-link:is([aria-current=page],[aria-current=true])::after{transform:scaleX(1)}
+.services-main{--services-title-offset:36px;padding:26px clamp(24px,3.2vw,44px) 36px}
+.breadcrumbs ol{display:flex;align-items:center;gap:12px;margin:0;padding:0;list-style:none;font-size:13px;line-height:1.5;letter-spacing:-.02em;color:#7d8791}
+.breadcrumbs li+li::before{content:'/';display:inline-block;margin-right:12px;color:#b5bec8}
+.breadcrumbs a{transition:color .5s var(--ease)}
+.breadcrumbs a:hover{color:var(--purple)}
+.breadcrumbs [aria-current=page]{color:var(--ink)}
+.services-intro,.service-row{display:grid;grid-template-columns:1.7fr 1fr;gap:clamp(35px,6vw,90px)}
+.services-intro{align-items:end;margin:var(--services-title-offset) 0 50px}
+.services-intro h1{align-self:start;font-size:clamp(64px,8.2vw,118px);font-weight:570;line-height:1;letter-spacing:-.075em}
+.services-intro h1 span{color:var(--purple)}
+.services-intro p{justify-self:start;margin:0 0 6px;font-size:clamp(16px,1.4vw,19px);line-height:1.5;letter-spacing:-.035em;color:#68737c}
+.service-row{padding:36px 0 42px;border-top:1px solid #e0e6ed;scroll-margin-top:28px}
+.service-heading{display:flex;align-items:center;gap:16px;min-height:66px}
+.service-visual{display:block;flex:none;width:70px;height:70px;transition:transform 1s var(--ease)}
+.service-art{display:block;width:100%;height:100%;animation:service-drift var(--service-duration,7s) ease-in-out var(--service-delay,0s) infinite;animation-play-state:paused}
+.service-row.is-motion-active .service-art{animation-play-state:running}
+.service-icon{display:block;width:100%;height:100%;object-fit:contain;user-select:none}
+.service-art .phone-art{animation:none}
+.service-art .phone-art>img{display:block;width:100%;height:100%;object-fit:contain;user-select:none}
+.service-row:hover .service-visual{transform:translateY(-3px) rotate(-3deg)}
+@keyframes service-drift{0%,100%{transform:translateY(2px) rotate(-1.5deg)}50%{transform:translateY(-3px) rotate(1.5deg)}}
+.service-target{display:block;width:100%;height:100%;overflow:visible}
+.target-shaft{transform-box:view-box;transform-origin:55px 61px;animation:target-settle 5.6s ease-in-out infinite;animation-play-state:paused}
+.service-row.is-motion-active .target-shaft{animation-play-state:running}
+@keyframes target-settle{0%,28%,100%{transform:rotate(0)}5%{transform:rotate(1.8deg)}10%{transform:rotate(-1.2deg)}15%{transform:rotate(.7deg)}21%{transform:rotate(-.25deg)}}
+@media(prefers-reduced-motion:reduce){.target-shaft{animation:none}}
+.service-title{margin:0;font-size:clamp(25px,2.35vw,34px);line-height:1.15;font-weight:520;letter-spacing:-.055em;cursor:pointer}
+.service-tags{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.service-tags li{padding:9px 12px;border-radius:11px;background:var(--paper);color:#68737c;font-size:14px;line-height:1.4;letter-spacing:-.015em;transition:background-color .45s var(--ease),color .45s var(--ease)}
+.service-tags li:has(>a){padding:0}
+.service-tags li>a{display:block;padding:9px 12px;border-radius:inherit}
+@media(max-width:760px){.service-tags li>a{padding:8px 10px}}
+@media(hover:hover){.service-tags li:hover{background:var(--purple);color:#fff}}
+.service-description{width:100%;padding-top:12px}
+.service-description p{margin:0;font-size:15px;line-height:1.65;letter-spacing:-.025em;color:#46515b}
+.service-enquiry{display:inline-flex;align-items:center;margin-top:24px;padding:0;border-radius:13px;background:none;color:var(--ink)}
+.service-enquiry-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border:2px solid var(--ink);border-radius:13px;background:var(--enquiry-icon-bg,transparent);color:var(--enquiry-icon-color,var(--ink));transition:transform .8s var(--ease),background-color .5s var(--ease),color .5s var(--ease)}
+.service-enquiry svg{width:19px;height:19px;stroke:currentColor;stroke-width:1.5;transition:transform .8s var(--ease)}
+.service-enquiry:focus-visible{outline-color:var(--ink)}
+.service-enquiry:is(:hover,:focus-visible),
+.service-row:has(.service-title:hover) .service-enquiry{
+  --enquiry-icon-bg:var(--ink);
+  --enquiry-icon-color:#fff;
+  --enquiry-icon-lift:translateY(-2px);
+}
+.service-enquiry:hover,
+.service-row:has(.service-title:hover) .service-enquiry{--enquiry-arrow-shift:translate(2px,-2px)}
+@media(prefers-reduced-motion:no-preference){
+  .service-enquiry-icon{transform:var(--enquiry-icon-lift,none)}
+  .service-enquiry svg{transform:var(--enquiry-arrow-shift,none)}
+}
+.services-cta{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:14px;padding:32px;border-radius:26px;background:var(--paper)}
+.services-cta h2{margin:0;font-size:clamp(25px,2.8vw,38px);font-weight:530;line-height:1.15;letter-spacing:-.05em}
+.services-cta p{margin:12px 0 0;color:#68737c;font-size:14px;line-height:1.5;letter-spacing:-.02em}
+.services-cta .project-button{flex:none;border-radius:14px;font-size:15px}
+@media(max-width:1050px){.services-surface .header{height:140px;padding-top:18px;padding-bottom:12px}.services-main{--services-title-offset:28px}.services-intro{margin-bottom:36px}.services-intro,.service-row{gap:32px}.service-visual{width:58px;height:58px}.service-heading{min-height:58px;gap:12px}.service-title{font-size:26px}.service-description p{font-size:14px}}
+@media(max-width:760px){.services-surface .header{padding-inline:20px}.services-main{padding:20px 20px 24px}.breadcrumbs ol{font-size:12px}.services-intro{grid-template-columns:1fr;gap:22px;margin-bottom:34px}.services-intro h1{font-size:68px}.services-intro p{max-width:320px;margin:0;font-size:15px}.service-row{grid-template-columns:1fr;gap:20px;padding:25px 0 30px;scroll-margin-top:18px}.service-heading{gap:10px}.service-title{font-size:27px}.service-tags{margin-top:16px;gap:7px}.service-tags li{padding:8px 10px}.service-description{padding-top:0}.service-description p{line-height:1.6}.service-enquiry{margin-top:18px}.services-cta{align-items:flex-start;flex-direction:column;padding:24px;gap:22px;border-radius:22px}.services-cta h2{font-size:28px}.services-cta p{font-size:13px}.services-cta .project-button{height:48px;padding-inline:20px;font-size:14px}}
+@media(max-width:380px){.services-main{padding-inline:16px}.service-visual{width:48px;height:48px}.service-title{font-size:24px}.services-cta{padding:20px}}
+@media(prefers-reduced-motion:reduce){.service-art{animation:none}.service-visual,.service-enquiry,.service-enquiry-icon,.service-enquiry svg,.breadcrumbs a{transition:none}.service-row:hover .service-visual{transform:none}}

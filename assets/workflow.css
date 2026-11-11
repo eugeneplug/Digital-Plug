@@ -1,0 +1,53 @@
+.viewport.workflow-viewport{height:auto;padding-top:0}
+.workflow-surface{padding:clamp(24px,3.2vw,44px);gap:36px;background:#fff}
+.workflow-header h2{margin:0;font-weight:500;letter-spacing:-.055em;line-height:1.13}
+.workflow-main{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.workflow-left{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:10px}
+.workflow-card{min-width:0;padding:25px 24px;border-radius:28px;background:var(--paper)}
+.workflow-card h3{margin:0;font-size:clamp(21px,1.85vw,28px);font-weight:500;letter-spacing:-.045em;line-height:1.18}
+.workflow-card p{margin:15px 0 0;font-size:14px;font-weight:400;letter-spacing:-.02em;line-height:1.6}
+.workflow-intro{position:relative;grid-column:1/-1;min-height:180px}
+.workflow-intro p{max-width:100%}
+
+.workflow-team,.workflow-plan{display:flex;flex-direction:column;align-items:flex-start;min-height:320px}
+
+
+
+
+
+.workflow-feature{display:flex;flex-direction:column;gap:17px;padding:24px}
+.workflow-visual{display:flex;align-items:center;justify-content:center;flex:none;height:clamp(220px,23vw,300px);overflow:hidden;border-radius:20px;background:#e0e7f2}
+.workflow-visual img{display:block;flex:none;width:90%;height:130%;min-height:0;max-width:430px;object-fit:contain;user-select:none}
+
+.workflow-feature h3{font-size:clamp(22px,1.9vw,28px)}
+.workflow-feature p{margin:0}
+.workflow-bottom{display:grid;grid-template-columns:1fr auto 1.25fr;align-items:center;gap:28px;margin-top:-26px;padding:26px 24px}
+.workflow-bottom h3{font-size:clamp(21px,1.8vw,26px)}
+.workflow-bottom p{margin:0}
+.workflow-tools{display:flex;padding-left:8px}
+.workflow-tools span{display:grid;place-items:center;width:44px;height:44px;margin-left:-8px;border:2px solid var(--paper);border-radius:50%;background:#202629;color:white;font-size:13px;font-weight:550;letter-spacing:-.04em}
+.workflow-tools span:nth-child(2){background:var(--purple);font-size:15px}.workflow-tools span:last-child{background:#d6e4ff;color:var(--purple);font-size:10px}
+@media(max-width:1100px){.workflow-card{padding:23px 21px}.workflow-card p{font-size:13px}.workflow-card h3{font-size:23px}.workflow-intro{min-height:185px}.workflow-feature{padding:21px}.workflow-visual{height:250px}.workflow-bottom{gap:20px}.workflow-tools span{width:38px;height:38px}.workflow-bottom h3{font-size:21px}}
+@media(max-width:900px){.workflow-main{grid-template-columns:1fr}.workflow-left{grid-template-rows:auto 1fr}.workflow-team,.workflow-plan{min-height:280px}.workflow-feature{gap:18px}.workflow-visual{height:310px}.workflow-feature h3 br{display:none}.workflow-bottom{grid-template-columns:1fr auto;gap:20px}.workflow-bottom p{grid-column:1/-1}}
+@media(max-width:760px){.workflow-surface{padding:25px 15px 20px;gap:26px}.workflow-main,.workflow-left{gap:9px}.workflow-card{padding:22px 18px;border-radius:24px}.workflow-card h3{font-size:21px}.workflow-card p{font-size:13px;line-height:1.65;margin-top:13px}.workflow-intro{min-height:190px}.workflow-team,.workflow-plan{min-height:290px}.workflow-feature{padding:18px}.workflow-visual{height:250px;border-radius:17px}.workflow-feature p{margin:0}.workflow-bottom{margin-top:-16px;padding:22px 18px}.workflow-bottom h3{font-size:21px}.workflow-bottom p{margin:0}}
+@media(max-width:450px){.workflow-team,.workflow-plan{padding:21px 14px;min-height:300px}.workflow-team h3,.workflow-plan h3{font-size:18px}.workflow-team p,.workflow-plan p{font-size:12px}.workflow-bottom{gap:15px}.workflow-bottom h3{font-size:18px}.workflow-tools span{width:32px;height:32px;font-size:10px}.workflow-tools span:nth-child(2){font-size:12px}.workflow-tools span:last-child{font-size:8px}.workflow-visual{height:220px}}
+
+.workflow-people{display:flex;align-items:center;gap:0;margin-top:auto;padding-top:28px}
+.workflow-people{position:relative}
+.workflow-people>[data-avatar-name]{cursor:help;outline:none}
+.workflow-people>[data-avatar-name]:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+.avatar-tooltip{position:absolute;left:0;bottom:calc(100% - 18px);z-index:3;display:grid;width:max-content;padding:10px 13px;border:1px solid #dce4ee;border-radius:12px;background:#fff;color:var(--ink);box-shadow:0 8px 24px #1731560b;font-size:12px;font-weight:500;line-height:1.4;letter-spacing:-.025em;white-space:nowrap;pointer-events:none;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .35s ease,transform .55s var(--ease),visibility 0s .55s}
+.avatar-tooltip::before{content:'Мистер Волт Бойевич.';grid-area:1/1;visibility:hidden}
+.avatar-tooltip-content{grid-area:1/1}
+.is-name-visible .avatar-tooltip{opacity:1;visibility:visible;transform:translateY(0);transition-delay:0s}
+.avatar-dot{display:inline-block;margin-left:1px;color:var(--purple);animation:avatar-dot-breathe 1.3s ease-in-out infinite;animation-play-state:paused}
+.is-name-visible .avatar-dot{animation-play-state:running}
+@keyframes avatar-dot-breathe{0%,100%{opacity:1}50%{opacity:.2}}
+@media(prefers-reduced-motion:reduce){.avatar-tooltip{transition:none;transform:none}.avatar-dot{animation:none}}
+.workflow-people>span{display:grid;place-items:center;flex:none;width:56px;height:56px;border:3px solid var(--paper);border-radius:50%;background:#e0e7f0}
+.workflow-people>span+span{margin-left:-9px}.workflow-people>span:nth-child(2){background:#dce7ff}.workflow-people>span:nth-child(3){background:#e9e7df}
+.workflow-people>span:first-child{overflow:hidden}
+.workflow-people img{display:block;width:100%;height:100%;object-fit:contain;user-select:none;pointer-events:none}
+.workflow-people img[src$="avatar-vader-reference.png"]{height:auto;clip-path:polygon(50% 3%,40% 4%,32% 7%,27% 11%,24% 17%,22% 25%,21% 33%,18% 41%,16% 48%,12% 60%,8% 74%,6% 84%,5% 91%,16% 95%,32% 98%,50% 100%,70% 98%,86% 95%,94% 91%,93% 84%,88% 69%,83% 54%,79% 43%,77% 33%,76% 23%,74% 15%,71% 10%,65% 6%,58% 3%)}
+@media(max-width:760px){.workflow-people>span{width:46px;height:46px;border-width:2px}}
+@media(max-width:450px){.workflow-people>span{width:clamp(34px,10vw,39px);height:clamp(34px,10vw,39px)}.workflow-people>span+span{margin-left:-8px}}

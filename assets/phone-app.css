@@ -1,0 +1,61 @@
+/* A quiet live dashboard projected onto the original 3D phone. */
+.phone-art{position:relative;width:100%;height:100%;animation:direction-float 7.8s ease-in-out -1.3s infinite;animation-play-state:paused}
+.is-motion-active .phone-art{animation-play-state:running}
+.direction-card--stone .phone-art>img{animation:none;transform:none}
+.phone-app-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.phone-app{position:relative;width:240px;height:480px;overflow:hidden;border-radius:28px;padding:25px 19px;background:#1d5fe0;color:white;font-family:Inter,Arial,sans-serif;line-height:1.2;text-align:left;transform-origin:0 0;transform:matrix3d(1.869554125,-.228285739,0,.000168328,.417780451,1.607857932,0,-.000268639,0,0,1,0,316,189,0,1)}
+.app-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.app-top b{font-size:24px;letter-spacing:-1.4px;font-weight:750}
+.app-avatar{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#ffffff20;font-size:14px;font-weight:550}
+.app-heading{font-size:27px;font-weight:600;letter-spacing:-1.3px}
+.app-caption{margin-top:6px;font-size:10px;color:#c1d6ff}
+.app-board{position:relative;width:202px;height:293px;margin-top:16px}
+.app-block{position:absolute;border-radius:18px;overflow:hidden}
+.app-focus{left:0;top:0;width:202px;height:123px;background:#f0f5ff;color:#17449d}
+.app-face{position:absolute;inset:0;padding:17px}
+.app-label{display:block;font-size:11px;font-weight:450;color:#6982ad}
+.app-timer,.app-done{display:block;margin-top:11px;font-size:31px;font-weight:550;letter-spacing:-1.8px}
+.app-focus-ring{position:absolute;right:13px;top:34px;width:58px;height:58px;fill:none;stroke:#d5e1f6;stroke-width:5}
+.app-ring-progress{stroke:#1d5fe0;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:.65;transform:rotate(-90deg);transform-origin:center}
+.app-done{font-size:29px}
+.app-check{position:absolute;right:22px;top:51px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#dce8ff}
+.app-check svg{width:22px;height:22px;fill:none;stroke:#1d5fe0;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.app-tasks,.app-growth{top:135px;width:95px;height:89px;padding:14px}
+.app-tasks{left:0;background:#124fbf;color:#fff;z-index:2}
+.app-growth{left:107px;background:#c6dcff;color:#16499f}
+.app-number{position:relative;display:block;height:34px;font-size:30px;font-weight:550;letter-spacing:-1.5px}
+.app-number>span{position:absolute;inset:0}
+.app-tile-label{display:block;font-size:10px;letter-spacing:-.1px}
+.app-tasks .app-tile-label{margin-top:7px;color:#c6d9ff}
+.app-task-dot{position:absolute;right:14px;bottom:15px;width:5px;height:5px;border-radius:50%;background:#9ec2ff}
+.app-growth-mark{width:24px;height:24px;margin-top:12px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.app-bar{position:absolute;left:14px;right:14px;bottom:14px;height:3px;border-radius:3px;background:#9bbbea;overflow:hidden}
+.app-bar i{display:block;width:100%;height:100%;border-radius:3px;background:#1d5fe0;transform:scaleX(.35);transform-origin:left}
+.app-next{top:235px;left:0;width:202px;height:58px;background:#ffffff14;border:1px solid #ffffff15}
+.app-next .app-face{padding:10px 15px}
+.app-next .app-label{font-size:9px;color:#bfd5ff}
+.app-next strong{display:block;margin-top:5px;font-size:13px;letter-spacing:-.25px;font-weight:500}
+.app-next-arrow{position:absolute;right:17px;top:19px;font-size:20px;color:#dce9ff}
+.app-nav{position:absolute;left:40px;right:40px;bottom:26px;display:flex;justify-content:space-between;align-items:center}
+.app-nav svg{width:17px;height:17px;fill:none;stroke:#c8dbff;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.app-nav-dot{position:absolute;left:6px;bottom:-8px;width:4px;height:4px;border-radius:50%;background:#fff}
+.app-home-indicator{position:absolute;width:63px;height:4px;bottom:8px;left:89px;border-radius:3px;background:#b7d1ff}
+.app-face--first{animation:app-content-first 16s var(--ease) infinite}
+.app-face--second{animation:app-content-second 16s var(--ease) infinite}
+.app-tasks{animation:app-tasks-swap 16s var(--ease) infinite}
+.app-growth{animation:app-growth-swap 16s var(--ease) infinite}
+.app-ring-progress{animation:app-focus-progress 16s ease-in-out infinite}
+.app-bar i{animation:app-bar-grow 16s ease-in-out infinite}
+.app-task-dot{animation:app-task-complete 16s ease-in-out infinite}
+.app-nav-dot{animation:app-nav-move 16s var(--ease) infinite}
+.phone-app *{animation-play-state:paused!important}
+.is-motion-active .phone-app *{animation-play-state:running!important}
+@keyframes app-content-first{0%,33%,100%{opacity:1;transform:translateY(0)}44%,76%{opacity:0;transform:translateY(-8px)}91%{opacity:1;transform:translateY(0)}}
+@keyframes app-content-second{0%,33%,100%{opacity:0;transform:translateY(9px)}45%,76%{opacity:1;transform:translateY(0)}91%{opacity:0;transform:translateY(9px)}}
+@keyframes app-tasks-swap{0%,20%,100%{transform:translate(0,0)}26%{transform:translate(0,-8px)}37%{transform:translate(107px,-8px)}43%,72%{transform:translate(107px,0)}78%{transform:translate(107px,-8px)}90%{transform:translate(0,-8px)}96%{transform:translate(0,0)}}
+@keyframes app-growth-swap{0%,20%,100%{transform:translate(0,0)}26%{transform:translate(0,8px)}37%{transform:translate(-107px,8px)}43%,72%{transform:translate(-107px,0)}78%{transform:translate(-107px,8px)}90%{transform:translate(0,8px)}96%{transform:translate(0,0)}}
+@keyframes app-focus-progress{0%,16%,100%{stroke-dashoffset:.65}38%,77%{stroke-dashoffset:0}93%{stroke-dashoffset:.65}}
+@keyframes app-bar-grow{0%,16%,100%{transform:scaleX(.35)}43%,77%{transform:scaleX(.86)}94%{transform:scaleX(.35)}}
+@keyframes app-task-complete{0%,30%,100%{opacity:.5;transform:scale(.8)}44%,76%{opacity:1;transform:scale(1.35)}92%{opacity:.5;transform:scale(.8)}}
+@keyframes app-nav-move{0%,26%,100%{transform:translateX(0)}43%,76%{transform:translateX(71px)}93%{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.phone-art,.phone-app *{animation:none!important}.phone-art{transform:none}.app-face--first{opacity:1;transform:none}.app-face--second{display:none}}

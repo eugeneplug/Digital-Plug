@@ -1,0 +1,5 @@
+Built-in ImageGen color edit.
+Source: knight-dark-gothic.png
+Output: knight-dark-gothic-navy.png
+Prompt:
+Precise color-only edit of the provided dark Gothic knight image. Replace ALL burgundy, oxblood, crimson and red areas with deep dark navy blue: cape lining and cloth, helmet plume, the glow behind the visor, tiny fabric accents. Use midnight navy and inky dark blue, with subtle cool blue highlights and deep almost-black shadows; keep it dark and sophisticated, NOT bright electric blue or cyan. For the visor replace the red light with a restrained deep sapphire blue glow. Preserve EVERYTHING ELSE exactly: the black Gothic armor, silver engravings, spikes, sword, pose, every limb and finger position, plume silhouette, every cape fold, original subject position, scale, framing, lighting, detailed realistic rendering, and PURE WHITE background. Original canvas 1448x1086 landscape. Do not crop, resize, zoom, shift, change geometry or redesign any part. This is a registered hover-reveal asset superimposed on an existing image, so pixel alignment and identical composition are essential. Only change the red/burgundy color family to dark navy blue.

@@ -1,0 +1,39 @@
+/* The field never moves. Only the clip window and magnifier share a path. */
+.seo-art{width:100%;height:100%}
+.seo-lens-scene{display:block;width:100%;height:100%;overflow:visible}
+.seo-window,.seo-scan{transform-box:view-box;transform-origin:548px 538px;animation:seo-window-tour 20s cubic-bezier(.4,0,.2,1) infinite}
+.seo-content,.seo-world-block{animation:none;transform:none}
+.seo-query-reveal{animation:seo-query-type 10s steps(14,end) infinite}
+.seo-query-caret{animation:seo-query-caret 10s steps(14,end) infinite}
+.seo-caret-blink{animation:seo-caret-blink .75s steps(1) infinite}
+.seo-audit-highlight{animation:seo-audit-focus 9s var(--ease) infinite}
+.seo-audit-row path{stroke-dasharray:1;stroke-dashoffset:0;animation:seo-check-draw 9s var(--ease) infinite}
+.seo-audit-row--two path{animation-delay:1s}.seo-audit-row--three path{animation-delay:2s}
+.seo-value{opacity:0}
+.seo-value--one{animation:seo-value-one 12s ease-in-out infinite}
+.seo-value--two{animation:seo-value-two 12s ease-in-out infinite}
+.seo-value--three{animation:seo-value-three 12s ease-in-out infinite}
+.seo-traffic-values .seo-value{animation-delay:-4s}.seo-keyword-values .seo-value{animation-delay:-8s}
+.seo-position-progress{transform-box:fill-box;transform-origin:left;animation:seo-position-fill 12s var(--ease) infinite}
+.seo-world-bar{transform-box:fill-box;transform-origin:center bottom;animation:seo-bar-grow 8s var(--ease) infinite}
+.seo-world-bar:nth-child(2n){animation-delay:-1s}.seo-world-bar:nth-child(3n){animation-delay:-2s}
+.seo-world-line{stroke-dasharray:1;stroke-dashoffset:0;animation:seo-line-trace 9s var(--ease) infinite}
+.seo-world-area{animation:seo-area-breathe 9s ease-in-out infinite}
+.seo-index-pulse{transform-box:fill-box;transform-origin:center;animation:seo-index-pulse 4s ease-in-out infinite}
+.seo-art *{animation-play-state:paused!important}
+.is-motion-active .seo-art *{animation-play-state:running!important}
+@keyframes seo-window-tour{0%,100%{transform:translate(-145px,-110px) rotate(-4deg)}14%{transform:translate(-85px,-130px) rotate(-2deg)}32%{transform:translate(145px,-90px) rotate(4deg)}49%{transform:translate(155px,105px) rotate(5deg)}67%{transform:translate(-110px,130px) rotate(-3deg)}83%{transform:translate(-155px,40px) rotate(-5deg)}}
+@keyframes seo-query-type{0%,100%{width:0}28%,83%{width:360px}96%{width:0}}
+@keyframes seo-query-caret{0%,100%{transform:translateX(0)}28%,83%{transform:translateX(360px)}96%{transform:translateX(0)}}
+@keyframes seo-caret-blink{0%,55%{opacity:1}56%,100%{opacity:0}}
+@keyframes seo-audit-focus{0%,100%{transform:translateY(0);opacity:.3}20%{transform:translateY(0);opacity:1}45%{transform:translateY(58px);opacity:1}70%{transform:translateY(116px);opacity:1}90%{transform:translateY(116px);opacity:.3}}
+@keyframes seo-check-draw{0%,100%{stroke-dashoffset:1;opacity:.3}25%,85%{stroke-dashoffset:0;opacity:1}}
+@keyframes seo-value-one{0%,24%,100%{opacity:1}33%,90%{opacity:0}}
+@keyframes seo-value-two{0%,25%,66%,100%{opacity:0}34%,57%{opacity:1}}
+@keyframes seo-value-three{0%,58%,100%{opacity:0}67%,90%{opacity:1}}
+@keyframes seo-position-fill{0%,100%{transform:scaleX(.23)}34%{transform:scaleX(.6)}67%,90%{transform:scaleX(1)}}
+@keyframes seo-bar-grow{0%,100%{transform:scaleY(.24);opacity:.5}48%,80%{transform:scaleY(1);opacity:1}}
+@keyframes seo-line-trace{0%,100%{stroke-dashoffset:1;opacity:0}15%{opacity:1}68%,88%{stroke-dashoffset:0;opacity:1}}
+@keyframes seo-area-breathe{0%,100%{opacity:.15}65%,85%{opacity:1}}
+@keyframes seo-index-pulse{0%,100%{opacity:.45;transform:scale(.8)}50%{opacity:1;transform:scale(1.12)}}
+@media(prefers-reduced-motion:reduce){.seo-art *{animation:none!important;transform:none!important}.seo-value--one,.seo-value--two,.seo-caret-blink{display:none}.seo-value--three{opacity:1}}
