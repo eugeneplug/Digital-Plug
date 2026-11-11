@@ -312,3 +312,22 @@
     });
   }
 })();
+
+(() => {
+  const items = document.querySelectorAll('.landing-page [data-landing-reveal]');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!items.length || reducedMotion.matches || !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      observer.unobserve(entry.target);
+      if (reducedMotion.matches || !entry.target.animate) continue;
+      entry.target.animate([
+        { opacity: .25, transform: 'translateY(12px)' },
+        { opacity: 1, transform: 'translateY(0)' },
+      ], { duration: 650, easing: 'cubic-bezier(.22, 1, .36, 1)' });
+    }
+  });
+  items.forEach(item => observer.observe(item));
+})();
