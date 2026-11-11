@@ -610,14 +610,6 @@
   margin: -10px 0 14px;
 }
 
-.dev-position {
-  min-width: 6ch;
-  color: var(--dev-text-muted);
-  font-size: 13px;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-
 .dev-arrow {
   display: grid;
   width: 44px;
@@ -686,6 +678,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: clamp(19px, 2.25vw, 31px);
+  padding-bottom: 0;
   overflow: hidden;
   border: 1px solid var(--dev-line);
   border-radius: var(--dev-radius);

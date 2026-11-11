@@ -1,14 +1,12 @@
 (() => {
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const tolerance = 1;
-  const formatNumber = number => String(number).padStart(2, '0');
 
   for (const carousel of document.querySelectorAll('[data-dev-carousel]')) {
     const track = carousel.querySelector('[data-dev-track]');
     const previous = carousel.querySelector('[data-dev-prev]');
     const next = carousel.querySelector('[data-dev-next]');
-    const position = carousel.querySelector('[data-dev-position]');
-    if (!track?.children.length || !previous || !next || !position) continue;
+    if (!track?.children.length || !previous || !next) continue;
 
     const cards = Array.from(track.children);
     let stops = [0];
@@ -18,14 +16,6 @@
     function updateButtons() {
       previous.disabled = track.scrollLeft <= tolerance;
       next.disabled = track.scrollLeft >= stops.at(-1) - tolerance;
-    }
-
-    function updatePosition() {
-      const left = track.scrollLeft;
-      const current = stops.reduce((nearest, stop, index) =>
-        Math.abs(stop - left) < Math.abs(stops[nearest] - left) ? index : nearest, 0);
-      const label = `${formatNumber(current + 1)} / ${formatNumber(stops.length)}`;
-      if (position.textContent !== label) position.textContent = label;
     }
 
     function measure() {
@@ -42,14 +32,12 @@
       if (max - stops.at(-1) > tolerance) stops.push(max);
       destination = null;
       updateButtons();
-      updatePosition();
     }
 
-    function schedulePositionUpdate() {
+    function scheduleDestinationReset() {
       clearTimeout(settleTimer);
       settleTimer = setTimeout(() => {
         destination = null;
-        updatePosition();
       }, 150);
     }
 
@@ -57,7 +45,7 @@
       if (index < 0 || index >= stops.length) return;
       destination = index;
       track.scrollTo({ left: stops[index], behavior: reducedMotion.matches ? 'instant' : 'smooth' });
-      schedulePositionUpdate();
+      scheduleDestinationReset();
     }
 
     function move(direction) {
@@ -74,7 +62,7 @@
     next.addEventListener('click', () => move(1));
     track.addEventListener('scroll', () => {
       updateButtons();
-      schedulePositionUpdate();
+      scheduleDestinationReset();
     }, { passive: true });
     track.addEventListener('pointerdown', () => { destination = null; });
     track.addEventListener('wheel', () => { destination = null; }, { passive: true });
