@@ -284,6 +284,7 @@
       animation?.cancel();
       animation = undefined;
 
+      details.toggleAttribute('data-faq-closing', !expand && !reducedMotion.matches);
       if (reducedMotion.matches) {
         details.open = expand;
         return;
@@ -296,13 +297,16 @@
       const endHeight = expand ? details.getBoundingClientRect().height
         : summary.getBoundingClientRect().height + borderHeight;
 
-      animation = details.animate([
+      const transition = details.animate([
         { height: startHeight + 'px', overflow: 'hidden' },
         { height: endHeight + 'px', overflow: 'hidden' },
       ], { duration: 360, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' });
-      animation.onfinish = () => {
+      animation = transition;
+      transition.onfinish = () => {
+        if (animation !== transition) return;
         details.open = expand;
-        animation.cancel();
+        details.removeAttribute('data-faq-closing');
+        transition.cancel();
         animation = undefined;
       };
     });

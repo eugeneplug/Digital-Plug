@@ -806,7 +806,7 @@
   transition: background-color .36s var(--ease);
 }
 
-.dev-faq details[open] {
+.dev-faq details[open]:not([data-faq-closing]) {
   background: #f6f9fe;
 }
 
@@ -824,26 +824,29 @@
 }
 
 .dev-faq summary::after {
-  display: grid;
+  display: block;
   width: 35px;
   height: 35px;
   flex: 0 0 35px;
-  place-items: center;
   border: 1px solid var(--dev-line);
   border-radius: 10px;
-  background: #fff;
+  background-color: #fff;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px 2px, 2px 12px;
   color: var(--purple);
-  content: "+";
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1;
+  content: "";
+  transition: background-color .36s var(--ease), border-color .36s var(--ease),
+    color .36s var(--ease), background-size .36s var(--ease), box-shadow .36s var(--ease);
 }
 
-.dev-faq details[open] summary::after {
+.dev-faq details[open]:not([data-faq-closing]) summary::after {
   border-color: var(--purple);
-  background: var(--purple);
+  background-color: var(--purple);
+  background-size: 12px 2px, 2px 0;
+  box-shadow: 0 0 12px #1d5fe045;
   color: #fff;
-  content: "−";
 }
 
 .dev-faq details p {
