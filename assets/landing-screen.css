@@ -1,280 +1,307 @@
-.rasen-screen {
+.ramen-screen {
+  --ramen-cream: #fff3d9;
+  --ramen-ink: #162449;
   width: 640px;
   height: 450px;
   overflow: hidden;
-  background: #fff4d7;
-  color: #171329;
+  background: var(--ramen-cream);
+  color: var(--ramen-ink);
   font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   transform-origin: top left;
-  /* Project the rectangular preview onto the four corners of the laptop display. */
+  /* Project the preview onto the four corners of the laptop display. */
   transform: matrix3d(0.794960035, -0.156137196, 0, -0.000217263, 0.224347255, 1.04652713, 0, 0.000148565, 0, 0, 1, 0, 409, 310, 0, 1);
 }
 
-.rasen-page {
-  animation: rasen-scroll 18s cubic-bezier(.43, 0, .57, 1) infinite;
+.ramen-page {
+  animation: ramen-scroll 20s cubic-bezier(.43, 0, .57, 1) infinite;
 }
 
-.rasen-header,
-.rasen-footer {
+.ramen-header,
+.ramen-footer {
   display: flex;
   min-height: 58px;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 0 27px;
-  background: #fff4d7;
+  background: var(--ramen-cream);
   font-size: 16px;
   font-weight: 700;
 }
 
-.rasen-header strong {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 21px;
+.ramen-header strong,
+.ramen-footer strong {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 26px;
   font-weight: 900;
+  letter-spacing: -.09em;
 }
 
-.rasen-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: 50%;
-  background: #fa4a1a;
-  color: #fff;
-  font-size: 20px;
+.ramen-header strong span {
+  color: #bd3520;
 }
 
-.rasen-cover {
+.ramen-hero {
   position: relative;
+  isolation: isolate;
   display: flex;
-  min-height: 387px;
+  min-height: 392px;
   align-items: center;
   overflow: hidden;
-  isolation: isolate;
-  background: linear-gradient(120deg, #ffcc48 0%, #ff8519 49%, #f0441e 100%);
+  background: linear-gradient(125deg, #ffe28b, #ffb64c 56%, #e97c33);
 }
 
-.rasen-cover::before {
+.ramen-rays {
   position: absolute;
-  inset: 0;
   z-index: -1;
-  background: radial-gradient(circle, #61241c 1px, transparent 1.8px) 0 0 / 9px 9px;
-  opacity: .2;
-  content: "";
-}
-
-.rasen-sun {
-  position: absolute;
-  top: -102px;
-  right: -56px;
-  z-index: -1;
-  width: 490px;
+  top: -64px;
+  right: -74px;
+  width: 512px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: repeating-conic-gradient(from 8deg, #ffe380 0 9deg, #ffb344 9deg 18deg);
-  animation: rasen-spin 42s linear infinite;
+  background: repeating-conic-gradient(from -10deg, #ffe5a1 0 12deg, #ffc45b 12deg 24deg);
+  animation: ramen-turn 55s linear infinite;
 }
 
-.rasen-cover-copy {
+.ramen-hero-copy,
+.ramen-chef-copy {
   position: relative;
   z-index: 1;
-  max-width: 58%;
-  padding: 24px 0 24px 31px;
+  padding: 24px 0 24px 30px;
 }
 
-.rasen-kicker {
+.ramen-kicker {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 5px 10px;
   border: 2px solid currentColor;
   border-radius: 6px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 900;
 }
 
-.rasen-cover-title {
+.ramen-title,
+.ramen-section-title {
   display: block;
-  margin-top: 10px;
-  color: #21152a;
-  font-size: 77px;
   font-weight: 900;
-  line-height: .99;
+  line-height: 1.07;
   letter-spacing: -.085em;
 }
 
-.rasen-cover p,
-.rasen-finale p {
-  max-width: 21em;
-  margin: 15px 0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.5;
+.ramen-title {
+  margin-top: 11px;
+  font-size: 64px;
 }
 
-.rasen-pill {
+.ramen-hero-copy p,
+.ramen-chef-copy p {
+  margin: 15px 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.ramen-menu-label {
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 99px;
-  background: #24182d;
-  color: #fff6de;
+  padding: 9px 16px;
+  border-radius: 6px;
+  background: var(--ramen-ink);
+  color: var(--ramen-cream);
   font-size: 16px;
   font-weight: 800;
 }
 
-.rasen-character {
+.ramen-hero-dish {
   position: absolute;
-  right: 4px;
-  bottom: -35px;
-  width: 337px;
-  animation: rasen-float 4.6s ease-in-out infinite;
+  right: 13px;
+  bottom: 11px;
+  width: 293px;
+  animation: ramen-float 5s ease-in-out infinite;
 }
 
-.rasen-character img {
+.ramen-hero-dish img,
+.ramen-chef img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.rasen-orbit {
+.ramen-steam {
   position: absolute;
-  top: 3%;
-  right: 0;
-  width: 46%;
-  aspect-ratio: 1;
-  border: 3px dashed #d8faffaa;
+  inset: 22% 0 23%;
+  pointer-events: none;
+}
+
+.ramen-steam i {
+  position: absolute;
+  bottom: 24%;
+  left: 18%;
+  width: 42px;
+  height: 98px;
   border-radius: 50%;
-  animation: rasen-spin 8s linear infinite;
+  background: radial-gradient(ellipse, #fffbebdc, #fff3d900 70%);
+  animation: ramen-steam 4s ease-in-out infinite;
 }
 
-.rasen-training {
-  padding: 30px 26px 34px;
-  background: #fff4d7;
+.ramen-steam i:nth-child(2) {
+  left: 37%;
+  width: 30px;
+  animation-delay: -1.5s;
 }
 
-.rasen-section-title {
-  display: block;
-  font-size: 38px;
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -.06em;
+.ramen-steam i:nth-child(3) {
+  left: 71%;
+  width: 35px;
+  animation-delay: -2.8s;
 }
 
-.rasen-steps {
+.ramen-menu {
+  padding: 28px 26px 34px;
+  background: var(--ramen-cream);
+}
+
+.ramen-section-title {
+  font-size: 40px;
+}
+
+.ramen-dishes {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-  margin: 17px 0 0;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.rasen-steps li {
+.ramen-dishes li {
   min-width: 0;
-  padding: 12px;
-  border: 2px solid #25172c;
-  border-radius: 12px;
-  background: #ffbd63;
+  padding: 10px 12px 14px;
+  border: 2px solid var(--ramen-ink);
+  border-radius: 11px;
+  background: #ffdc93;
 }
 
-.rasen-steps li:nth-child(2) {
-  background: #a9edff;
+.ramen-dishes li:nth-child(2) {
+  background: #e0edd6;
 }
 
-.rasen-steps li:nth-child(3) {
-  background: #ffc7e8;
+.ramen-dishes li:nth-child(3) {
+  background: #ffd0ae;
 }
 
-.rasen-step-art {
-  position: relative;
-  display: grid;
-  height: 104px;
-  place-items: center;
+.ramen-menu-art {
+  width: 100%;
+  aspect-ratio: 1;
+  background: url("web-development/ramen-menu.webp") 0 50% / 300% 100% no-repeat;
+  animation: ramen-float 5s ease-in-out infinite;
 }
 
-.rasen-step-art span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 18px;
-  font-weight: 900;
+.ramen-dishes li:nth-child(2) .ramen-menu-art {
+  background-position: 50% 50%;
+  animation-delay: -1.6s;
 }
 
-.rasen-steps strong {
+.ramen-dishes li:nth-child(3) .ramen-menu-art {
+  background-position: 100% 50%;
+  animation-delay: -3.1s;
+}
+
+.ramen-dishes strong {
   display: block;
-  margin-top: 4px;
+  margin-top: 3px;
   font-size: 20px;
   font-weight: 900;
 }
 
-.rasen-steps p {
-  margin: 5px 0 0;
+.ramen-dishes p {
+  margin: 6px 0 0;
   font-size: 16px;
   line-height: 1.45;
 }
 
-.rasen-chakra {
-  display: block;
-  width: 100px;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 5px #15286136);
-  animation: rasen-spin 7s linear infinite;
-}
-
-.rasen-wind {
-  animation-duration: 9s;
-}
-
-.rasen-orb {
-  animation-direction: reverse;
-  animation-duration: 5s;
-}
-
-.rasen-finale {
-  display: grid;
-  min-height: 280px;
-  grid-template-columns: minmax(0, 1fr) 212px;
+.ramen-chef {
+  position: relative;
+  display: flex;
+  min-height: 382px;
   align-items: center;
-  gap: 16px;
-  padding: 28px 30px;
-  background: radial-gradient(circle at 79% 47%, #343ef0, #24205e 60%, #1a153d);
-  color: #fff4d7;
+  overflow: hidden;
+  background: radial-gradient(circle at 74% 64%, #315e69, #182b49 64%);
+  color: var(--ramen-cream);
 }
 
-.rasen-finale .rasen-section-title {
-  margin-top: 10px;
+.ramen-chef::before {
+  position: absolute;
+  right: 20px;
+  bottom: -108px;
+  width: 336px;
+  aspect-ratio: 1;
+  border: 2px solid #ffce7840;
+  border-radius: 50%;
+  box-shadow: 0 0 0 18px #ffce7815, 0 0 0 36px #ffce780e;
+  content: "";
+  animation: ramen-halo 6s ease-in-out infinite;
+}
+
+.ramen-chef .ramen-section-title {
+  margin-top: 14px;
   font-size: 49px;
 }
 
-.rasen-finale .rasen-blade {
-  width: 205px;
-  justify-self: center;
-  filter: drop-shadow(0 0 12px #53dfff88);
-  animation-duration: 7.5s;
+.ramen-chef img {
+  position: absolute;
+  right: 24px;
+  bottom: -12px;
+  width: 245px;
+  animation: ramen-float 6s ease-in-out infinite;
 }
 
-.rasen-footer {
-  min-height: 61px;
-  background: #f54b22;
-  color: #fff;
+.ramen-footer {
+  position: relative;
+  min-height: 68px;
+  background: #a93221;
+  color: var(--ramen-cream);
 }
 
-.dev-hero-art:not(.is-laptop-visible) .rasen-screen * {
+.ramen-credit {
+  position: absolute;
+  right: 24px;
+  bottom: 6px;
+  opacity: 0;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  transform: translateY(3px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+.ramen-footer:hover .ramen-credit {
+  opacity: .9;
+  transform: translateY(0);
+}
+
+.dev-hero-art:not(.is-laptop-visible) .ramen-screen * {
   animation-play-state: paused;
 }
 
-@keyframes rasen-scroll {
+@keyframes ramen-scroll {
   0%, 7%, 96%, 100% { transform: translateY(0); }
-  47%, 55% { transform: translateY(var(--rasen-travel, 0px)); }
+  47%, 56% { transform: translateY(var(--ramen-travel, 0px)); }
 }
 
-@keyframes rasen-spin {
+@keyframes ramen-turn {
   to { transform: rotate(360deg); }
 }
 
-@keyframes rasen-float {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(-8px) rotate(1deg); }
+@keyframes ramen-float {
+  0%, 100% { transform: translateY(0) rotate(-.8deg); }
+  50% { transform: translateY(-6px) rotate(.8deg); }
+}
+
+@keyframes ramen-steam {
+  0% { opacity: 0; transform: translateY(12px) scale(.8); }
+  40% { opacity: .72; }
+  100% { opacity: 0; transform: translate(10px, -48px) scale(1.4); }
+}
+
+@keyframes ramen-halo {
+  0%, 100% { opacity: .55; transform: scale(.98); }
+  50% { opacity: 1; transform: scale(1.035); }
 }

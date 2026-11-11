@@ -1,6 +1,6 @@
 (() => {
-  const screen = document.querySelector('.rasen-screen');
-  const page = screen?.querySelector('.rasen-page');
+  const screen = document.querySelector('.ramen-screen');
+  const page = screen?.querySelector('.ramen-page');
   const laptop = screen?.closest('.dev-hero-art');
   if (!page || !laptop) return;
 
@@ -9,7 +9,7 @@
 
   function measure() {
     const distance = Math.max(0, page.offsetHeight - screen.clientHeight);
-    screen.style.setProperty('--rasen-travel', -distance + 'px');
+    screen.style.setProperty('--ramen-travel', -distance + 'px');
   }
 
   function updateMotion() {
