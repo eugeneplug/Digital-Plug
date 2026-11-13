@@ -1036,7 +1036,6 @@
   min-width: 0;
   min-height: 186px;
   flex-direction: column;
-  justify-content: flex-end;
   overflow: hidden;
   padding: clamp(21px, 2.55vw, 36px);
   border: 1px solid var(--dev-line);
