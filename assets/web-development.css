@@ -1192,11 +1192,11 @@
   }
 }
 
-.viewport.landing-results-viewport {
+.viewport.landing-section-viewport {
   padding-top: 0;
 }
 
-.landing-results {
+.landing-section {
   padding-top: clamp(24px, 3vw, 44px);
 }
 
