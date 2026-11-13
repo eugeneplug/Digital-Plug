@@ -323,7 +323,6 @@
       if (!entry.isIntersecting) continue;
       observer.unobserve(entry.target);
       if (reducedMotion.matches || !entry.target.animate) continue;
-      entry.target.classList.add('is-landing-revealed');
       entry.target.animate([
         { opacity: .25, transform: 'translateY(12px)' },
         { opacity: 1, transform: 'translateY(0)' },
