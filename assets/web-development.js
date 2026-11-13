@@ -326,7 +326,12 @@
       entry.target.animate([
         { opacity: .25, transform: 'translateY(12px)' },
         { opacity: 1, transform: 'translateY(0)' },
-      ], { duration: 650, easing: 'cubic-bezier(.22, 1, .36, 1)' });
+      ], {
+        duration: 650,
+        delay: Number(entry.target.dataset.landingReveal) || 0,
+        fill: 'backwards',
+        easing: 'cubic-bezier(.22, 1, .36, 1)',
+      });
     }
   });
   items.forEach(item => observer.observe(item));

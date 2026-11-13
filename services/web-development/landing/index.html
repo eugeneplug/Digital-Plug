@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../../assets/project-panel.css?v=7">
   <link rel="stylesheet" href="../../../assets/footer.css?v=11">
   <link rel="stylesheet" href="../../../assets/services.css?v=22">
-  <link rel="stylesheet" href="../../../assets/web-development.css?v=35">
+  <link rel="stylesheet" href="../../../assets/web-development.css?v=36">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"Лендинг","item":"/services/web-development/landing/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
   <link rel="stylesheet" href="../../../assets/landing-screen.css?v=3">
@@ -129,23 +129,29 @@
             <h2 id="landing-benefits-title">Преимущества лендинга</h2>
           </div>
           <ul class="landing-benefits">
-            <li class="landing-benefit" data-landing-reveal>
-              <h3>Быстрый запуск</h3>
-              <p>Можно быстро проверить спрос, представить новый продукт или запустить акцию.</p>
+            <li class="landing-benefit landing-benefit--launch" data-landing-reveal="0">
+              <div class="landing-benefit-art" aria-hidden="true">
+                <span class="landing-benefit-window"></span>
+                <span class="landing-benefit-cursor"></span>
+              </div>
+              <div class="landing-benefit-copy">
+                <h3>Быстрый запуск</h3>
+                <p>Можно быстро проверить спрос, представить новый продукт или запустить акцию.</p>
+              </div>
             </li>
-            <li class="landing-benefit" data-landing-reveal>
+            <li class="landing-benefit" data-landing-reveal="70">
               <h3>Фокус на заявке</h3>
               <p>Одно предложение и понятный путь к звонку, заявке или покупке.</p>
             </li>
-            <li class="landing-benefit" data-landing-reveal>
+            <li class="landing-benefit" data-landing-reveal="140">
               <h3>Профессиональный образ</h3>
               <p>Дизайн, примеры работ и отзывы помогают клиенту познакомиться с компанией и принять решение.</p>
             </li>
-            <li class="landing-benefit" data-landing-reveal>
+            <li class="landing-benefit" data-landing-reveal="210">
               <h3>Готовность к рекламе</h3>
               <p>Собираем страницу под рекламное предложение и предусматриваем отслеживание заявок.</p>
             </li>
-            <li class="landing-benefit" data-landing-reveal>
+            <li class="landing-benefit" data-landing-reveal="280">
               <h3>Простота управления</h3>
               <p>Тексты, цены и фотографии легко обновить, когда меняется предложение.</p>
             </li>
@@ -168,6 +174,28 @@
       </div>
     </div></div>
   </section>
+  <div class="viewport services-viewport landing-results-viewport">
+    <div class="studio"><div class="surface services-surface">
+      <section class="services-main dev-main landing-results" aria-labelledby="landing-results-title">
+        <div class="dev-section-head">
+          <h2 id="landing-results-title">Что вы получите по итогам разработки</h2>
+        </div>
+        <div class="dev-carousel dev-carousel--results" data-dev-carousel>
+          <div class="dev-carousel-controls">
+            <button class="dev-arrow" type="button" data-dev-prev aria-controls="landing-results-track" aria-label="Предыдущая карточка" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12H4m7-7-7 7 7 7"/></svg></button>
+            <button class="dev-arrow" type="button" data-dev-next aria-controls="landing-results-track" aria-label="Следующая карточка" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></button>
+          </div>
+          <ul class="dev-track" id="landing-results-track" data-dev-track tabindex="0" aria-label="Результаты разработки">
+            <li class="dev-slide"><h3>Сайт<br>на вашем домене</h3><p>Полностью весь сайт, проверенные формы обратной связи, базы данных, доменные имена - будет хоститься на вашем сервере/хостинге</p></li>
+            <li class="dev-slide"><h3>Доступы<br>и инструкции</h3><p>Передаём доступы и документацию проекта, показываем где менять тексты, изображения и другие элементы, предусмотренные проектом.</p></li>
+            <li class="dev-slide"><h3>Материалы<br>проекта</h3><p>Передаём полный комплект макетов, исходников и настроек.</p></li>
+            <li class="dev-slide"><h3>Данные<br>о работе сайта</h3><p>Если аналитика входит в проект, настраиваем цели для форм и ключевых действий, чтобы видеть результаты после запуска.</p></li>
+            <li class="dev-slide"><h3>Гарантия и техподдержка</h3><p>Помогаем решить проблемы связанные с продуктом, отвечаем на ваши вопросы, остаемся с вами для дальнейшей работы и улучшения продукта.</p></li>
+          </ul>
+        </div>
+      </section>
+    </div></div>
+  </div>
   <footer class="viewport footer-viewport" id="site-footer" aria-label="Подвал сайта">
     <div class="studio"><div class="surface footer-surface">
       <div class="footer-brand">
@@ -193,7 +221,7 @@
   <script src="../../../assets/phone-mask.js" defer></script>
   <script src="../../../assets/main.js?v=11" defer></script>
   <script src="../../../assets/cookie-cursor.js?v=4" defer></script>
-  <script src="../../../assets/web-development.js?v=11" defer></script>
+  <script src="../../../assets/web-development.js?v=12" defer></script>
   <script src="../../../assets/landing-screen.js?v=2" defer></script>
   <script src="../../../assets/contact-robot.js?v=7" defer></script>
   <script src="../../../assets/contact-fire.js?v=2" defer></script>
