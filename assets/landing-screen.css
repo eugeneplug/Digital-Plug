@@ -1,19 +1,22 @@
-.ramen-screen {
-  --ramen-cream: #fff3d9;
-  --ramen-ink: #162449;
+.laptop-screen {
   width: 640px;
   height: 450px;
   overflow: hidden;
-  background: var(--ramen-cream);
-  color: var(--ramen-ink);
-  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   transform-origin: top left;
   /* Project the preview onto the four corners of the laptop display. */
   transform: matrix3d(0.794960035, -0.156137196, 0, -0.000217263, 0.224347255, 1.04652713, 0, 0.000148565, 0, 0, 1, 0, 409, 310, 0, 1);
 }
 
-.ramen-page {
-  animation: ramen-scroll 20s cubic-bezier(.43, 0, .57, 1) infinite;
+.laptop-preview-page {
+  animation: laptop-preview-scroll 20s cubic-bezier(.43, 0, .57, 1) infinite;
+}
+
+.ramen-screen {
+  --ramen-cream: #fff3d9;
+  --ramen-ink: #162449;
+  background: var(--ramen-cream);
+  color: var(--ramen-ink);
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 .ramen-header,
@@ -277,13 +280,13 @@
   transform: translateY(0);
 }
 
-.dev-hero-art:not(.is-laptop-visible) .ramen-screen * {
+.dev-hero-art:not(.is-laptop-visible) .laptop-screen * {
   animation-play-state: paused;
 }
 
-@keyframes ramen-scroll {
+@keyframes laptop-preview-scroll {
   0%, 7%, 96%, 100% { transform: translateY(0); }
-  47%, 56% { transform: translateY(var(--ramen-travel, 0px)); }
+  47%, 56% { transform: translateY(var(--laptop-preview-travel, 0px)); }
 }
 
 @keyframes ramen-turn {

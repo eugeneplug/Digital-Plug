@@ -2,12 +2,12 @@
   const laptop = document.querySelector('.landing-page .dev-hero-art');
   if (!laptop || !('IntersectionObserver' in window)) return;
 
-  const screen = laptop.querySelector('.ramen-screen');
-  const page = screen?.querySelector('.ramen-page');
+  const screen = laptop.querySelector('.laptop-screen');
+  const page = screen?.querySelector('.laptop-preview-page');
   if (page) {
     const measure = () => {
       const distance = Math.max(0, page.offsetHeight - screen.clientHeight);
-      screen.style.setProperty('--ramen-travel', -distance + 'px');
+      screen.style.setProperty('--laptop-preview-travel', -distance + 'px');
     };
     measure();
     new ResizeObserver(measure).observe(page);

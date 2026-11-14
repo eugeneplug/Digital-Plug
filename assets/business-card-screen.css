@@ -1,0 +1,210 @@
+.paul-screen {
+  --paul-ink: #1a1310;
+  --paul-yellow: #ffdf27;
+  --paul-red: #d60b28;
+  background: var(--paul-yellow);
+  color: var(--paul-ink);
+}
+
+.paul-page {
+  border-inline: 8px solid var(--paul-red);
+}
+
+.paul-header {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 22px;
+  border-bottom: 3px solid var(--paul-ink);
+  background: var(--paul-red);
+  color: #fff8e6;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.paul-header strong {
+  font-size: 27px;
+  font-weight: 930;
+  letter-spacing: -.06em;
+}
+
+.paul-header strong span {
+  color: var(--paul-yellow);
+}
+
+.paul-hero {
+  position: relative;
+  display: flex;
+  min-height: 330px;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle, #bc671a37 1px, transparent 1.7px) 0 0 / 8px 8px,
+              repeating-conic-gradient(from -12deg at 78% 67%, #ffdf27 0 14deg, #ffcf20 14deg 29deg);
+}
+
+.paul-hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 17px 0 26px 25px;
+}
+
+.paul-label {
+  width: fit-content;
+  margin: 0 0 12px;
+  padding: 6px 9px;
+  background: var(--paul-ink);
+  color: var(--paul-yellow);
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.paul-hero-copy > strong {
+  display: block;
+  color: var(--paul-ink);
+  font-size: 66px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: .91;
+  letter-spacing: -.085em;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 7px #fff9e7;
+  transform: rotate(-4deg);
+}
+
+.paul-hero-copy p:last-child {
+  margin: 19px 0 0;
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.16;
+}
+
+.paul-portrait {
+  position: absolute;
+  right: -5px;
+  bottom: -59px;
+  width: 353px;
+  height: auto;
+}
+
+.paul-burst {
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  right: 19px;
+  display: grid;
+  width: 100px;
+  height: 96px;
+  place-content: center;
+  background: var(--paul-red);
+  color: #ffed70;
+  clip-path: polygon(50% 0, 57% 12%, 70% 4%, 72% 18%, 87% 15%, 85% 28%, 100% 34%, 91% 45%, 100% 55%, 88% 63%, 96% 76%, 80% 77%, 79% 92%, 65% 87%, 57% 100%, 47% 89%, 34% 99%, 29% 85%, 14% 89%, 16% 74%, 2% 68%, 11% 56%, 0 46%, 12% 38%, 6% 23%, 22% 24%, 24% 9%, 38% 15%);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: .93;
+  text-align: center;
+  text-shadow: 1px 2px var(--paul-ink);
+  transform: rotate(10deg);
+}
+
+.paul-phone-banner {
+  display: grid;
+  min-height: 66px;
+  place-items: center;
+  border-block: 3px solid var(--paul-ink);
+  background: var(--paul-red);
+  color: #fff07a;
+  font-size: 39px;
+  font-weight: 900;
+  letter-spacing: .02em;
+  line-height: 1;
+}
+
+.paul-practice, .paul-about, .paul-contact {
+  padding: 27px 24px 30px;
+}
+
+.paul-heading {
+  display: block;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+}
+
+.paul-practice {
+  background: #fff2bc;
+}
+
+.paul-areas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 19px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paul-areas li {
+  min-height: 137px;
+  padding: 13px 12px;
+  border: 2px solid var(--paul-ink);
+  background: #ffe268;
+  box-shadow: 3px 3px var(--paul-ink);
+}
+
+.paul-areas b {
+  display: block;
+  color: #a10c24;
+  font-size: 22px;
+  font-weight: 850;
+  line-height: 1.05;
+}
+
+.paul-areas span {
+  display: block;
+  margin-top: 7px;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.paul-about {
+  border-block: 3px solid var(--paul-ink);
+  background: var(--paul-yellow);
+}
+
+.paul-about p {
+  max-width: 400px;
+  margin: 13px 0 0;
+  font-size: 21px;
+  font-weight: 650;
+  line-height: 1.36;
+}
+
+.paul-contact {
+  background: var(--paul-red);
+  color: #fff07a;
+  text-align: center;
+}
+
+.paul-contact > span {
+  display: block;
+  margin: 11px 0;
+  font-size: 47px;
+  font-weight: 900;
+  letter-spacing: -.045em;
+}
+
+.paul-contact small {
+  color: #ffedd0;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
