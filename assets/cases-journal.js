@@ -15,6 +15,17 @@
   const flip = journal.querySelector('video.journal-turn, .journal-turn video');
   let index = 0;
   let animation = null;
+  let activeCase = null;
+
+  function closeCase(restoreFocus = false) {
+    if (!activeCase) return;
+    const { card, detail, opener } = activeCase;
+    activeCase = null;
+    detail.hidden = true;
+    card.classList.remove('is-detail-open');
+    opener.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) opener.focus({ preventScroll: true });
+  }
 
   function updateControls() {
     const locked = Boolean(animation);
@@ -117,6 +128,7 @@
     const destination = index + direction;
     if (animation || destination < 0 || destination >= spreads.length) return;
     const focused = document.activeElement;
+    closeCase();
 
     function finishTurn() {
       showSpread(destination);
@@ -148,6 +160,11 @@
   next.addEventListener('click', () => turn(1));
   skip?.addEventListener('click', () => animation?.finish());
   journal.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && activeCase) {
+      event.preventDefault();
+      closeCase(activeCase.card.contains(event.target));
+      return;
+    }
     if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
     if (event.target.closest('a, button, input, select, textarea, [contenteditable]') && event.target !== previous && event.target !== next) return;
     const direction = { ArrowLeft: -1, ArrowRight: 1 }[event.key];
@@ -178,55 +195,30 @@
     });
   }
 
-  const detail = document.querySelector('dialog[data-journal-detail]');
-  if (!detail || typeof detail.showModal !== 'function') return;
+  journal.querySelectorAll('[data-case-preview]').forEach(opener => {
+    const card = opener.closest('.journal-case');
+    const detail = document.getElementById(opener.getAttribute('aria-controls'));
+    const close = detail?.querySelector('[data-case-close]');
+    if (!card?.contains(detail) || !close) return;
 
-  const title = detail.querySelector('[data-case-title]');
-  const category = detail.querySelector('[data-case-category]');
-  const summary = detail.querySelector('[data-case-summary]');
-  const link = detail.querySelector('[data-case-link]');
-  const close = detail.querySelector('[data-case-close]');
-  let opener;
+    detail.hidden = true;
+    opener.disabled = false;
+    opener.addEventListener('click', () => {
+      if (animation) return;
+      const wasOpen = activeCase?.opener === opener;
+      closeCase(wasOpen);
+      if (wasOpen) return;
 
-  journal.querySelectorAll('[data-case-preview]').forEach(button => { button.disabled = false; });
-
-  journal.addEventListener('click', event => {
-    const button = event.target.closest('[data-case-preview]');
-    const project = button?.closest('.journal-case');
-    if (animation || !project || detail.open) return;
-
-    const projectTitle = project.querySelector('h2');
-    const projectCategory = project.querySelector('.journal-case-category');
-    const projectSummary = project.querySelector('.journal-case-summary');
-    const projectLink = project.querySelector('.journal-case-link');
-
-    if (title) title.textContent = projectTitle?.textContent.trim() ?? '';
-    if (category) category.textContent = projectCategory?.textContent.trim() ?? '';
-    if (summary) summary.textContent = projectSummary?.textContent.trim() ?? '';
-    if (link) {
-      link.hidden = !projectLink;
-      if (projectLink) {
-        link.href = projectLink.href;
-        link.textContent = projectLink.textContent.trim();
-      } else {
-        link.removeAttribute('href');
-      }
-    }
-    opener = button;
-    detail.showModal();
-    close?.focus();
+      activeCase = { card, detail, opener };
+      detail.hidden = false;
+      card.classList.add('is-detail-open');
+      opener.setAttribute('aria-expanded', 'true');
+      close.focus({ preventScroll: true });
+    });
+    close.addEventListener('click', () => closeCase(true));
   });
 
-  close?.addEventListener('click', () => detail.close());
-  detail.addEventListener('click', event => {
-    if (event.target !== detail) return;
-    const box = detail.getBoundingClientRect();
-    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) {
-      detail.close();
-    }
-  });
-  detail.addEventListener('close', () => {
-    if (opener?.isConnected && !opener.closest('[hidden]')) opener.focus({ preventScroll: true });
-    opener = null;
+  document.addEventListener('click', event => {
+    if (activeCase && !activeCase.card.contains(event.target)) closeCase();
   });
 })();

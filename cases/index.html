@@ -3,186 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f0f5f9">
+  <meta name="theme-color" content="#afa99d">
   <title>Кейсы DigitalPlug</title>
   <meta name="description" content="Интерактивный журнал DigitalPlug с концептами сайтов, приложений и веб-сервисов.">
   <link rel="canonical" href="/cases/">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/style.css">
-  <link rel="stylesheet" href="../assets/project-panel.css?v=7">
-  <link rel="stylesheet" href="../assets/footer.css?v=11">
-  <link rel="stylesheet" href="../assets/services.css?v=22">
-  <link rel="stylesheet" href="../assets/cases-journal.css">
+  <link rel="stylesheet" href="../assets/cases-journal.css?v=2">
 </head>
-<body class="services-page cases-page">
-  <div class="viewport services-viewport"><div class="studio"><div class="surface services-surface">
-    <header class="header reveal">
-          <a class="logo" href="../" aria-label="DigitalPlug - на главную"><span class="logo-typing" aria-hidden="true">Digital<span class="logo-plug">Plug</span></span><span class="logo-caret" aria-hidden="true"></span></a>
-          <nav class="nav" aria-label="Основная навигация">
-            <a class="nav-link" href="../services/">Услуги</a>
-            <a class="nav-link" href="./" aria-current="page">Кейсы</a>
-            <a class="nav-link" href="../#contacts">Контакты</a>
-          </nav>
-          <button class="project-button heart-hover" data-panel="project">Обсудить проект</button>
-          <button class="menu-button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
-        </header>
-    <main class="services-main cases-main">
-      <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="../">Главная</a></li><li aria-current="page">Кейсы</li></ol></nav>
-      <div class="cases-heading">
-        <h1 id="cases-title">Кейсы.</h1>
-        <p>Вымышленные проекты студии</p>
-      </div>
-      <section class="journal" data-journal aria-labelledby="cases-title">
-        <div class="journal-stage">
-          <div class="journal-scene" aria-hidden="true">
-            <img class="journal-paper" src="../assets/cases/spread.webp" width="1224" height="752" alt="" fetchpriority="high">
-            <video class="journal-turn" preload="none" muted playsinline disablepictureinpicture tabindex="-1" src="../assets/cases/flip.mp4"></video>
-            <img class="journal-closed" src="../assets/cases/cover.webp" width="1280" height="720" alt="">
-            <video class="journal-intro" preload="none" muted playsinline disablepictureinpicture tabindex="-1" src="../assets/cases/opening.mp4"></video>
-          </div>
-          <div class="journal-pages" id="journal-pages">
-            <div class="journal-spread" data-spread>
-              <article class="journal-case journal-case--forma" aria-labelledby="journal-forma">
-                <button class="journal-case-button" type="button" data-case-preview disabled aria-haspopup="dialog" aria-label="Открыть кейс Форма">
-                  <span class="journal-cover" aria-hidden="true">
-                    <b>forma.</b>
-                    <span class="journal-cover-art"><svg class="case-building case-art" viewBox="0 0 460 370" fill="none">
-                      <defs><linearGradient id="case-forma-side" x1="150" y1="100" x2="280" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#e5dfd0"/><stop offset="1" stop-color="#b3aa96"/></linearGradient><linearGradient id="case-forma-front" x1="255" y1="160" x2="400" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#faf8f0"/><stop offset="1" stop-color="#d9d2c3"/></linearGradient></defs>
-                      <ellipse cx="269" cy="326" rx="146" ry="17" fill="#c5bfae" opacity=".35"/>
-                      <path d="m80 207 149-65 161 76-153 73Z" fill="#ded8c9"/>
-                      <path d="m171 102 123-53 110 55-123 57Z" fill="#fffdf6"/>
-                      <path d="M171 102v168l110 57V161Z" fill="url(#case-forma-side)"/>
-                      <path d="m281 161 123-57v168l-123 55Z" fill="url(#case-forma-front)"/>
-                      <path d="M201 126v113l23 12V138Zm43 22v112l22 12V159Z" fill="#79776c"/>
-                      <path d="m307 172 25-12v136l-25 12Zm43-20 25-12v136l-25 12Z" fill="#b2b2a7"/>
-                      <path d="m126 209 68-30v105l-68 31Z" fill="#f7f4ea"/><path d="m126 209 28-13v88l-28 13Z" fill="#cac3b1"/>
-                      <path d="m117 315 87-39 112 56-86 39Z" fill="#e8e2d5"/>
-                      </svg></span>
-                    <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
-                  </span>
-                </button>
-                <h2 id="journal-forma">Форма</h2>
-                <p class="journal-case-category">Сайт архитектурного бюро</p>
+<body class="cases-page">
+  <main class="cases-main">
+    <h1 id="cases-title" class="sr-only">Кейсы.</h1>
+    <section class="journal" data-journal aria-labelledby="cases-title">
+      <div class="journal-stage">
+        <div class="journal-scene" aria-hidden="true">
+          <img class="journal-paper" src="../assets/cases/spread.webp" width="1224" height="752" alt="" fetchpriority="high">
+          <video class="journal-turn" preload="none" muted playsinline disablepictureinpicture tabindex="-1" src="../assets/cases/flip.mp4"></video>
+          <img class="journal-closed" src="../assets/cases/cover.webp" width="1280" height="720" alt="">
+          <video class="journal-intro" preload="none" muted playsinline disablepictureinpicture tabindex="-1" src="../assets/cases/opening.mp4"></video>
+        </div>
+        <div class="journal-pages" id="journal-pages">
+          <div class="journal-spread" data-spread>
+            <article class="journal-case journal-case--forma" aria-labelledby="journal-forma">
+              <button class="journal-case-button" type="button" data-case-preview disabled aria-expanded="false" aria-controls="journal-forma-details" aria-label="Открыть кейс Форма">
+                <span class="journal-cover" aria-hidden="true">
+                  <b>forma.</b>
+                  <span class="journal-cover-art"><svg class="case-building case-art" viewBox="0 0 460 370" fill="none">
+                    <defs><linearGradient id="case-forma-side" x1="150" y1="100" x2="280" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#e5dfd0"/><stop offset="1" stop-color="#b3aa96"/></linearGradient><linearGradient id="case-forma-front" x1="255" y1="160" x2="400" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#faf8f0"/><stop offset="1" stop-color="#d9d2c3"/></linearGradient></defs>
+                    <ellipse cx="269" cy="326" rx="146" ry="17" fill="#c5bfae" opacity=".35"/>
+                    <path d="m80 207 149-65 161 76-153 73Z" fill="#ded8c9"/>
+                    <path d="m171 102 123-53 110 55-123 57Z" fill="#fffdf6"/>
+                    <path d="M171 102v168l110 57V161Z" fill="url(#case-forma-side)"/>
+                    <path d="m281 161 123-57v168l-123 55Z" fill="url(#case-forma-front)"/>
+                    <path d="M201 126v113l23 12V138Zm43 22v112l22 12V159Z" fill="#79776c"/>
+                    <path d="m307 172 25-12v136l-25 12Zm43-20 25-12v136l-25 12Z" fill="#b2b2a7"/>
+                    <path d="m126 209 68-30v105l-68 31Z" fill="#f7f4ea"/><path d="m126 209 28-13v88l-28 13Z" fill="#cac3b1"/>
+                    <path d="m117 315 87-39 112 56-86 39Z" fill="#e8e2d5"/>
+                    </svg></span>
+                  <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                </span>
+              </button>
+              <h2 id="journal-forma">Форма</h2>
+              <p class="journal-case-category">Сайт архитектурного бюро</p>
+              <div class="journal-case-detail" id="journal-forma-details">
+                <button class="journal-case-close" type="button" data-case-close aria-label="Закрыть описание"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
                 <p class="journal-case-summary">Галерея проектов с планировками, материалами и заявкой на консультацию.</p>
-              </article>
-              <article class="journal-case journal-case--pulse" aria-labelledby="journal-pulse">
-                <button class="journal-case-button" type="button" data-case-preview disabled aria-haspopup="dialog" aria-label="Открыть кейс Pulse">
-                  <span class="journal-cover" aria-hidden="true">
-                    <b>pulse</b>
-                    <span class="journal-cover-art"><span class="journal-phone"><i></i><svg viewBox="0 0 100 66" fill="none"><path d="M2 55 18 40 31 46 52 25 64 30 82 11 98 4" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><b></b><b></b></span></span>
-                    <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
-                  </span>
-                </button>
-                <h2 id="journal-pulse">Pulse</h2>
-                <p class="journal-case-category">Приложение для личных финансов</p>
+              </div>
+            </article>
+            <article class="journal-case journal-case--pulse" aria-labelledby="journal-pulse">
+              <button class="journal-case-button" type="button" data-case-preview disabled aria-expanded="false" aria-controls="journal-pulse-details" aria-label="Открыть кейс Pulse">
+                <span class="journal-cover" aria-hidden="true">
+                  <b>pulse</b>
+                  <span class="journal-cover-art"><span class="journal-phone"><i></i><svg viewBox="0 0 100 66" fill="none"><path d="M2 55 18 40 31 46 52 25 64 30 82 11 98 4" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><b></b><b></b></span></span>
+                  <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                </span>
+              </button>
+              <h2 id="journal-pulse">Pulse</h2>
+              <p class="journal-case-category">Приложение для личных финансов</p>
+              <div class="journal-case-detail" id="journal-pulse-details">
+                <button class="journal-case-close" type="button" data-case-close aria-label="Закрыть описание"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
                 <p class="journal-case-summary">В одном экране видны расходы по категориям, остаток и прогресс по целям.</p>
-              </article>
-            </div>
-            <div class="journal-spread" data-spread>
-              <article class="journal-case journal-case--objects" aria-labelledby="journal-objects">
-                <button class="journal-case-button" type="button" data-case-preview disabled aria-haspopup="dialog" aria-label="Открыть кейс Objects">
-                  <span class="journal-cover" aria-hidden="true">
-                    <b>objects</b>
-                    <span class="journal-cover-art"><svg class="case-chair case-art" viewBox="0 0 400 360" fill="none">
-                      <defs><linearGradient id="case-chair-back" x1="106" y1="64" x2="263" y2="244" gradientUnits="userSpaceOnUse"><stop stop-color="#719df5"/><stop offset=".5" stop-color="#326be1"/><stop offset="1" stop-color="#174bb3"/></linearGradient><linearGradient id="case-chair-seat" x1="160" y1="175" x2="224" y2="255" gradientUnits="userSpaceOnUse"><stop stop-color="#98b9ff"/><stop offset="1" stop-color="#2760cb"/></linearGradient></defs>
-                      <ellipse cx="211" cy="321" rx="99" ry="12" fill="#263e6810"/>
-                      <path d="m135 222-17 94m50-87 11 96m81-104 25 88m-49-106-5 104" stroke="#66758d" stroke-width="9" stroke-linecap="round"/>
-                      <path d="M110 100c-4-30 15-49 48-47l70 6c29 2 47 19 48 46l3 97-142 23Z" fill="url(#case-chair-back)"/>
-                      <path d="m137 199 127-23c17-3 39 23 42 36 2 12-8 21-21 25l-105 24c-19 4-44-7-52-22-11-20-9-35 9-40Z" fill="url(#case-chair-seat)"/>
-                      <path d="M133 100c-1-16 8-25 23-25l70 6" stroke="#c2d6ff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
-                      </svg></span>
-                    <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
-                  </span>
-                </button>
-                <h2 id="journal-objects">Objects</h2>
-                <p class="journal-case-category">Интернет-магазин интерьера</p>
+              </div>
+            </article>
+          </div>
+          <div class="journal-spread" data-spread>
+            <article class="journal-case journal-case--objects" aria-labelledby="journal-objects">
+              <button class="journal-case-button" type="button" data-case-preview disabled aria-expanded="false" aria-controls="journal-objects-details" aria-label="Открыть кейс Objects">
+                <span class="journal-cover" aria-hidden="true">
+                  <b>objects</b>
+                  <span class="journal-cover-art"><svg class="case-chair case-art" viewBox="0 0 400 360" fill="none">
+                    <defs><linearGradient id="case-chair-back" x1="106" y1="64" x2="263" y2="244" gradientUnits="userSpaceOnUse"><stop stop-color="#719df5"/><stop offset=".5" stop-color="#326be1"/><stop offset="1" stop-color="#174bb3"/></linearGradient><linearGradient id="case-chair-seat" x1="160" y1="175" x2="224" y2="255" gradientUnits="userSpaceOnUse"><stop stop-color="#98b9ff"/><stop offset="1" stop-color="#2760cb"/></linearGradient></defs>
+                    <ellipse cx="211" cy="321" rx="99" ry="12" fill="#263e6810"/>
+                    <path d="m135 222-17 94m50-87 11 96m81-104 25 88m-49-106-5 104" stroke="#66758d" stroke-width="9" stroke-linecap="round"/>
+                    <path d="M110 100c-4-30 15-49 48-47l70 6c29 2 47 19 48 46l3 97-142 23Z" fill="url(#case-chair-back)"/>
+                    <path d="m137 199 127-23c17-3 39 23 42 36 2 12-8 21-21 25l-105 24c-19 4-44-7-52-22-11-20-9-35 9-40Z" fill="url(#case-chair-seat)"/>
+                    <path d="M133 100c-1-16 8-25 23-25l70 6" stroke="#c2d6ff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+                    </svg></span>
+                  <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                </span>
+              </button>
+              <h2 id="journal-objects">Objects</h2>
+              <p class="journal-case-category">Интернет-магазин интерьера</p>
+              <div class="journal-case-detail" id="journal-objects-details">
+                <button class="journal-case-close" type="button" data-case-close aria-label="Закрыть описание"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
                 <p class="journal-case-summary">Каталог мебели и света с фильтрами по материалам, размерам и наличию.</p>
-              </article>
-              <article class="journal-case journal-case--navi" aria-labelledby="journal-navi">
-                <button class="journal-case-button" type="button" data-case-preview disabled aria-haspopup="dialog" aria-label="Открыть кейс Navi">
-                  <span class="journal-cover" aria-hidden="true">
-                    <b>navi↗</b>
-                    <span class="journal-cover-art"><svg class="journal-route" viewBox="0 0 250 190" fill="none"><path d="M22 149h55a31 31 0 0 0 31-31V65a28 28 0 0 1 28-28h91M22 53h44a56 56 0 0 1 56 56v12a31 31 0 0 0 31 31h74" stroke="#55759a" stroke-width="2" stroke-dasharray="6 7"/><path d="M22 149h55a31 31 0 0 0 31-31V65a28 28 0 0 1 28-28h91" stroke="#91c3ff" stroke-width="4" stroke-linecap="round"/><g fill="#a5ccff"><circle cx="22" cy="149" r="7"/><circle cx="108" cy="98" r="7"/><circle cx="227" cy="37" r="7"/></g><circle cx="108" cy="72" r="21" fill="#1d5fe0"/><path d="m100 72 6 6 10-12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
-                  </span>
-                </button>
-                <h2 id="journal-navi">Navi</h2>
-                <p class="journal-case-category">ИИ для логистики</p>
+              </div>
+            </article>
+            <article class="journal-case journal-case--navi" aria-labelledby="journal-navi">
+              <button class="journal-case-button" type="button" data-case-preview disabled aria-expanded="false" aria-controls="journal-navi-details" aria-label="Открыть кейс Navi">
+                <span class="journal-cover" aria-hidden="true">
+                  <b>navi↗</b>
+                  <span class="journal-cover-art"><svg class="journal-route" viewBox="0 0 250 190" fill="none"><path d="M22 149h55a31 31 0 0 0 31-31V65a28 28 0 0 1 28-28h91M22 53h44a56 56 0 0 1 56 56v12a31 31 0 0 0 31 31h74" stroke="#55759a" stroke-width="2" stroke-dasharray="6 7"/><path d="M22 149h55a31 31 0 0 0 31-31V65a28 28 0 0 1 28-28h91" stroke="#91c3ff" stroke-width="4" stroke-linecap="round"/><g fill="#a5ccff"><circle cx="22" cy="149" r="7"/><circle cx="108" cy="98" r="7"/><circle cx="227" cy="37" r="7"/></g><circle cx="108" cy="72" r="21" fill="#1d5fe0"/><path d="m100 72 6 6 10-12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                </span>
+              </button>
+              <h2 id="journal-navi">Navi</h2>
+              <p class="journal-case-category">ИИ для логистики</p>
+              <div class="journal-case-detail" id="journal-navi-details">
+                <button class="journal-case-close" type="button" data-case-close aria-label="Закрыть описание"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
                 <p class="journal-case-summary">Рабочий экран диспетчера с маршрутами, статусами доставок и подсказками по отклонениям.</p>
-              </article>
-            </div>
-            <div class="journal-spread" data-spread>
-              <article class="journal-case journal-case--smena" aria-labelledby="journal-smena">
-                <button class="journal-case-button" type="button" data-case-preview disabled aria-haspopup="dialog" aria-label="Открыть кейс Смена">
-                  <span class="journal-cover" aria-hidden="true">
-                    <b>смена.</b>
-                    <span class="journal-cover-art"><span class="journal-search"><i></i><i></i><i></i><i></i></span></span>
-                    <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
-                  </span>
-                </button>
-                <h2 id="journal-smena">Смена</h2>
-                <p class="journal-case-category">Сайт и SEO школы дизайна</p>
+              </div>
+            </article>
+          </div>
+          <div class="journal-spread" data-spread>
+            <article class="journal-case journal-case--smena" aria-labelledby="journal-smena">
+              <button class="journal-case-button" type="button" data-case-preview disabled aria-expanded="false" aria-controls="journal-smena-details" aria-label="Открыть кейс Смена">
+                <span class="journal-cover" aria-hidden="true">
+                  <b>смена.</b>
+                  <span class="journal-cover-art"><span class="journal-search"><i></i><i></i><i></i><i></i></span></span>
+                  <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                </span>
+              </button>
+              <h2 id="journal-smena">Смена</h2>
+              <p class="journal-case-category">Сайт и SEO школы дизайна</p>
+              <div class="journal-case-detail" id="journal-smena-details">
+                <button class="journal-case-close" type="button" data-case-close aria-label="Закрыть описание"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
                 <p class="journal-case-summary">Страницы курсов с программой, работами выпускников и записью на пробное занятие.</p>
-              </article>
-              <article class="journal-case journal-case--ramen" aria-labelledby="journal-ramen">
-                <button class="journal-case-button" type="button" data-case-preview disabled aria-haspopup="dialog" aria-label="Открыть кейс RAMEN.EXE">
-                  <span class="journal-cover" aria-hidden="true">
-                    <b>RAMEN.EXE</b>
-                    <span class="journal-cover-art"><img class="journal-ramen-art" src="../assets/web-development/ramen-hero.webp" width="600" height="750" alt="" loading="lazy" decoding="async"></span>
-                    <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
-                  </span>
-                </button>
-                <h2 id="journal-ramen">RAMEN.EXE</h2>
-                <p class="journal-case-category">Лендинг японской раменной</p>
+              </div>
+            </article>
+            <article class="journal-case journal-case--ramen" aria-labelledby="journal-ramen">
+              <button class="journal-case-button" type="button" data-case-preview disabled aria-expanded="false" aria-controls="journal-ramen-details" aria-label="Открыть кейс RAMEN.EXE">
+                <span class="journal-cover" aria-hidden="true">
+                  <b>RAMEN.EXE</b>
+                  <span class="journal-cover-art"><img class="journal-ramen-art" src="../assets/web-development/ramen-hero.webp" width="600" height="750" alt="" loading="lazy" decoding="async"></span>
+                  <svg class="journal-cover-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                </span>
+              </button>
+              <h2 id="journal-ramen">RAMEN.EXE</h2>
+              <p class="journal-case-category">Лендинг японской раменной</p>
+              <div class="journal-case-detail" id="journal-ramen-details">
+                <button class="journal-case-close" type="button" data-case-close aria-label="Закрыть описание"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
                 <p class="journal-case-summary">На одной странице можно выбрать рамен, посмотреть меню и забронировать столик.</p>
                 <a class="journal-case-link" href="../services/web-development/landing/">Смотреть демо</a>
-              </article>
-            </div>
+              </div>
+            </article>
           </div>
-          <button class="journal-skip" type="button" data-journal-skip hidden>Пропустить вступление</button>
         </div>
         <div class="journal-controls">
-          <button class="journal-page-button" type="button" data-journal-prev aria-controls="journal-pages" aria-label="Предыдущий разворот" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>Назад</span></button>
+          <button class="journal-page-button" type="button" data-journal-prev aria-controls="journal-pages" aria-label="Предыдущий разворот" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12H4m7-7-7 7 7 7"/></svg></button>
           <span class="journal-count" data-journal-count aria-hidden="true">01 / 03</span>
-          <button class="journal-page-button" type="button" data-journal-next aria-controls="journal-pages" aria-label="Следующий разворот"><span>Дальше</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></button>
+          <button class="journal-page-button" type="button" data-journal-next aria-controls="journal-pages" aria-label="Следующий разворот"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></button>
         </div>
-        <p class="sr-only" data-journal-status aria-live="polite" aria-atomic="true"></p>
-      </section>
-    </main>
-  </div></div></div>
-  <footer class="viewport footer-viewport" id="site-footer" aria-label="Подвал сайта">
-    <div class="studio"><div class="surface footer-surface">
-      <div class="footer-brand">
-        <a class="footer-wordmark" href="../" aria-label="DigitalPlug - на первый экран"><span class="footer-digital">Digital</span><span class="footer-plug">Plug</span></a>
-      <dl class="footer-requisites">
-        <div><dt class="sr-only">ФИО</dt><dd>ИП Тышевский Евгений Павлович</dd></div>
-        <div><dt>ИНН</dt><dd>246114921487</dd></div>
-      </dl>
-        <span class="footer-copyright">© <span data-current-year>2026</span></span>
+        <button class="journal-skip" type="button" data-journal-skip aria-label="Пропустить вступление" hidden></button>
       </div>
-        <nav class="footer-policies" aria-label="Правовая информация">
-          <a role="link" aria-disabled="true">Политика конфиденциальности</a>
-          <a role="link" aria-disabled="true">Обработка персональных данных</a>
-          <a role="link" aria-disabled="true" data-cookie-cursor>Политика cookies</a>
-        </nav>
-    </div></div>
-  </footer>
-  <dialog class="panel" id="info-panel" aria-labelledby="panel-title">
-    <button class="panel-close" aria-label="Закрыть окно"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
-    <h2 id="panel-title"></h2><div id="panel-content"></div>
-  </dialog>
-  <span class="heart-cursor" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M14 24 4.5 14.8C-2.3 8.2 7.4-.8 14 6.5 20.6-.8 30.3 8.2 23.5 14.8Z"/></svg></span>
-  <dialog class="journal-detail" data-journal-detail aria-labelledby="journal-detail-title">
-    <button class="journal-detail-close" type="button" data-case-close aria-label="Закрыть кейс"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
-    <p class="journal-detail-category" data-case-category></p>
-    <h2 id="journal-detail-title" data-case-title></h2>
-    <p class="journal-detail-summary" data-case-summary></p>
-    <a class="journal-detail-link" data-case-link hidden>Смотреть демо <span aria-hidden="true">↗</span></a>
-  </dialog>
-  <script src="../assets/phone-mask.js" defer></script>
-  <script src="../assets/main.js?v=11" defer></script>
-  <script src="../assets/cookie-cursor.js?v=4" defer></script>
-  <script src="../assets/cases-journal.js" defer></script>
+      <p class="sr-only" data-journal-status aria-live="polite" aria-atomic="true"></p>
+    </section>
+  </main>
+  <script src="../assets/cases-journal.js?v=2" defer></script>
 </body>
 </html>
