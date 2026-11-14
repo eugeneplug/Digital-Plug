@@ -150,7 +150,7 @@
       start: 1.12,
       end: 3.62,
       rate: 1.65,
-      delay: 140,
+      delay: 180,
       onReady: () => journal.classList.add('is-flip-visible'),
       onFinish: finishTurn,
     });
