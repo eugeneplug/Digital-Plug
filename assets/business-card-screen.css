@@ -103,6 +103,10 @@
 }
 
 .paul-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  align-items: center;
+  gap: 20px;
   border-block: 3px solid var(--paul-ink);
   background: var(--paul-yellow);
 }
@@ -113,6 +117,14 @@
   font-size: 21px;
   font-weight: 650;
   line-height: 1.36;
+}
+
+.paul-about-meme {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--paul-ink);
+  box-shadow: 3px 3px var(--paul-ink);
 }
 
 .paul-contact {
