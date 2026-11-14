@@ -41,9 +41,17 @@
   font-variant-numeric: tabular-nums;
 }
 
+.paul-cover {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background: radial-gradient(ellipse at center, #c21429, #840b1e);
+}
+
 .paul-poster {
   position: relative;
-  background: var(--paul-yellow);
+  width: 300px;
+  box-shadow: 0 4px 16px #3e061985;
 }
 
 .paul-poster img {
@@ -60,15 +68,15 @@
   place-items: center;
   background: linear-gradient(90deg, #dd0218, #db0218 75%, #e00219);
   color: #ffea12;
-  font-size: 43px;
+  font-size: 20px;
   font-style: italic;
   font-weight: 930;
   line-height: 1;
   letter-spacing: .035em;
   white-space: nowrap;
   paint-order: stroke fill;
-  -webkit-text-stroke: 3px #1a1310;
-  text-shadow: 2px 2px #1a1310;
+  -webkit-text-stroke: 1.4px #1a1310;
+  text-shadow: 1px 1px #1a1310;
 }
 
 .paul-practice, .paul-about, .paul-contact {
