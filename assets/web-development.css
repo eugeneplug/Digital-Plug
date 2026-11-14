@@ -1019,7 +1019,8 @@
 }
 
 .landing-results-carousel .dev-track {
-  gap: clamp(12px, 1.35vw, 20px);
+  --landing-results-gap: clamp(12px, 1.35vw, 20px);
+  gap: var(--landing-results-gap);
   padding: 8px 8px 24px;
   scroll-padding-inline: 8px;
 }
@@ -1158,6 +1159,12 @@
     max-width: 190px;
     justify-self: end;
     margin: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .landing-results-carousel .dev-slide:not(.dev-slide--featured) {
+    flex-basis: calc((100% - 3 * var(--landing-results-gap)) / 4);
   }
 }
 
