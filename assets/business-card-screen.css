@@ -34,94 +34,41 @@
   color: var(--paul-yellow);
 }
 
-.paul-hero {
-  position: relative;
-  display: flex;
-  min-height: 330px;
-  align-items: center;
-  overflow: hidden;
-  background: radial-gradient(circle, #bc671a37 1px, transparent 1.7px) 0 0 / 8px 8px,
-              repeating-conic-gradient(from -12deg at 78% 67%, #ffdf27 0 14deg, #ffcf20 14deg 29deg);
-}
-
-.paul-hero-copy {
-  position: relative;
-  z-index: 1;
-  padding: 17px 0 26px 25px;
-}
-
-.paul-label {
-  width: fit-content;
-  margin: 0 0 12px;
-  padding: 6px 9px;
-  background: var(--paul-ink);
-  color: var(--paul-yellow);
-  font-size: 14px;
-  font-weight: 850;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.paul-hero-copy > strong {
-  display: block;
-  color: var(--paul-ink);
-  font-size: 66px;
-  font-style: italic;
-  font-weight: 900;
-  line-height: .91;
-  letter-spacing: -.085em;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 7px #fff9e7;
-  transform: rotate(-4deg);
-}
-
-.paul-hero-copy p:last-child {
-  margin: 19px 0 0;
+.paul-header-phone {
+  color: #fff07a;
   font-size: 21px;
-  font-weight: 750;
-  line-height: 1.16;
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
 }
 
-.paul-portrait {
-  position: absolute;
-  right: -5px;
-  bottom: -59px;
-  width: 353px;
+.paul-poster {
+  position: relative;
+  background: var(--paul-yellow);
+}
+
+.paul-poster img {
+  display: block;
+  width: 100%;
   height: auto;
 }
 
-.paul-burst {
+.paul-poster-phone {
   position: absolute;
-  z-index: 2;
-  top: 13px;
-  right: 19px;
+  inset: 90.95% 7.7% auto;
   display: grid;
-  width: 100px;
-  height: 96px;
-  place-content: center;
-  background: var(--paul-red);
-  color: #ffed70;
-  clip-path: polygon(50% 0, 57% 12%, 70% 4%, 72% 18%, 87% 15%, 85% 28%, 100% 34%, 91% 45%, 100% 55%, 88% 63%, 96% 76%, 80% 77%, 79% 92%, 65% 87%, 57% 100%, 47% 89%, 34% 99%, 29% 85%, 14% 89%, 16% 74%, 2% 68%, 11% 56%, 0 46%, 12% 38%, 6% 23%, 22% 24%, 24% 9%, 38% 15%);
-  font-size: 22px;
-  font-style: italic;
-  font-weight: 900;
-  line-height: .93;
-  text-align: center;
-  text-shadow: 1px 2px var(--paul-ink);
-  transform: rotate(10deg);
-}
-
-.paul-phone-banner {
-  display: grid;
-  min-height: 66px;
+  height: 5.03%;
   place-items: center;
-  border-block: 3px solid var(--paul-ink);
-  background: var(--paul-red);
-  color: #fff07a;
-  font-size: 39px;
-  font-weight: 900;
-  letter-spacing: .02em;
+  background: linear-gradient(90deg, #dd0218, #db0218 75%, #e00219);
+  color: #ffea12;
+  font-size: 43px;
+  font-style: italic;
+  font-weight: 930;
   line-height: 1;
+  letter-spacing: .035em;
+  white-space: nowrap;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 3px #1a1310;
+  text-shadow: 2px 2px #1a1310;
 }
 
 .paul-practice, .paul-about, .paul-contact {
