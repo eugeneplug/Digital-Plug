@@ -995,6 +995,17 @@
   color: var(--purple);
 }
 
+.business-card-page .dev-hero h1 {
+  font-size: clamp(30px, 6.15vw, 94px);
+}
+
+@media (max-width: 820px) {
+  .business-card-page .dev-hero h1 {
+    max-width: none;
+    font-size: clamp(29px, 8.3vw, 73px);
+  }
+}
+
 .landing-page .dev-hero-copy > p {
   max-width: 38ch;
 }
