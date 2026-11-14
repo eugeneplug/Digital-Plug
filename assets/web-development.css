@@ -269,6 +269,7 @@
 }
 
 .dev-offer {
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(260px, 1fr) auto;
   align-items: center;
