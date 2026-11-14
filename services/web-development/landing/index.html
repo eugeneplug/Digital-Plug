@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../../assets/project-panel.css?v=7">
   <link rel="stylesheet" href="../../../assets/footer.css?v=11">
   <link rel="stylesheet" href="../../../assets/services.css?v=22">
-  <link rel="stylesheet" href="../../../assets/web-development.css?v=39">
+  <link rel="stylesheet" href="../../../assets/web-development.css?v=40">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"Лендинг","item":"/services/web-development/landing/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
   <link rel="stylesheet" href="../../../assets/landing-screen.css?v=3">
@@ -225,17 +225,37 @@
         <div class="dev-section-head">
           <h2 id="landing-results-title">Что вы получите по итогам разработки</h2>
         </div>
-        <div class="dev-carousel dev-carousel--results" data-dev-carousel>
+        <div class="dev-carousel dev-carousel--results landing-results-carousel" data-dev-carousel>
           <div class="dev-carousel-controls">
             <button class="dev-arrow" type="button" data-dev-prev aria-controls="landing-results-track" aria-label="Предыдущая карточка" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12H4m7-7-7 7 7 7"/></svg></button>
             <button class="dev-arrow" type="button" data-dev-next aria-controls="landing-results-track" aria-label="Следующая карточка" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></button>
           </div>
           <ul class="dev-track" id="landing-results-track" data-dev-track tabindex="0" aria-label="Результаты разработки">
-            <li class="dev-slide"><h3>Сайт<br>на вашем домене</h3><p>Полностью весь сайт, проверенные формы обратной связи, базы данных, доменные имена - будет хоститься на вашем сервере/хостинге</p></li>
-            <li class="dev-slide"><h3>Доступы<br>и инструкции</h3><p>Передаём доступы и документацию проекта, показываем где менять тексты, изображения и другие элементы, предусмотренные проектом.</p></li>
-            <li class="dev-slide"><h3>Материалы<br>проекта</h3><p>Передаём полный комплект макетов, исходников и настроек.</p></li>
-            <li class="dev-slide"><h3>Данные<br>о работе сайта</h3><p>Если аналитика входит в проект, настраиваем цели для форм и ключевых действий, чтобы видеть результаты после запуска.</p></li>
-            <li class="dev-slide"><h3>Гарантия и техподдержка</h3><p>Помогаем решить проблемы связанные с продуктом, отвечаем на ваши вопросы, остаемся с вами для дальнейшей работы и улучшения продукта.</p></li>
+            <li class="dev-slide dev-slide--featured">
+              <h3>Сайт<br>на вашем домене</h3>
+              <p>Полностью весь сайт, проверенные формы обратной связи, базы данных, доменные имена - будет хоститься на вашем сервере/хостинге</p>
+              <img class="landing-result-laptop" src="../../../assets/web-development/landing-results-laptop.webp" alt="" width="672" height="487" loading="lazy" decoding="async">
+            </li>
+            <li class="dev-slide">
+              <span class="landing-result-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 14a5 5 0 1 0-2.1-4.1L3 15v4h4v-2h2v-2z"/><circle cx="15" cy="9" r="1"/></svg></span>
+              <h3>Доступы<br>и инструкции</h3>
+              <p>Передаём доступы и документацию проекта, показываем где менять тексты, изображения и другие элементы, предусмотренные проектом.</p>
+            </li>
+            <li class="dev-slide">
+              <span class="landing-result-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l3 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+              <h3>Материалы<br>проекта</h3>
+              <p>Передаём полный комплект макетов, исходников и настроек.</p>
+            </li>
+            <li class="dev-slide">
+              <span class="landing-result-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 15c5.2-2.4 7.5-6.9 8-12-5.1.5-9.6 2.8-12 8l4 4zM9 11H5l-3 4 5.5.5M13 15v4l-4 3-.5-5.5M5 19l-2 2"/><circle cx="15.5" cy="8.5" r="1.3"/></svg></span>
+              <h3>Данные<br>о работе сайта</h3>
+              <p>Если аналитика входит в проект, настраиваем цели для форм и ключевых действий, чтобы видеть результаты после запуска.</p>
+            </li>
+            <li class="dev-slide">
+              <span class="landing-result-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 22 5-3a6 6 0 0 0 3-5V6l-8-3-8 3v8a6 6 0 0 0 3 5z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg></span>
+              <h3>Гарантия и техподдержка</h3>
+              <p>Помогаем решить проблемы связанные с продуктом, отвечаем на ваши вопросы, остаемся с вами для дальнейшей работы и улучшения продукта.</p>
+            </li>
           </ul>
         </div>
       </section>
