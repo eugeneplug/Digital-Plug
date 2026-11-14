@@ -630,13 +630,13 @@
   stroke-width: 1.6;
 }
 
-.dev-arrow:disabled {
+.dev-arrow:is(:disabled, [aria-disabled="true"]) {
   color: #9aa8b7;
   cursor: default;
 }
 
 @media (hover: hover) {
-  .dev-arrow:not(:disabled):hover {
+  .dev-arrow:not(:disabled, [aria-disabled="true"]):hover {
     border-color: var(--purple);
     background: var(--purple);
     color: #fff;

@@ -14,8 +14,15 @@
     let settleTimer;
 
     function updateButtons() {
-      previous.disabled = track.scrollLeft <= tolerance;
-      next.disabled = track.scrollLeft >= stops.at(-1) - tolerance;
+      const position = destination === null ? track.scrollLeft : stops[destination];
+      previous.setAttribute('aria-disabled', String(position <= tolerance));
+      next.setAttribute('aria-disabled', String(position >= stops.at(-1) - tolerance));
+    }
+
+    function clearDestination() {
+      clearTimeout(settleTimer);
+      destination = null;
+      updateButtons();
     }
 
     function measure() {
@@ -24,28 +31,26 @@
       const paddingValue = parseFloat(padding) || 0;
       const scrollInset = padding.endsWith('%') ? paddingValue * track.clientWidth / 100 : paddingValue;
       const origin = track.getBoundingClientRect().left + track.clientLeft + scrollInset - track.scrollLeft;
-      stops = [0];
+      const measured = [0];
       for (const card of cards) {
         const stop = Math.min(max, card.getBoundingClientRect().left - origin);
-        if (stop - stops.at(-1) > tolerance) stops.push(stop);
+        if (stop - measured.at(-1) > tolerance) measured.push(Math.round(stop));
       }
-      if (max - stops.at(-1) > tolerance) stops.push(max);
-      destination = null;
-      updateButtons();
-    }
-
-    function scheduleDestinationReset() {
-      clearTimeout(settleTimer);
-      settleTimer = setTimeout(() => {
-        destination = null;
-      }, 150);
+      if (max - measured.at(-1) > tolerance) measured.push(max);
+      if (stops.length !== measured.length || stops.some((stop, index) => stop !== measured[index])) {
+        stops = measured;
+        clearDestination();
+      }
     }
 
     function goTo(index) {
       if (index < 0 || index >= stops.length) return;
       destination = index;
+      updateButtons();
       track.scrollTo({ left: stops[index], behavior: reducedMotion.matches ? 'instant' : 'smooth' });
-      scheduleDestinationReset();
+      // Clear the target if the browser stops scrolling before it reaches it.
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(clearDestination, 250);
     }
 
     function move(direction) {
@@ -61,11 +66,19 @@
     previous.addEventListener('click', () => move(-1));
     next.addEventListener('click', () => move(1));
     track.addEventListener('scroll', () => {
-      updateButtons();
-      scheduleDestinationReset();
+      if (destination === null) {
+        updateButtons();
+      } else if (Math.abs(track.scrollLeft - stops[destination]) <= tolerance) {
+        clearDestination();
+      } else {
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(clearDestination, 250);
+      }
     }, { passive: true });
-    track.addEventListener('pointerdown', () => { destination = null; });
-    track.addEventListener('wheel', () => { destination = null; }, { passive: true });
+    track.addEventListener('pointerdown', clearDestination, { passive: true });
+    track.addEventListener('wheel', event => {
+      if (event.deltaX || event.shiftKey) clearDestination();
+    }, { passive: true });
     track.addEventListener('keydown', event => {
       if (event.target !== track || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       switch (event.key) {
@@ -82,6 +95,9 @@
     observer.observe(track);
     cards.forEach(card => observer.observe(card));
     measure();
+    updateButtons();
+    previous.disabled = false;
+    next.disabled = false;
     carousel.setAttribute('data-dev-ready', '');
   }
 })();
