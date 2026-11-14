@@ -1,7 +1,7 @@
 (() => {
   const host = document.querySelector('.dev-code-model');
   const canvas = host?.querySelector('canvas');
-  if (!canvas) return;
+  if (!canvas || !('IntersectionObserver' in window) || !('ResizeObserver' in window)) return;
   const libraryUrl = new URL('vendor/three/three.classic.min.js', document.currentScript.src);
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -14,6 +14,7 @@
     if (visible && !loading) {
       loading = true;
       initialize().catch(error => {
+        host.classList.remove('is-loading');
         host.dataset.modelError = error.message;
         console.warn('DigitalPlug 3D:', error);
         canvas.hidden = true;
@@ -22,6 +23,7 @@
     }
     updateMotion();
   });
+  host.classList.add('is-loading');
   observer.observe(host);
 
   async function initialize() {
@@ -150,10 +152,10 @@
       camera.position.z = Math.max(5.6, 2.45 / (Math.tan(Math.PI * 34 / 360) * camera.aspect));
       camera.updateProjectionMatrix();
       render();
+      if (host.classList.replace('is-loading', 'is-ready')) canvas.tabIndex = 0;
     }
-    new ResizeObserver(resize).observe(host);
     resize();
-    host.classList.add('is-ready');
+    new ResizeObserver(resize).observe(host);
 
     function tick(time) {
       const delta = Math.min((time - previousTime) / 1000, .06);
@@ -214,12 +216,13 @@
       event.preventDefault();
       contextLost = true;
       host.classList.remove('is-ready');
+      host.classList.add('is-loading');
+      canvas.tabIndex = -1;
       updateMotion();
     });
     canvas.addEventListener('webglcontextrestored', () => {
       contextLost = false;
       resize();
-      host.classList.add('is-ready');
       updateMotion();
     });
     document.addEventListener('visibilitychange', updateMotion);
