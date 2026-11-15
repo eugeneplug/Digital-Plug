@@ -1,238 +1,246 @@
-const worlds = [
+const fleet = [
   {
-    "id": "mars",
-    "name": "Mars",
-    "kind": "Solar system · Rocky world",
-    "tagline": "The red canyons",
-    "price": 2490,
-    "nights": 4,
-    "group": 8,
-    "color": "#642b3f",
-    "rim": "#f28075",
-    "heading": 1.1,
-    "description": "Cross the red dunes in a pressurized rover and watch the sunset from the rim of Valles Marineris.",
+    "id": "kestrel",
+    "name": "Kestrel I-7",
+    "role": "Interceptor",
+    "drive": "Twin vector thrusters",
+    "price": 28400,
+    "stock": 3,
+    "yaw": 0.04,
+    "description": "A fast-response interceptor with swept wings, a low cockpit and thrust nozzles set wide for tight turns.",
     "facts": [
       [
-        "Weather",
-        "Cold, dry air and seasonal dust storms. Typical surface temperature: about -60°C."
+        "Top speed",
+        "490 m/s"
       ],
       [
-        "Flora",
-        "Native plant life remains unconfirmed. The fictional base grows greens in pressurized greenhouses."
+        "Cargo bay",
+        "12 t"
       ],
       [
-        "Fauna",
-        "Native animal life remains unconfirmed. Follow rover tracks on the guided canyon route."
+        "Jump range",
+        "3.2 ly"
       ],
       [
-        "Field notes",
-        "Surface excursions use pressure suits. Routes shift when dust reduces visibility."
+        "Crew",
+        "1 pilot"
+      ],
+      [
+        "Shielding",
+        "Light · 18 MJ"
+      ],
+      [
+        "Hardpoints",
+        "2 wing mounts"
       ]
     ],
-    "itinerary": [
+    "systems": [
       [
-        "Arrival",
-        "Acclimatize at Ares Station and fit your surface suit."
+        "Vector drive",
+        "Independent engine nozzles help the pilot correct yaw on final approach."
       ],
       [
-        "Canyon traverse",
-        "Ride to Valles Marineris and stop at sheltered overlooks."
-      ],
-      [
-        "Blue sunset",
-        "Watch the evening sky from a sealed observation dome."
+        "Role",
+        "Short-range patrols, courier escort and rapid pursuits."
       ]
     ]
   },
   {
-    "id": "nibiru",
-    "name": "Nibiru",
-    "kind": "Imagined world · Ringed frontier",
-    "tagline": "The violet ringlight",
-    "price": 3890,
-    "nights": 6,
-    "group": 6,
-    "color": "#5e328b",
-    "rim": "#c79aff",
-    "ring": true,
-    "heading": 1.9,
-    "description": "Land on a twilight plateau where violet auroras meet the shadow of a vast ring system.",
+    "id": "tern",
+    "name": "Tern S-3",
+    "role": "Scout",
+    "drive": "Low-signature pulse drive",
+    "price": 18900,
+    "stock": 5,
+    "yaw": -0.18,
+    "description": "A narrow survey craft with a panoramic canopy and sensor pods at each wingtip. Built for mapping quiet routes.",
     "facts": [
       [
-        "Weather",
-        "The equatorial plateaus stay near 8°C. Aurora forecasts are best after the upper winds ease."
+        "Top speed",
+        "362 m/s"
       ],
       [
-        "Flora",
-        "Glass ferns curl their leaves before ringfall. Indigo moss stores moisture in hollow stems."
+        "Cargo bay",
+        "24 t"
       ],
       [
-        "Fauna",
-        "Silk gliders feed above the cliff forests. Dusk herds cross the plateau in small groups."
+        "Jump range",
+        "6.8 ly"
       ],
       [
-        "Field notes",
-        "Keep to lit trails at dusk. Watch gliders from the overlooks above the canopy."
+        "Crew",
+        "1 pilot"
+      ],
+      [
+        "Shielding",
+        "Light · 12 MJ"
+      ],
+      [
+        "Sensor range",
+        "48,000 km"
       ]
     ],
-    "itinerary": [
+    "systems": [
       [
-        "Ring approach",
-        "Follow the outer rings on a window-side arrival pass."
+        "Passive array",
+        "The paired pods track traffic and chart debris without an active scan."
       ],
       [
-        "Glass forest",
-        "Walk a boardwalk through the fern groves with a local guide."
-      ],
-      [
-        "Aurora watch",
-        "Spend the last evening at a sheltered plateau observatory."
+        "Role",
+        "Route mapping, beacon surveys and low-signature reconnaissance."
       ]
     ]
   },
   {
-    "id": "vespera",
-    "name": "Vespera",
-    "kind": "Imagined world · Canopy reserve",
-    "tagline": "Forests that glow",
-    "price": 3190,
-    "nights": 5,
-    "group": 6,
-    "color": "#244a61",
-    "rim": "#86f1b9",
-    "heading": 0.4,
-    "description": "Float above an emerald forest, then descend into the canopy as the night-bloomers open.",
+    "id": "atlas",
+    "name": "Atlas C-8",
+    "role": "Freighter",
+    "drive": "Triple heavy plasma drive",
+    "price": 51200,
+    "stock": 2,
+    "yaw": 0.31,
+    "description": "A twin-pod hauler with reinforced load rails, a raised bridge and a dedicated engine for each cargo module.",
     "facts": [
       [
-        "Weather",
-        "About 24°C in the low canopy. Short warm rains arrive around dusk."
+        "Top speed",
+        "184 m/s"
       ],
       [
-        "Flora",
-        "Lantern orchids glow after rain. Broadleaf towers collect water in deep crown pools."
+        "Cargo bay",
+        "940 t"
       ],
       [
-        "Fauna",
-        "Ribbon moths pollinate the orchids. Mossbacks travel along branches high in the canopy."
+        "Jump range",
+        "4.9 ly"
       ],
       [
-        "Field notes",
-        "Stay on raised walkways. Guides use dim amber lamps to protect nocturnal pollinators."
+        "Crew",
+        "4 operators"
+      ],
+      [
+        "Shielding",
+        "Heavy · 68 MJ"
+      ],
+      [
+        "Load system",
+        "Twin ISO pods"
       ]
     ],
-    "itinerary": [
+    "systems": [
       [
-        "Canopy lift",
-        "Ascend from the river docks to the skybridge lodges."
+        "Cargo rails",
+        "The external pods release independently, so a dock can unload one side at a time."
       ],
       [
-        "Dusk survey",
-        "Follow a botanist to an orchid grove during the first bloom."
-      ],
-      [
-        "River flight",
-        "Trace the canopy line at sunrise before departure."
+        "Role",
+        "Bulk contracts, regional supply runs and orbital construction freight."
       ]
     ]
   },
   {
-    "id": "thalassa",
-    "name": "Thalassa",
-    "kind": "Imagined world · Ocean sanctuary",
-    "tagline": "Under a blue horizon",
-    "price": 4290,
-    "nights": 7,
-    "group": 8,
-    "color": "#254b84",
-    "rim": "#85c9ff",
-    "heading": -0.55,
-    "description": "Sleep above an ocean with floating ice gardens and take a deep dive beneath its turquoise surface.",
+    "id": "meridian",
+    "name": "Meridian X-4",
+    "role": "Explorer",
+    "drive": "Long-range ion drive",
+    "price": 37600,
+    "stock": 3,
+    "yaw": -0.25,
+    "description": "A long-range explorer with an articulated scanner and open outrigger frames sized for deep-field instruments.",
     "facts": [
       [
-        "Weather",
-        "Upper water averages 12°C. Coastal platforms close when squalls cross the open sea."
+        "Top speed",
+        "284 m/s"
       ],
       [
-        "Flora",
-        "Mirror kelp rises to the surface in silver ribbons. Ice gardens shelter cold-water algae."
+        "Cargo bay",
+        "132 t"
       ],
       [
-        "Fauna",
-        "Glass rays glide between kelp beds. Chorus whales pass the sanctuary on migration."
+        "Jump range",
+        "11.4 ly"
       ],
       [
-        "Field notes",
-        "Dives use enclosed submersibles. Operators keep a quiet perimeter during whale season."
+        "Crew",
+        "2 operators"
+      ],
+      [
+        "Shielding",
+        "Medium · 36 MJ"
+      ],
+      [
+        "Survey kit",
+        "Spectrometer array"
       ]
     ],
-    "itinerary": [
+    "systems": [
       [
-        "Floating harbor",
-        "Board at the ocean platform and cross to the ice gardens."
+        "Field instruments",
+        "A gimballed bow scanner records spectral data from distant signals and wreckage."
       ],
       [
-        "Kelp descent",
-        "Take a guided submersible dive through the mirror forests."
-      ],
-      [
-        "Whale watch",
-        "Listen to migration calls from a pressurized observation cabin."
+        "Role",
+        "Deep-space surveys and expeditions beyond established relay routes."
       ]
     ]
   }
 ];
 
 const assetBase = new URL('web-development/spectrum-galaxy/', import.meta.url);
-const credits = new Intl.NumberFormat('en-US');
-function money(amount) {
-  return credits.format(amount) + ' CR';
-}
-function asset(id, suffix = '') {
-  return new URL(id + suffix + '.webp', assetBase).href;
-}
-function seatsLabel(count) {
-  return count + (count === 1 ? ' seat' : ' seats');
-}
+const format = new Intl.NumberFormat('en-US');
+const money = amount => format.format(amount) + ' CR';
+const shipCount = count => count + (count === 1 ? ' ship' : ' ships');
+const imageUrl = ship => new URL(ship.id + '.webp', assetBase).href;
 
-const store = document.querySelector('.spectrum-screen');
-if (store) activateStore(store);
+const terminal = document.querySelector('.spectrum-screen');
+if (terminal) activateTerminal(terminal);
 
-function activateStore(store) {
-  const deck = store.querySelector('[data-laptop-scroll]');
+function activateTerminal(terminal) {
+  const deck = terminal.querySelector('[data-laptop-scroll]');
   const panels = [...deck.querySelectorAll('[data-sg-view]')];
-  const catalog = store.querySelector('[data-sg-worlds]');
-  const cartItems = store.querySelector('[data-sg-cart]');
-  const status = store.querySelector('[data-sg-status]');
-  const added = store.querySelector('[data-sg-added]');
-  const canvas = store.querySelector('[data-sg-canvas]');
-  const image = store.querySelector('[data-sg-fallback]');
-  const viewer = store.querySelector('.spectrum-viewer');
+  const registry = terminal.querySelector('[data-sg-ships]');
+  const roster = terminal.querySelector('[data-sg-roster]');
+  const cartItems = terminal.querySelector('[data-sg-cart]');
+  const status = terminal.querySelector('[data-sg-status]');
+  const added = terminal.querySelector('[data-sg-added]');
+  const canvas = terminal.querySelector('[data-sg-canvas]');
+  const feature = terminal.querySelector('.spectrum-feature');
+  const hangarStage = terminal.querySelector('.spectrum-feature-model');
+  const viewer = terminal.querySelector('.spectrum-viewer');
   const detailStage = canvas.parentElement;
-  const feature = store.querySelector('.spectrum-feature');
-  const featureStage = feature.querySelector('.spectrum-feature-model');
-  const orbitHint = store.querySelector('#spectrum-model-hint');
-  const rotateButtons = [...store.querySelectorAll('[data-sg-rotate]')];
-  const addButton = store.querySelector('[data-sg-action="add"]');
-  const count = store.querySelector('[data-sg-count]');
-  const planetById = new Map(worlds.map(world => [world.id, world]));
+  const preview = terminal.querySelector('[data-sg-feature-image]');
+  const image = terminal.querySelector('[data-sg-fallback]');
+  const hints = [terminal.querySelector('#spectrum-hangar-hint'),terminal.querySelector('#spectrum-model-hint')];
+  const rotateButtons = [...terminal.querySelectorAll('[data-sg-rotate]')];
+  const addButton = terminal.querySelector('[data-sg-action="add"]');
+  const count = terminal.querySelector('[data-sg-count]');
+  const shipById = new Map(fleet.map(ship => [ship.id, ship]));
   const cart = new Map();
-  let selected = null;
-  let globe = null;
-  let globeLoading = null;
-  let globeMode = null;
+  const inventory = new Map(fleet.map(ship => [ship.id, ship.stock]));
+  const available = ship => inventory.get(ship.id);
+
+  let selected = fleet[0];
+  let renderer = null;
+  let loading = null;
   let current = 'catalog';
+  let rendererView = 'catalog';
   let catalogTop = 0;
 
-  catalog.innerHTML = worlds.map(world => `
-    <button class="spectrum-card" type="button" data-sg-planet="${world.id}" style="--planet-glow:${world.color}">
-      <img src="${asset(world.id)}" alt="" width="340" height="280">
-      <strong>${world.name}</strong>
-      <small>${world.tagline}</small>
-      <span class="spectrum-price">${world.nights} nights · ${money(world.price)}</span>
+  roster.innerHTML = fleet.map(ship => `
+    <button type="button" data-sg-select="${ship.id}" aria-pressed="${ship === selected}">
+      <img src="${imageUrl(ship)}" alt="" width="480" height="330">
+      <span><strong>${ship.name}</strong><small>${ship.role}</small></span>
     </button>`).join('');
 
-  function setText(selector, value) {
-    store.querySelector(selector).textContent = value;
+  registry.innerHTML = fleet.map(ship => `
+    <button class="spectrum-card" type="button" data-sg-inspect="${ship.id}">
+      <img src="${imageUrl(ship)}" alt="" width="480" height="330">
+      <strong>${ship.name}</strong>
+      <small>${ship.role}</small>
+      <span class="spectrum-price">${money(ship.price)}</span>
+    </button>`).join('');
+
+  function text(selector, value) {
+    terminal.querySelector(selector).textContent = value;
   }
 
   function show(view, top = 0, focus) {
@@ -241,121 +249,123 @@ function activateStore(store) {
     deck.toggleAttribute('data-laptop-autoplay-disabled', view !== 'catalog');
     for (const panel of panels) panel.hidden = panel.dataset.sgView !== view;
     deck.scrollTo({ top: typeof top === 'function' ? top() : top, behavior: 'instant' });
-    syncGlobe();
+    syncModel();
     const panel = panels.find(item => item.dataset.sgView === view);
     (focus ?? panel.querySelector('h2')).focus({ preventScroll: true });
     deck.dispatchEvent(new Event('laptop-autoplay-change'));
   }
 
-  function showDestinationSection() {
-    const heading = store.querySelector('#spectrum-destinations-title');
-    show('catalog', () => store.querySelector('.spectrum-catalog').offsetTop, heading);
+  function openRegistry() {
+    show('catalog', () => registry.parentElement.offsetTop, terminal.querySelector('#spectrum-fleet-title'));
   }
 
   function modelReady(ready, message = 'Drag to rotate') {
-    feature.classList.toggle('has-model', ready && globeMode === 'catalog');
-    viewer.classList.toggle('has-model', ready && globeMode === 'detail');
-    orbitHint.textContent = message;
-    for (const button of rotateButtons) button.disabled = !ready || globeMode !== 'detail';
+    feature.classList.toggle('has-model', ready && rendererView === 'catalog');
+    viewer.classList.toggle('has-model', ready && rendererView === 'detail');
+    for (const hint of hints) hint.textContent = message;
+    for (const button of rotateButtons) button.disabled = !ready;
   }
 
-  function syncGlobe() {
+  function syncModel() {
     if (current !== 'catalog' && current !== 'detail') {
-      globe?.setActive(false);
-      return;
-    }
-    if (!globe) {
-      if (globeLoading) return;
-      modelReady(false, 'Loading 3D globe…');
-      globeLoading = import('./spectrum-planet.js?v=2')
-        .then(({createPlanetViewer}) => {
-          globe = createPlanetViewer(canvas, modelReady);
-          syncGlobe();
-        })
-        .catch(() => modelReady(false, 'Planet image'));
+      renderer?.setActive(false);
       return;
     }
 
-    globeMode = current;
-    const detail = globeMode === 'detail';
-    const world = detail ? selected : planetById.get('nibiru');
-    canvas.tabIndex = detail ? 0 : -1;
-    if (detail) canvas.removeAttribute('aria-hidden');
-    else canvas.setAttribute('aria-hidden', 'true');
-    globe.attach(detail ? detailStage : featureStage);
-    globe.showPlanet(world, asset(world.id, '-surface'));
-    globe.setActive(true);
+    if (!renderer) {
+      if (loading) return;
+      modelReady(false, 'Loading 3D model…');
+      loading = import('./spectrum-ship-viewer.js?v=1')
+        .then(({createShipViewer}) => {
+          renderer = createShipViewer(canvas, modelReady);
+          syncModel();
+        })
+        .catch(() => modelReady(false, 'Ship image'));
+      return;
+    }
+
+    rendererView = current;
+    const inDetail = current === 'detail';
+    canvas.setAttribute('aria-describedby', inDetail ? 'spectrum-model-hint' : 'spectrum-hangar-hint');
+    canvas.setAttribute('aria-label', '3D model of ' + selected.name + '. Drag or use the arrow keys to rotate.');
+    renderer.attach(inDetail ? detailStage : hangarStage);
+    renderer.showShip(selected.id, selected.yaw);
+    renderer.setActive(true);
   }
 
-  new IntersectionObserver(([entry], observer) => {
-    if (!entry.isIntersecting) return;
-    observer.disconnect();
-    syncGlobe();
-  }).observe(feature);
+  function choose(ship) {
+    selected = ship;
+    preview.src = imageUrl(ship);
+    text('[data-sg-feature-name]', ship.name);
+    text('[data-sg-feature-price]', money(ship.price));
+    for (const button of roster.querySelectorAll('[data-sg-select]')) {
+      button.setAttribute('aria-pressed', String(button.dataset.sgSelect === ship.id));
+    }
+  }
 
-  function openPlanet(world) {
-    selected = world;
+  function inspect(ship) {
+    choose(ship);
     added.hidden = true;
-    const full = (cart.get(world.id) ?? 0) >= world.group;
+    const remaining = available(ship);
+    const full = (cart.get(ship.id) ?? 0) >= remaining;
     addButton.disabled = full;
-    addButton.firstElementChild.textContent = full ? 'Seat limit reached' : 'Add to cart';
-    image.src = asset(world.id);
-    canvas.setAttribute('aria-label', '3D globe of ' + world.name + '. Drag or use arrow keys to rotate.');
-    setText('#spectrum-planet-title', world.name);
-    setText('[data-sg-kind]', world.kind);
-    setText('[data-sg-description]', world.description);
-    setText('[data-sg-meta]', world.nights + ' nights · Groups of up to ' + world.group);
-    setText('[data-sg-detail-price]', money(world.price));
-    store.querySelector('[data-sg-facts]').innerHTML = world.facts.map(([term,value]) =>
+    addButton.firstElementChild.textContent = remaining === 0 ? 'Out of stock' : full ? 'Stock limit reached' : 'Add to cart';
+    image.src = imageUrl(ship);
+    text('#spectrum-ship-title', ship.name);
+    text('[data-sg-kind]', ship.role);
+    text('[data-sg-description]', ship.description);
+    text('[data-sg-meta]', ship.drive + ' · ' + remaining + ' in stock');
+    text('[data-sg-detail-price]', money(ship.price));
+    terminal.querySelector('[data-sg-facts]').innerHTML = ship.facts.map(([term,value]) =>
       '<div><dt>' + term + '</dt><dd>' + value + '</dd></div>').join('');
-    store.querySelector('[data-sg-itinerary]').innerHTML = world.itinerary.map(([step,description]) =>
-      '<li><strong>' + step + '</strong><span>' + description + '</span></li>').join('');
+    terminal.querySelector('[data-sg-systems]').innerHTML = ship.systems.map(([label,description]) =>
+      '<li><strong>' + label + '</strong><span>' + description + '</span></li>').join('');
     show('detail');
   }
 
   function order() {
-    const lines = [...cart].map(([id, quantity]) => ({ world: planetById.get(id), quantity }));
+    const lines = [...cart].map(([id, quantity]) => ({ ship: shipById.get(id), quantity }));
     return {
       lines,
-      seats: lines.reduce((sum, line) => sum + line.quantity, 0),
-      total: lines.reduce((sum, line) => sum + line.quantity * line.world.price, 0),
+      units: lines.reduce((sum, line) => sum + line.quantity, 0),
+      total: lines.reduce((sum, line) => sum + line.quantity * line.ship.price, 0),
     };
   }
 
-  function renderCart(focusWorld, action) {
-    const {lines, seats, total} = order();
+  function renderCart(focusShip, action) {
+    const {lines, units, total} = order();
     if (!lines.length) {
-      cartItems.innerHTML = '<p class="spectrum-muted">Your cart is empty.</p><button class="spectrum-button" type="button" data-sg-action="destinations">Browse tours</button>';
-      if (focusWorld) cartItems.querySelector('button').focus({ preventScroll: true });
+      cartItems.innerHTML = '<p class="spectrum-muted">Your cart is empty.</p><button class="spectrum-button" type="button" data-sg-action="fleet">Browse the fleet</button>';
+      if (focusShip) cartItems.querySelector('button').focus({ preventScroll: true });
       return;
     }
 
-    const rows = lines.map(({world,quantity}) => `
+    const rows = lines.map(({ship,quantity}) => `
       <li>
-        <div><strong>${world.name}</strong><small>${money(world.price)} per seat</small></div>
-        <div class="spectrum-quantity" aria-label="${world.name} seats">
-          <button type="button" data-sg-action="fewer" data-sg-item="${world.id}" aria-label="Remove one ${world.name} seat">−</button>
+        <div><strong>${ship.name}</strong><small>${money(ship.price)} each</small></div>
+        <div class="spectrum-quantity" aria-label="${ship.name} quantity">
+          <button type="button" data-sg-action="fewer" data-sg-item="${ship.id}" aria-label="Remove one ${ship.name}">−</button>
           <span>${quantity}</span>
-          <button type="button" data-sg-action="more" data-sg-item="${world.id}" aria-label="Add one ${world.name} seat" ${quantity >= world.group ? 'disabled' : ''}>+</button>
+          <button type="button" data-sg-action="more" data-sg-item="${ship.id}" aria-label="Add one ${ship.name}" ${quantity >= available(ship) ? 'disabled' : ''}>+</button>
         </div>
-        <strong>${money(world.price * quantity)}</strong>
+        <strong>${money(ship.price * quantity)}</strong>
       </li>`).join('');
     cartItems.innerHTML = `<ul class="spectrum-order-list">${rows}</ul>
-      <div class="spectrum-summary-row"><span>${seatsLabel(seats)}</span><strong>${money(total)}</strong></div>
+      <div class="spectrum-summary-row"><span>${shipCount(units)}</span><strong>${money(total)}</strong></div>
       <button class="spectrum-button" type="button" data-sg-action="checkout">Continue to SpaceKassa <span aria-hidden="true">↗</span></button>`;
-    if (!focusWorld) return;
-    const sameRow = [...cartItems.querySelectorAll('[data-sg-item]')].filter(button => button.dataset.sgItem === focusWorld && !button.disabled);
+    if (!focusShip) return;
+    const sameRow = [...cartItems.querySelectorAll('[data-sg-item]')].filter(button => button.dataset.sgItem === focusShip && !button.disabled);
     (sameRow.find(button => button.dataset.sgAction === action) ?? sameRow[0] ??
       cartItems.querySelector('[data-sg-action="checkout"]')).focus({ preventScroll: true });
   }
 
-  function setQuantity(id, next) {
-    if (!planetById.has(id)) return;
-    const quantity = Math.min(planetById.get(id).group, next);
-    if (quantity <= 0) cart.delete(id);
-    else cart.set(id, quantity);
-    count.textContent = order().seats;
-    status.textContent = planetById.get(id).name + ': ' + seatsLabel(Math.max(0, quantity)) + ' in cart.';
+  function setQuantity(ship, next) {
+    if (!ship) return;
+    const quantity = Math.max(0, Math.min(available(ship), next));
+    if (quantity === 0) cart.delete(ship.id);
+    else cart.set(ship.id, quantity);
+    count.textContent = order().units;
+    status.textContent = ship.name + ': ' + shipCount(quantity) + ' in cart.';
   }
 
   function openCart() {
@@ -369,37 +379,46 @@ function activateStore(store) {
       openCart();
       return;
     }
-    store.querySelector('[data-sg-payment]').innerHTML = `
-      <ul class="spectrum-order-list">${lines.map(({world,quantity}) =>
-        '<li><span>' + world.name + ' · ' + seatsLabel(quantity) + '</span><strong>' +
-        money(world.price * quantity) + '</strong></li>').join('')}</ul>`;
-    setText('[data-sg-pay-amount]', money(total));
+    terminal.querySelector('[data-sg-payment]').innerHTML = `
+      <ul class="spectrum-order-list">${lines.map(({ship,quantity}) =>
+        '<li><span>' + ship.name + ' · ' + shipCount(quantity) + '</span><strong>' +
+        money(ship.price * quantity) + '</strong></li>').join('')}</ul>`;
+    text('[data-sg-pay-amount]', money(total));
     show('payment');
   }
 
   function pay() {
     if (current !== 'payment') return;
-    const {lines, seats, total} = order();
-    if (!seats) return;
-    const reference = 'SG-' + Math.floor(Math.random() * 36 ** 6).toString(36).padStart(6, '0').toUpperCase();
-    setText('[data-sg-confirmation]', seatsLabel(seats) + ' reserved for ' + lines.map(line => line.world.name).join(', ') + '.');
-    setText('[data-sg-reference]', reference);
-    setText('[data-sg-paid]', money(total));
+    const {lines, units, total} = order();
+    if (!units) return;
+    const ref = Math.floor(Math.random() * 36 ** 6).toString(36).padStart(6, '0').toUpperCase();
+    text('[data-sg-confirmation]', shipCount(units) + ' cleared for collection: ' + lines.map(line => line.ship.name).join(', ') + '.');
+    text('[data-sg-reference]', 'SG-' + ref);
+    text('[data-sg-paid]', money(total));
+    for (const {ship, quantity} of lines) inventory.set(ship.id, available(ship) - quantity);
     cart.clear();
     count.textContent = '0';
     show('confirmation');
   }
 
-  store.addEventListener('click', event => {
-    const planet = event.target.closest('[data-sg-planet]');
-    if (planet) {
-      const world = planetById.get(planet.dataset.sgPlanet);
-      if (world) openPlanet(world);
+  terminal.addEventListener('click', event => {
+    const select = event.target.closest('[data-sg-select]');
+    if (select) {
+      const ship = shipById.get(select.dataset.sgSelect);
+      if (!ship) return;
+      choose(ship);
+      syncModel();
+      return;
+    }
+    const card = event.target.closest('[data-sg-inspect]');
+    if (card) {
+      const ship = shipById.get(card.dataset.sgInspect);
+      if (ship) inspect(ship);
       return;
     }
     const rotate = event.target.closest('[data-sg-rotate]');
     if (rotate) {
-      globe?.rotate(Number(rotate.dataset.sgRotate));
+      renderer?.rotate(Number(rotate.dataset.sgRotate) * .31);
       return;
     }
     const button = event.target.closest('[data-sg-action]');
@@ -407,20 +426,16 @@ function activateStore(store) {
     const {sgAction: action, sgItem: id} = button.dataset;
     switch (action) {
       case 'home': show('catalog'); break;
-      case 'destinations': showDestinationSection(); break;
-      case 'catalog': {
-        const target = selected ? [...catalog.querySelectorAll('[data-sg-planet]')].find(card => card.dataset.sgPlanet === selected.id) : undefined;
-        show('catalog', catalogTop, target && catalogTop > 0 ? target : undefined);
-        break;
-      }
+      case 'fleet': openRegistry(); break;
+      case 'catalog': show('catalog', catalogTop); break;
+      case 'inspect': inspect(selected); break;
       case 'add': {
-        if (!selected) return;
         const quantity = (cart.get(selected.id) ?? 0) + 1;
-        setQuantity(selected.id, quantity);
+        setQuantity(selected, quantity);
         added.hidden = false;
-        if (quantity >= selected.group) {
+        if (quantity >= available(selected)) {
           addButton.disabled = true;
-          addButton.firstElementChild.textContent = 'Seat limit reached';
+          addButton.firstElementChild.textContent = 'Stock limit reached';
           added.querySelector('button').focus({ preventScroll: true });
         }
         break;
@@ -428,11 +443,17 @@ function activateStore(store) {
       case 'cart': openCart(); break;
       case 'fewer':
       case 'more':
-        setQuantity(id, (cart.get(id) ?? 0) + (action === 'more' ? 1 : -1));
+        setQuantity(shipById.get(id), (cart.get(id) ?? 0) + (action === 'more' ? 1 : -1));
         renderCart(id, action);
         break;
       case 'checkout': checkout(); break;
       case 'pay': pay(); break;
     }
   });
+
+  new IntersectionObserver(([entry], observer) => {
+    if (!entry.isIntersecting) return;
+    observer.disconnect();
+    syncModel();
+  }).observe(hangarStage);
 }

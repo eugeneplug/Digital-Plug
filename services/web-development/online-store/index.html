@@ -15,7 +15,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"Интернет-магазин","item":"/services/web-development/online-store/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
   <link rel="stylesheet" href="../../../assets/landing-screen.css?v=5">
-  <link rel="stylesheet" href="../../../assets/spectrum-galaxy.css?v=2">
+  <link rel="stylesheet" href="../../../assets/spectrum-galaxy.css?v=3">
 </head>
 <body class="services-page landing-page">
   <div class="viewport services-viewport">
@@ -58,68 +58,85 @@
                 <clipPath id="spectrum-laptop-screen"><path d="M439 317L1020 256Q1059 251 1063 286L1090 687Q1095 729 1052 729L518 724Q484 724 478 696L417 354Q410 323 439 317Z"/></clipPath>
               </defs>
               <foreignObject x="0" y="0" width="1317" height="1194" clip-path="url(#spectrum-laptop-screen)">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="laptop-screen spectrum-screen" lang="en" role="group" aria-label="Spectrum Galaxy tour booking demo">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="laptop-screen spectrum-screen" lang="en" role="group" aria-label="Spectrum Galaxy ship exchange">
                   <header class="spectrum-bar">
                     <button class="spectrum-brand" type="button" data-sg-action="home"><span class="spectrum-orbit" aria-hidden="true"></span>Spectrum Galaxy</button>
                     <nav class="spectrum-nav" aria-label="Spectrum Galaxy">
-                      <button type="button" data-sg-action="destinations">Destinations</button>
+                      <button type="button" data-sg-action="fleet">Fleet</button>
                       <button class="spectrum-cart-button" type="button" data-sg-action="cart">Cart <span data-sg-count>0</span></button>
                     </nav>
                   </header>
                   <p class="sr-only" role="status" data-sg-status=""></p>
-                  <div class="spectrum-deck" data-laptop-scroll="" tabindex="0" role="region" aria-label="Galaxy tour shop">
+                  <div class="spectrum-deck" data-laptop-scroll="" tabindex="0" role="region" aria-label="Spectrum Galaxy hangar">
                     <div data-sg-view="catalog">
                       <section class="spectrum-hero" aria-labelledby="spectrum-hero-title">
-                        <div class="spectrum-hero-copy">
-                          <p class="spectrum-kicker">Interplanetary tours</p>
-                          <h2 id="spectrum-hero-title" tabindex="-1">Find your<br />next world.</h2>
-                          <p>Four planets. A seat on the next flight.</p>
-                          <button class="spectrum-button" type="button" data-sg-action="destinations">Explore tours <span aria-hidden="true">↓</span></button>
+                        <div class="spectrum-heading">
+                          <h2 id="spectrum-hero-title" tabindex="-1">Ship exchange</h2>
+                          <p>Select a hull to inspect.</p>
                         </div>
-                        <button class="spectrum-feature" type="button" data-sg-planet="nibiru" aria-label="Explore Nibiru">
-                          <span class="spectrum-feature-model"><img src="../../../assets/web-development/spectrum-galaxy/nibiru.webp" alt="" width="340" height="280" /></span>
-                          <span class="spectrum-feature-label">Nibiru <span aria-hidden="true">↗</span></span>
-                        </button>
+                        <div class="spectrum-hangar">
+                          <div class="spectrum-roster">
+                            <p class="spectrum-kicker">Select a hull</p>
+                            <div data-sg-roster=""></div>
+                          </div>
+                          <div class="spectrum-bay">
+                            <div class="spectrum-feature">
+                              <p class="spectrum-hull-name" data-sg-feature-name="">Kestrel I-7</p>
+                              <div class="spectrum-feature-model">
+                                <img data-sg-feature-image="" src="../../../assets/web-development/spectrum-galaxy/kestrel.webp" alt="" width="480" height="330" />
+                              </div>
+                              <div class="spectrum-model-controls">
+                                <button type="button" data-sg-rotate="-1" aria-label="Rotate ship left">◀</button>
+                                <span id="spectrum-hangar-hint">Drag to rotate</span>
+                                <button type="button" data-sg-rotate="1" aria-label="Rotate ship right">▶</button>
+                              </div>
+                            </div>
+                            <div class="spectrum-hangar-action">
+                              <strong class="spectrum-price" data-sg-feature-price="">28,400 CR</strong>
+                              <button class="spectrum-button" type="button" data-sg-action="inspect">Inspect ship <span aria-hidden="true">↗</span></button>
+                            </div>
+                          </div>
+                        </div>
                       </section>
-                      <section class="spectrum-catalog" aria-labelledby="spectrum-destinations-title">
-                        <h2 id="spectrum-destinations-title" tabindex="-1">Choose your destination</h2>
-                        <div class="spectrum-worlds" data-sg-worlds=""></div>
+                      <section class="spectrum-catalog" aria-labelledby="spectrum-fleet-title">
+                        <h2 id="spectrum-fleet-title" tabindex="-1">Fleet registry</h2>
+                        <div class="spectrum-ship-grid" data-sg-ships=""></div>
                       </section>
                       <footer class="spectrum-footer">
-                        <span>Fictional tour shop</span>
-                        <button type="button" data-sg-action="home">Back to orbit <span aria-hidden="true">↑</span></button>
+                        <span>Spectrum Galaxy · Demo terminal</span>
+                        <button type="button" data-sg-action="home">Back to hangar <span aria-hidden="true">↑</span></button>
                       </footer>
                     </div>
-                    <section class="spectrum-panel spectrum-detail" data-sg-view="detail" aria-labelledby="spectrum-planet-title" hidden="hidden">
-                      <button class="spectrum-back" type="button" data-sg-action="catalog"><span aria-hidden="true">←</span> All destinations</button>
+                    <section class="spectrum-panel spectrum-detail" data-sg-view="detail" aria-labelledby="spectrum-ship-title" hidden="hidden">
+                      <button class="spectrum-back" type="button" data-sg-action="catalog"><span aria-hidden="true">←</span> Back to fleet</button>
                       <div class="spectrum-detail-lead">
                         <div>
                           <p class="spectrum-kicker" data-sg-kind=""></p>
-                          <h2 id="spectrum-planet-title" tabindex="-1"></h2>
+                          <h2 id="spectrum-ship-title" tabindex="-1"></h2>
                           <p class="spectrum-detail-desc" data-sg-description=""></p>
                           <p class="spectrum-detail-meta" data-sg-meta=""></p>
                           <button class="spectrum-button" type="button" data-sg-action="add"><span>Add to cart</span><span data-sg-detail-price=""></span></button>
-                          <p class="spectrum-added" data-sg-added="" hidden="hidden">Seat added. <button type="button" data-sg-action="cart">View cart <span aria-hidden="true">↗</span></button></p>
+                          <p class="spectrum-added" data-sg-added="" hidden="hidden">Ship added. <button type="button" data-sg-action="cart">View cart <span aria-hidden="true">↗</span></button></p>
                         </div>
                         <div class="spectrum-viewer">
                           <div class="spectrum-model">
-                            <img data-sg-fallback="" alt="" width="340" height="280" />
+                            <img data-sg-fallback="" alt="" width="480" height="330" />
                             <canvas data-sg-canvas="" tabindex="0" role="img" aria-describedby="spectrum-model-hint"></canvas>
                           </div>
                           <div class="spectrum-model-controls">
-                            <button type="button" data-sg-rotate="-1" aria-label="Rotate planet left"><span aria-hidden="true">←</span></button>
+                            <button type="button" data-sg-rotate="-1" aria-label="Rotate ship left"><span aria-hidden="true">←</span></button>
                             <span id="spectrum-model-hint">Drag to rotate</span>
-                            <button type="button" data-sg-rotate="1" aria-label="Rotate planet right"><span aria-hidden="true">→</span></button>
+                            <button type="button" data-sg-rotate="1" aria-label="Rotate ship right"><span aria-hidden="true">→</span></button>
                           </div>
                         </div>
                       </div>
-                      <h3>Planet guide</h3>
+                      <h3>Technical specifications</h3>
                       <dl class="spectrum-facts" data-sg-facts=""></dl>
-                      <h3>Flight itinerary</h3>
-                      <ol class="spectrum-itinerary" data-sg-itinerary=""></ol>
+                      <h3>Onboard systems</h3>
+                      <ol class="spectrum-systems" data-sg-systems=""></ol>
                     </section>
                     <section class="spectrum-panel spectrum-order" data-sg-view="cart" aria-labelledby="spectrum-cart-title" hidden="hidden">
-                      <button class="spectrum-back" type="button" data-sg-action="catalog"><span aria-hidden="true">←</span> All destinations</button>
+                      <button class="spectrum-back" type="button" data-sg-action="catalog"><span aria-hidden="true">←</span> Back to fleet</button>
                       <h2 id="spectrum-cart-title" tabindex="-1">Your cart</h2>
                       <div data-sg-cart=""></div>
                     </section>
@@ -132,12 +149,12 @@
                     </section>
                     <section class="spectrum-panel spectrum-order spectrum-confirmation" data-sg-view="confirmation" aria-labelledby="spectrum-confirmation-title" hidden="hidden">
                       <div class="spectrum-ticket">
-                        <p class="spectrum-kicker">Spectrum Galaxy · Flight ticket</p>
-                        <h2 id="spectrum-confirmation-title" tabindex="-1">You’re cleared for launch.</h2>
+                        <p class="spectrum-kicker">Spectrum Galaxy · Transfer receipt</p>
+                        <h2 id="spectrum-confirmation-title" tabindex="-1">Transfer complete.</h2>
                         <p data-sg-confirmation=""></p>
-                        <dl><div><dt>Booking reference</dt><dd data-sg-reference=""></dd></div><div><dt>Paid via SpaceKassa</dt><dd data-sg-paid=""></dd></div></dl>
+                        <dl><div><dt>Transfer reference</dt><dd data-sg-reference=""></dd></div><div><dt>Paid via SpaceKassa</dt><dd data-sg-paid=""></dd></div></dl>
                       </div>
-                      <button class="spectrum-button" type="button" data-sg-action="catalog">Explore more worlds <span aria-hidden="true">↗</span></button>
+                      <button class="spectrum-button" type="button" data-sg-action="home">Return to hangar <span aria-hidden="true">↗</span></button>
                     </section>
                   </div>
                 </div>
@@ -336,7 +353,7 @@
   <script src="../../../assets/cookie-cursor.js?v=4" defer></script>
   <script src="../../../assets/web-development.js?v=13" defer></script>
   <script src="../../../assets/landing-screen.js?v=8" defer></script>
-  <script type="module" src="../../../assets/spectrum-galaxy.js?v=2"></script>
+  <script type="module" src="../../../assets/spectrum-galaxy.js?v=3"></script>
   <script type="module" src="../../../assets/service-question-model.js?v=1"></script>
   <script src="../../../assets/contact-robot.js?v=7" defer></script>
   <script src="../../../assets/contact-fire.js?v=2" defer></script>
