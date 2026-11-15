@@ -7,8 +7,21 @@
   transform: matrix3d(0.794960035, -0.156137196, 0, -0.000217263, 0.224347255, 1.04652713, 0, 0.000148565, 0, 0, 1, 0, 409, 310, 0, 1);
 }
 
-.laptop-preview-page {
-  animation: laptop-preview-scroll 20s cubic-bezier(.43, 0, .57, 1) infinite;
+[data-laptop-scroll] {
+  overflow: hidden auto;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y pinch-zoom;
+  scrollbar-width: thin;
+  scrollbar-color: #8ea5c685 transparent;
+}
+
+[data-laptop-scroll]:focus-visible {
+  outline: 2px solid #83adff;
+  outline-offset: -3px;
+}
+
+.dev-laptop:has([data-laptop-scroll]):is(:hover, :focus-within) {
+  animation-play-state: paused;
 }
 
 .ramen-screen {
@@ -282,11 +295,6 @@
 
 .dev-hero-art:not(.is-laptop-visible) .laptop-screen * {
   animation-play-state: paused;
-}
-
-@keyframes laptop-preview-scroll {
-  0%, 7%, 96%, 100% { transform: translateY(0); }
-  47%, 56% { transform: translateY(var(--laptop-preview-travel, 0px)); }
 }
 
 @keyframes ramen-turn {

@@ -8,13 +8,10 @@
   font-family: Inter, Arial, sans-serif;
 }
 
-.galactic-screen .laptop-preview-page {
-  animation-name: galactic-preview-scroll;
-}
-
-@keyframes galactic-preview-scroll {
-  0%, 19.5%, 96%, 100% { transform: translateY(0); }
-  50%, 58% { transform: translateY(var(--laptop-preview-travel, 0px)); }
+/* Play the laser once while the opening scene is held at the top. */
+.galactic-screen:not(.is-laptop-opening) :is(.galactic-ray, .galactic-laser-focus, .galactic-beam),
+.galactic-screen:not(.is-laptop-opening) .galactic-ray::after {
+  animation-name: none;
 }
 
 .galactic-header {
@@ -86,7 +83,7 @@
   rotate: atan2(var(--dy), var(--dx));
   transform-origin: left center;
   opacity: 0;
-  animation: galactic-ray-light var(--laser-cycle) linear var(--delay, 0s) infinite;
+  animation: galactic-ray-light var(--laser-cycle) linear var(--delay, 0s) both;
 }
 
 .galactic-ray::before,
@@ -113,7 +110,7 @@
   box-shadow: 0 0 4px 1px #5fff70, 0 0 9px 2px #22dd579c;
   transform: scaleX(0);
   transform-origin: left center;
-  animation: galactic-ray-grow var(--laser-cycle) ease-out var(--delay, 0s) infinite;
+  animation: galactic-ray-grow var(--laser-cycle) ease-out var(--delay, 0s) both;
   animation-play-state: inherit;
 }
 
@@ -126,7 +123,7 @@
   background: radial-gradient(circle, #f0fff4 0%, #b1ffc1 7%, #3dff768c 20%, #31ff592e 43%, transparent 70%);
   translate: -50% -50%;
   opacity: 0;
-  animation: galactic-laser-focus var(--laser-cycle) ease-in-out infinite;
+  animation: galactic-laser-focus var(--laser-cycle) ease-in-out both;
 }
 
 .galactic-beam {
@@ -141,7 +138,7 @@
   rotate: -18deg;
   transform-origin: left center;
   opacity: 0;
-  animation: galactic-laser-fire var(--laser-cycle) ease-out infinite;
+  animation: galactic-laser-fire var(--laser-cycle) ease-out both;
 }
 
 @keyframes galactic-ray-light {
