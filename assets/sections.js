@@ -54,11 +54,11 @@
     if(frame)cancelAnimationFrame(frame);
     const from=window.scrollY;
     return new Promise(resolve=>{
-      if(!duration){window.scrollTo(0,target());updateScenes();resolve();return;}
+      if(!duration){window.scrollTo({left:0,top:target(),behavior:'instant'});updateScenes();resolve();return;}
       const start=performance.now();
       function tick(now){
         const progress=motion.matches?1:Math.min(1,(now-start)/duration);
-        window.scrollTo(0,from+(target()-from)*easing(progress));updateScenes();
+        window.scrollTo({left:0,top:from+(target()-from)*easing(progress),behavior:'instant'});updateScenes();
         if(progress<1)frame=requestAnimationFrame(tick);else{frame=0;resolve();}
       }
       frame=requestAnimationFrame(tick);

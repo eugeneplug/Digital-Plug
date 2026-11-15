@@ -65,7 +65,8 @@ svg.knight-anatomy{-webkit-mask-image:none!important;mask-image:none!important;o
 .knight-reveal{--mask-x:50%;--mask-y:50%;--mask-r:0px;--mask-alpha:0;opacity:var(--mask-alpha);-webkit-mask-image:radial-gradient(circle at var(--mask-x) var(--mask-y),#000 0px,#000 calc(var(--mask-r)*.22),#000e calc(var(--mask-r)*.4),#0008 calc(var(--mask-r)*.62),#0003 calc(var(--mask-r)*.82),#0000 var(--mask-r));mask-image:radial-gradient(circle at var(--mask-x) var(--mask-y),#000 0px,#000 calc(var(--mask-r)*.22),#000e calc(var(--mask-r)*.4),#0008 calc(var(--mask-r)*.62),#0003 calc(var(--mask-r)*.82),#0000 var(--mask-r))}
 
 /* A short, video-led transition connects the two full-height sections. */
-html{scroll-behavior:auto;overscroll-behavior-y:none;scrollbar-width:none}html::-webkit-scrollbar{display:none}
+html{overscroll-behavior-y:none;scrollbar-width:none}html::-webkit-scrollbar{display:none}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 .home-viewport{position:relative;--scene-exit:0}.home-viewport>.studio{transform:scale(calc(1 - var(--scene-exit)*.035));opacity:calc(1 - var(--scene-exit)*.14);transform-origin:50% 30%}
 .knight-video{position:absolute;left:-10%;top:-10%;width:120%;height:120%;object-fit:contain;opacity:0;pointer-events:none;z-index:1;filter:brightness(1.2) contrast(1.12);transition:opacity .18s ease-out}
 .home-viewport.is-playing .knight-video.is-selected{opacity:1}.home-viewport.is-playing .knight-base,.home-viewport.is-playing .knight-reveal{opacity:0!important}.home-viewport.is-playing .knight-orbit{opacity:.2;transition:opacity .3s ease}.home-viewport.is-playing .knight-stage{pointer-events:none}
