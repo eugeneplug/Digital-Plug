@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="../../../assets/web-development.css?v=48">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"Корпоративный сайт","item":"/services/web-development/corporate-site/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
+  <link rel="stylesheet" href="../../../assets/landing-screen.css?v=4">
+  <link rel="stylesheet" href="../../../assets/hogwarts-screen.css?v=2">
 </head>
 <body class="services-page landing-page">
   <div class="viewport services-viewport">
@@ -49,9 +51,78 @@
             </dl>
             <div class="dev-actions"><button class="dev-button dev-button--primary" type="button" data-panel="project" data-service-request="Разработка сайта" data-service-topic="Корпоративный сайт" data-service-brief aria-label="Обсудить проект: Корпоративный сайт">Обсудить проект <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button></div>
           </div>
-          <div class="dev-hero-art" aria-hidden="true">
-            <svg class="dev-laptop" viewBox="100 138 1100 970" fill="none" aria-hidden="true">
-              <image class="dev-laptop-image" href="../../../assets/web-development/laptop-complete.png" width="1317" height="1194"/>
+          <div class="dev-hero-art">
+            <svg class="dev-laptop hogwarts-laptop" viewBox="100 138 1100 970" fill="none">
+              <image class="dev-laptop-image" href="../../../assets/web-development/laptop-complete.png" width="1317" height="1194" aria-hidden="true"/>
+              <defs>
+                <clipPath id="hogwarts-laptop-screen">
+                  <path d="M439 317L1020 256Q1059 251 1063 286L1090 687Q1095 729 1052 729L518 724Q484 724 478 696L417 354Q410 323 439 317Z"/>
+                </clipPath>
+              </defs>
+              <foreignObject x="0" y="0" width="1317" height="1194" clip-path="url(#hogwarts-laptop-screen)">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="laptop-screen hogwarts-screen" lang="la" role="group" aria-label="Schola Artium Magicarum Hogwarts">
+                  <header class="hogwarts-bar">
+                    <button type="button" class="hogwarts-brand" data-hogwarts-go="home" aria-label="Hogwarts">
+                      <span class="hogwarts-crest"><img src="../../../assets/web-development/hogwarts-crest.webp" alt="" /></span>
+                      <span>Hogwarts</span>
+                    </button>
+                    <nav aria-label="Index scholae">
+                      <button type="button" data-hogwarts-go="home" aria-pressed="true">Schola</button>
+                      <button type="button" data-hogwarts-go="houses" aria-pressed="false">Domus</button>
+                      <button type="button" data-hogwarts-go="admission" aria-pressed="false">Admissio</button>
+                    </nav>
+                  </header>
+                  <div class="hogwarts-deck">
+                    <section class="hogwarts-view hogwarts-home" data-hogwarts-view="home" aria-labelledby="hogwarts-opening">
+                      <img class="hogwarts-castle" src="../../../assets/web-development/hogwarts-castle.webp" width="1120" height="840" alt="" />
+                      <span class="hogwarts-crest hogwarts-crest--hero" aria-hidden="true"><img src="../../../assets/web-development/hogwarts-crest.webp" alt="" /></span>
+                      <div class="hogwarts-hero-copy">
+                        <p class="hogwarts-kicker">Schola Artium Magicarum</p>
+                        <h2 id="hogwarts-opening" tabindex="-1">Ianuae patent.</h2>
+                        <p>Annus scholasticus Kalendis Septembribus incipit.</p>
+                        <button type="button" class="hogwarts-button" data-hogwarts-go="admission">Litteras accipe <span aria-hidden="true">↗</span></button>
+                      </div>
+                      <p class="hogwarts-credit">Imago aptata: <a href="https://commons.wikimedia.org/wiki/File:Wizarding_World_of_Harry_Potter_-_Hogwarts_at_night_(5013550897).jpg" target="_blank" rel="noopener">The Conmunity - Pop Culture Geek</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></p>
+                    </section>
+                    <section class="hogwarts-view hogwarts-houses" data-hogwarts-view="houses" aria-labelledby="hogwarts-houses-title" hidden="hidden">
+                      <p class="hogwarts-kicker">Saeculo decimo condita</p>
+                      <h2 id="hogwarts-houses-title" tabindex="-1">Quattuor domus</h2>
+                      <p>Cappellus Sortitor discipulos in quattuor domus distribuit.</p>
+                      <ul class="hogwarts-house-grid">
+                        <li><strong>Gryffindor</strong><span>Virtus et audacia</span></li>
+                        <li><strong>Hufflepuff</strong><span>Fides et aequitas</span></li>
+                        <li><strong>Ravenclaw</strong><span>Sapientia et ingenium</span></li>
+                        <li><strong>Slytherin</strong><span>Ambitio et sollertia</span></li>
+                      </ul>
+                      <button type="button" class="hogwarts-button hogwarts-button--outline" data-hogwarts-go="admission">Ad admissionem <span aria-hidden="true">↗</span></button>
+                    </section>
+                    <section class="hogwarts-view hogwarts-admission" data-hogwarts-view="admission" aria-labelledby="hogwarts-admission-title" hidden="hidden">
+                      <div class="hogwarts-admission-copy">
+                        <h2 id="hogwarts-admission-title" tabindex="-1">Admissio</h2>
+                        <p>Penna et Liber Admissionis nomina discipulorum servant. Scribe nomen ut litteras accipias.</p>
+                        <form class="hogwarts-form" novalidate="novalidate">
+                          <label for="hogwarts-name">Nomen tuum</label>
+                          <input id="hogwarts-name" type="text" maxlength="42" autocomplete="off" spellcheck="false" required="required" aria-describedby="hogwarts-name-error" />
+                          <p id="hogwarts-name-error" role="alert" hidden="hidden">Quaeso, nomen tuum scribe.</p>
+                          <button class="hogwarts-button" type="submit">Petitionem mitte <span aria-hidden="true">↗</span></button>
+                        </form>
+                      </div>
+                      <div class="hogwarts-envelope" aria-hidden="true"><span class="hogwarts-seal">H</span></div>
+                    </section>
+                    <section class="hogwarts-view hogwarts-letter" data-hogwarts-view="letter" aria-labelledby="hogwarts-letter-title" hidden="hidden">
+                      <div class="hogwarts-parchment">
+                        <p class="hogwarts-kicker">Schola Artium Magicarum Hogwarts</p>
+                        <h2 id="hogwarts-letter-title" tabindex="-1">Litterae admissionis</h2>
+                        <p class="hogwarts-addressee" data-hogwarts-recipient></p>
+                        <p>Locum tibi in schola nostra reservavimus. Lectiones Kalendis Septembribus incipiunt. Te in Aula Magna exspectamus.</p>
+                        <p class="hogwarts-signature"><em>Minerva McGonagall</em><br />Vicaria praefecti scholae</p>
+                        <span class="hogwarts-seal" aria-hidden="true">H</span>
+                        <button class="hogwarts-button hogwarts-button--paper" type="button" data-hogwarts-go="admission" data-hogwarts-reset="true">Rursus</button>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </foreignObject>
             </svg>
           </div>
         </section>
@@ -246,6 +317,7 @@
   <script src="../../../assets/cookie-cursor.js?v=4" defer></script>
   <script src="../../../assets/web-development.js?v=13" defer></script>
   <script src="../../../assets/landing-screen.js?v=5" defer></script>
+  <script src="../../../assets/hogwarts-screen.js?v=1" defer></script>
   <script type="module" src="../../../assets/service-question-model.js?v=1"></script>
   <script src="../../../assets/contact-robot.js?v=7" defer></script>
   <script src="../../../assets/contact-fire.js?v=2" defer></script>
