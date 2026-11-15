@@ -146,7 +146,9 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(180deg, #17142825, transparent 30%, #0a091773 57%, #0d0a16 100%);
+  background:
+    linear-gradient(90deg, #0b0b1673, #0b0b1629 40%, transparent 66%),
+    linear-gradient(0deg, #090913e0, #09091338 31%, transparent 62%);
   content: "";
 }
 
@@ -157,8 +159,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
-  filter: brightness(.86) saturate(.88);
+  object-position: center;
   transform-origin: center 38%;
   animation: hoodwars-castle-breathe 18s ease-in-out infinite alternate;
 }
@@ -410,7 +411,7 @@
 
 @keyframes hoodwars-castle-breathe {
   from { transform: scale(1.01); }
-  to { transform: scale(1.05) translateY(-1%); }
+  to { transform: scale(1.035) translateY(-.5%); }
 }
 
 /* Keep the projected screen still while its controls are in use. */
