@@ -5,7 +5,7 @@
   if (!scroller || !('IntersectionObserver' in window)) return;
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const resumeDelay = 3000;
+  const resumeDelay = 1500;
   const topHold = Number(scroller.dataset.laptopTopHold) || 1400;
   let visible = false;
   let hovered = false;
@@ -55,7 +55,7 @@
 
     const onScreen = visible && !document.hidden && !reducedMotion.matches;
     laptop.classList.toggle('is-laptop-visible', onScreen);
-    if (!onScreen || !maxScroll) return;
+    if (!onScreen || !maxScroll || scroller.hasAttribute('data-laptop-autoplay-disabled')) return;
 
     position = scroller.scrollTop;
     if (position <= 0) direction = 1;
@@ -129,6 +129,7 @@
     resumeLater();
   });
 
+  scroller.addEventListener('laptop-autoplay-change', updatePlayback);
   scroller.addEventListener('scroll', () => {
     // Native wheel, touch and keyboard scrolling all take priority over the animation.
     if (scroller.scrollTop === lastScrollTop) return;
