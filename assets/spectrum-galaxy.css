@@ -1,3 +1,19 @@
+.spectrum-laptop {
+  scale: 1.1;
+}
+
+@media (min-width: 821px) {
+  .spectrum-laptop {
+    left: min(44%, calc(100% + 20px - min(70%, 289px)));
+  }
+}
+
+@media (max-width: 820px) {
+  .landing-page .spectrum-art {
+    min-height: clamp(190px, calc(91vw - 58px), 447px);
+  }
+}
+
 .spectrum-screen {
   --sg-bg: #0a1319;
   --sg-panel: #14232a;
