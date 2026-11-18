@@ -154,7 +154,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #14151a;
+  background: linear-gradient(90deg, #100f15, #16212c);
 }
 
 .hoodwars-home::before,
@@ -168,8 +168,8 @@
   z-index: -1;
   inset: 0;
   background:
-    linear-gradient(88deg, #0b0a0eef, #100e16ad 39%, #17172124 72%),
-    linear-gradient(0deg, #160e15e5, #3223310d 34%, #0b0b1122 73%, #0b0a0ea8);
+    linear-gradient(90deg, #0b0a0ec9, #100e1680 38%, transparent 69%),
+    linear-gradient(0deg, #100e16bf, transparent 37%, transparent 88%, #0b0a0e4d);
 }
 
 .hoodwars-home::after {
@@ -182,13 +182,13 @@
 .hoodwars-castle {
   position: absolute;
   z-index: -3;
-  inset: 0;
-  width: 100%;
+  inset: 0 0 0 auto;
+  width: 66%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  filter: saturate(.66) brightness(.84);
-  transform-origin: 72% 50%;
+  object-position: center top;
+  mask-image: linear-gradient(90deg, transparent, #000 36%);
+  transform-origin: 72% top;
   animation: hoodwars-castle-breathe 20s ease-in-out infinite alternate;
 }
 
@@ -197,8 +197,8 @@
   z-index: -2;
   inset: 44% -12% 0;
   background:
-    radial-gradient(ellipse at 30% 78%, #42333d6b, transparent 55%),
-    radial-gradient(ellipse at 74% 92%, #ad85935e, transparent 58%);
+    radial-gradient(ellipse at 30% 78%, #2d34485e, transparent 55%),
+    radial-gradient(ellipse at 74% 92%, #738da956, transparent 58%);
   animation: hoodwars-mist 16s ease-in-out infinite alternate;
 }
 
@@ -513,7 +513,7 @@
 
 @keyframes hoodwars-castle-breathe {
   from { transform: scale(1.01); }
-  to { transform: scale(1.045) translateY(-.6%); }
+  to { transform: scale(1.045); }
 }
 
 @keyframes hoodwars-mist {
