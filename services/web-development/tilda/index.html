@@ -15,7 +15,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"Сайт на Tilda","item":"/services/web-development/tilda/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
   <link rel="stylesheet" href="../../../assets/landing-screen.css?v=5">
-  <link rel="stylesheet" href="../../../assets/tilda-demo.css?v=1">
+  <link rel="stylesheet" href="../../../assets/tilda-demo.css?v=2">
 </head>
 <body class="services-page landing-page">
   <div class="viewport services-viewport">
@@ -51,8 +51,8 @@
             </dl>
             <div class="dev-actions"><button class="dev-button dev-button--primary" type="button" data-panel="project" data-service-request="Разработка сайта" data-service-topic="Сайт на Tilda" data-service-brief aria-label="Обсудить проект: Сайт на Tilda">Обсудить проект <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button></div>
           </div>
-          <div class="dev-hero-art tilda-demo-art" role="img" aria-label="Демо Tilda. Вход, редактирование и публикация рыбного портала">
-            <svg class="dev-laptop tilda-demo-laptop" viewBox="100 138 1100 970" fill="none" aria-hidden="true">
+          <figure class="dev-hero-art tilda-demo-art">
+            <svg class="dev-laptop tilda-demo-laptop" viewBox="100 138 1100 970" fill="none" role="img" aria-label="Демо Tilda. Вход, редактирование и публикация рыбного портала">
               <image class="dev-laptop-image" href="../../../assets/web-development/laptop-complete.png" width="1317" height="1194"/>
               <defs>
                 <clipPath id="tilda-laptop-screen"><path d="M439 317L1020 256Q1059 251 1063 286L1090 687Q1095 729 1052 729L518 724Q484 724 478 696L417 354Q410 323 439 317Z"/></clipPath>
@@ -160,7 +160,8 @@
                 </div>
               </foreignObject>
             </svg>
-          </div>
+            <figcaption class="tilda-demo-note">* Демонстрационная версия. Вход и публикация имитируются.</figcaption>
+          </figure>
         </section>
 
         <section class="dev-section landing-overview" aria-labelledby="tilda-overview-title">

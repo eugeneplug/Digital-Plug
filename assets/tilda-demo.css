@@ -1,3 +1,34 @@
+.tilda-demo-art {
+  --tilda-media-center: 44%;
+  --tilda-media-width: min(132%, 550px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  margin: 0;
+}
+
+.tilda-demo-art > :is(.tilda-demo-laptop, .tilda-demo-note) {
+  position: relative;
+  inset: auto auto auto var(--tilda-media-center);
+  width: var(--tilda-media-width);
+  translate: -50% 0;
+}
+
+.tilda-demo-note {
+  margin: 12px 0 0;
+  color: #657181;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: right;
+}
+
+@media (max-width: 820px) {
+  .tilda-demo-art {
+    --tilda-media-center: 50%;
+    --tilda-media-width: min(94%, 460px);
+  }
+}
+
 .tilda-demo-laptop {
   pointer-events: none;
   user-select: none;
