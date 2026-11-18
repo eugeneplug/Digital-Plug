@@ -11,9 +11,11 @@
   <link rel="stylesheet" href="../../../assets/project-panel.css?v=7">
   <link rel="stylesheet" href="../../../assets/footer.css?v=11">
   <link rel="stylesheet" href="../../../assets/services.css?v=22">
-  <link rel="stylesheet" href="../../../assets/web-development.css?v=48">
+  <link rel="stylesheet" href="../../../assets/web-development.css?v=49">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"Сайт на WordPress","item":"/services/web-development/wordpress/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
+  <link rel="stylesheet" href="../../../assets/landing-screen.css?v=6">
+  <link rel="stylesheet" href="../../../assets/wordpress-demo.css?v=1">
 </head>
 <body class="services-page landing-page">
   <div class="viewport services-viewport">
@@ -48,10 +50,115 @@
               <div><dt>Гарантия</dt><dd>3 месяца</dd></div>
             </dl>
             <div class="dev-actions"><button class="dev-button dev-button--primary" type="button" data-panel="project" data-service-request="Разработка сайта" data-service-topic="Сайт на WordPress" data-service-brief aria-label="Обсудить проект: Сайт на WordPress">Обсудить проект <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button></div>
+            <p class="dev-demo-note">* Демонстрационная версия WordPress. Вход и публикация имитируются.</p>
           </div>
-          <div class="dev-hero-art" aria-hidden="true">
-            <svg class="dev-laptop" viewBox="100 138 1100 970" fill="none" aria-hidden="true">
+          <div class="dev-hero-art wordpress-demo-art">
+            <svg class="dev-laptop wordpress-demo-laptop" viewBox="100 138 1100 970" fill="none" role="img" aria-label="Демо WordPress. Вход, создание HTML-блока, проверка и публикация атласа морских рыб">
               <image class="dev-laptop-image" href="../../../assets/web-development/laptop-complete.png" width="1317" height="1194"/>
+              <defs>
+                <clipPath id="wordpress-laptop-screen"><path d="M439 317L1020 256Q1059 251 1063 286L1090 687Q1095 729 1052 729L518 724Q484 724 478 696L417 354Q410 323 439 317Z"/></clipPath>
+              </defs>
+              <foreignObject x="0" y="0" width="1317" height="1194" clip-path="url(#wordpress-laptop-screen)">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="laptop-screen wordpress-demo" data-laptop-demo="" data-scene="login" data-editor="canvas">
+                  <div class="wp-scene wp-login" data-wp-scene="login">
+                    <img class="wp-logo" src="../../../assets/web-development/wordpress.svg" width="67" height="67" alt="" />
+                    <div class="wp-login-card">
+                      <div class="wp-field"><span>Имя пользователя или email</span><div class="wp-input" data-wp-target="user"><strong data-wp-user=""></strong></div></div>
+                      <div class="wp-field"><span>Пароль</span><div class="wp-input wp-password" data-wp-target="password"><strong data-wp-password=""></strong></div></div>
+                      <div class="wp-login-actions"><span>□ Запомнить меня</span><span class="wp-button wp-button--primary" data-wp-target="login">Войти</span></div>
+                    </div>
+                  </div>
+
+                  <div class="wp-scene wp-admin" data-wp-scene="admin">
+                    <div class="wp-admin-bar"><span><img class="wp-logo" src="../../../assets/web-development/wordpress.svg" width="23" height="23" alt="" /> Атлас океана</span><span>Привет, admin</span></div>
+                    <div class="wp-admin-shell">
+                      <ul class="wp-admin-nav"><li><span>◷</span> Консоль</li><li><span>▤</span> Записи</li><li><span>▧</span> Медиафайлы</li><li class="wp-admin-current"><span>▱</span> Страницы</li><li><span>◈</span> Внешний вид</li><li><span>⚙</span> Настройки</li></ul>
+                      <div class="wp-admin-main">
+                        <p class="wp-admin-title">Страницы</p>
+                        <div class="wp-page-list">
+                          <div><span>Заголовок</span><span>Статус</span></div>
+                          <div class="wp-page-select" data-wp-target="page"><span><strong>Главная</strong><small>Редактировать</small></span><span>Черновик</span></div>
+                          <div><strong>Виды рыб</strong><span>Опубликовано</span></div>
+                          <div><strong>О проекте</strong><span>Опубликовано</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="wp-scene wp-editor" data-wp-scene="editor">
+                    <div class="wp-editor-bar">
+                      <img class="wp-logo" src="../../../assets/web-development/wordpress.svg" width="30" height="30" alt="" />
+                      <span class="wp-icon-action wp-button--primary" data-wp-target="insert">+</span>
+                      <strong>Главная</strong>
+                      <span class="wp-editor-mode" data-wp-mode="">Визуальный редактор</span>
+                      <span class="wp-button wp-button--line" data-wp-target="mode"><span data-wp-mode-action="">Код</span></span>
+                      <span class="wp-button wp-button--primary" data-wp-target="publish">Опубликовать</span>
+                    </div>
+                    <div class="wp-editor-body">
+                      <div class="wp-editor-view wp-canvas">
+                        <div class="wp-block-outline wp-ocean-hero">
+                          <span>Путеводитель по морским рыбам</span>
+                          <strong>Атлас<br />океана</strong>
+                        </div>
+                        <div class="wp-placeholder">&lt;/&gt; Произвольный HTML</div>
+                      </div>
+                      <div class="wp-editor-view wp-code">
+                        <div class="wp-code-bar"><strong>Редактор кода</strong><span>Главная · HTML</span></div>
+                        <div class="wp-code-body">
+                          <div class="wp-code-line wp-code-comment"><span>1</span><code></code></div>
+                          <div class="wp-code-line"><span>2</span><code></code></div>
+                          <div class="wp-code-line"><span>3</span><code></code></div>
+                          <div class="wp-code-line"><span>4</span><code></code></div>
+                          <div class="wp-code-line"><span>5</span><code></code></div>
+                          <div class="wp-code-line wp-code-comment"><span>6</span><code></code></div>
+                        </div>
+                      </div>
+                      <div class="wp-editor-view wp-check">
+                        <div class="wp-block-list">
+                          <strong>Список блоков</strong>
+                          <span data-wp-target="cover">▧ Обложка</span>
+                          <span data-wp-target="new-block">&lt;/&gt; Из глубины</span>
+                        </div>
+                        <div class="wp-preview">
+                          <div class="wp-block-outline wp-ocean-hero"><span>Путеводитель по морским рыбам</span><strong>Атлас океана</strong></div>
+                          <div class="wp-block-outline wp-ocean-note"><h2>Из глубины</h2><p>Три рыбы, три мира под водой.</p></div>
+                        </div>
+                      </div>
+                      <div class="wp-inserter">
+                        <strong>Блоки</strong>
+                        <div class="wp-block-options"><span>▧ Обложка</span><span>¶ Абзац</span><span data-wp-target="html-block">&lt;/&gt; Произвольный HTML</span></div>
+                      </div>
+                    </div>
+                    <div class="wp-publish-shade">
+                      <div class="wp-publish-dialog">
+                        <span class="wp-publish-mark" data-wp-publish-mark="">↑</span>
+                        <strong data-wp-publish-title="">Публикация страницы</strong>
+                        <div class="wp-progress"><i></i></div>
+                        <span class="wp-button wp-button--primary" data-wp-target="open">Открыть страницу ↗</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="wp-scene wp-live" data-wp-scene="live">
+                    <div class="wp-browser"><span></span><span>atlas-oceana.example</span><span>↗</span></div>
+                    <div class="wp-live-window">
+                      <div class="wp-live-track">
+                        <div class="wp-ocean-nav"><strong>Атлас океана</strong><span>Виды рыб <i>О проекте</i></span></div>
+                        <div class="wp-ocean-hero"><span>Путеводитель по морским рыбам</span><strong>Атлас<br />океана</strong></div>
+                        <div class="wp-ocean-note"><h2>Из глубины</h2><p>Три рыбы, три мира под водой.</p></div>
+                        <div class="wp-species">
+                          <article><img src="../../../assets/web-development/wordpress-manta.webp" width="960" height="640" alt="" /><strong>Рифовая манта</strong><small>Mobula alfredi</small></article>
+                          <article><img src="../../../assets/web-development/wordpress-clownfish.webp" width="480" height="320" alt="" /><strong>Рыба-клоун</strong><small>Amphiprion ocellaris</small></article>
+                          <article><img src="../../../assets/web-development/wordpress-blue-tang.webp" width="480" height="320" alt="" /><strong>Рыба-хирург</strong><small>Paracanthurus hepatus</small></article>
+                        </div>
+                        <div class="wp-ocean-footer"><strong>Атлас океана</strong><span>Морские рыбы</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="laptop-demo-cursor" aria-hidden="true"></div>
+                </div>
+              </foreignObject>
             </svg>
           </div>
         </section>
@@ -246,6 +353,7 @@
   <script src="../../../assets/cookie-cursor.js?v=4" defer></script>
   <script src="../../../assets/web-development.js?v=13" defer></script>
   <script src="../../../assets/landing-screen.js?v=5" defer></script>
+  <script type="module" src="../../../assets/wordpress-demo.js?v=1"></script>
   <script type="module" src="../../../assets/service-question-model.js?v=1"></script>
   <script src="../../../assets/contact-robot.js?v=7" defer></script>
   <script src="../../../assets/contact-fire.js?v=2" defer></script>

@@ -659,62 +659,6 @@
   color: #eeeada;
 }
 
-.td-cursor {
-  position: absolute;
-  z-index: 5;
-  inset: 0 auto auto 0;
-  width: 25px;
-  height: 32px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s ease;
-}
-
-.tilda-demo.has-cursor .td-cursor {
-  opacity: 1;
-}
-
-.td-cursor::before,
-.td-cursor::after {
-  position: absolute;
-  content: "";
-}
-
-.td-cursor::before {
-  inset: 0;
-  background: #fffdfa;
-  clip-path: polygon(0 0, 2px 30px, 9px 22px, 15px 31px, 21px 27px, 15px 18px, 25px 17px);
-}
-
-.td-cursor::after {
-  inset: 3px 2px 4px 3px;
-  background: #252726;
-  clip-path: polygon(0 0, 1px 20px, 7px 14px, 13px 25px, 15px 24px, 9px 13px, 17px 12px);
-}
-
-.td-pulse {
-  position: absolute;
-  z-index: 4;
-  top: -16px;
-  left: -16px;
-  width: 32px;
-  height: 32px;
-  border: 2px solid #ff795c;
-  border-radius: 50%;
-  background: #ffb9a24d;
-  pointer-events: none;
-  animation: td-click .46s ease-out both;
-}
-
-.tilda-demo .is-pressed {
-  transform: scale(.96);
-}
-
-@keyframes td-click {
-  from { opacity: 1; scale: .35; }
-  to { opacity: 0; scale: 1.65; }
-}
-
 @keyframes td-caret {
   50% { opacity: 0; }
 }
