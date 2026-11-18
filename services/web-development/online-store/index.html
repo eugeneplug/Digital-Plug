@@ -15,7 +15,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"Интернет-магазин","item":"/services/web-development/online-store/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
   <link rel="stylesheet" href="../../../assets/landing-screen.css?v=5">
-  <link rel="stylesheet" href="../../../assets/spectrum-galaxy.css?v=4">
+  <link rel="stylesheet" href="../../../assets/spectrum-galaxy.css?v=5">
 </head>
 <body class="services-page landing-page">
   <div class="viewport services-viewport">
@@ -51,112 +51,69 @@
             </dl>
             <div class="dev-actions"><button class="dev-button dev-button--primary" type="button" data-panel="project" data-service-request="Разработка сайта" data-service-topic="Интернет-магазин" data-service-brief aria-label="Обсудить проект: Интернет-магазин">Обсудить проект <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button></div>
           </div>
-          <div class="dev-hero-art spectrum-art">
-            <svg class="dev-laptop spectrum-laptop" viewBox="100 138 1100 970" fill="none">
+          <div class="dev-hero-art spectrum-art" role="img" aria-label="Анимация покупки кораблей в магазине Spectrum Galaxy">
+            <svg class="dev-laptop spectrum-laptop" aria-hidden="true" viewBox="100 138 1100 970" fill="none">
               <image class="dev-laptop-image" href="../../../assets/web-development/laptop-complete.png" width="1317" height="1194" aria-hidden="true"/>
               <defs>
                 <clipPath id="spectrum-laptop-screen"><path d="M439 317L1020 256Q1059 251 1063 286L1090 687Q1095 729 1052 729L518 724Q484 724 478 696L417 354Q410 323 439 317Z"/></clipPath>
               </defs>
               <foreignObject x="0" y="0" width="1317" height="1194" clip-path="url(#spectrum-laptop-screen)">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="laptop-screen spectrum-screen" lang="en" role="group" aria-label="Spectrum Galaxy ship exchange">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="laptop-screen spectrum-screen" lang="en">
                   <header class="spectrum-bar">
-                    <button class="spectrum-brand" type="button" data-sg-action="home"><span class="spectrum-orbit" aria-hidden="true"></span>Spectrum Galaxy</button>
-                    <nav class="spectrum-nav" aria-label="Spectrum Galaxy">
-                      <button type="button" data-sg-action="fleet">Fleet</button>
-                      <button class="spectrum-cart-button" type="button" data-sg-action="cart">Cart <span data-sg-count>0</span></button>
-                    </nav>
+                    <span class="spectrum-brand"><span class="spectrum-orbit"></span>Spectrum Galaxy</span>
+                    <span class="spectrum-cart-badge">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M3 4h2l3 10h11l2-7H6m3 11h.01m8 0h.01"/></svg>
+                      Cart <strong data-sg-count="">0</strong>
+                    </span>
                   </header>
-                  <p class="sr-only" role="status" data-sg-status=""></p>
-                  <div class="spectrum-deck" data-laptop-scroll="" tabindex="0" role="region" aria-label="Spectrum Galaxy hangar">
-                    <div data-sg-view="catalog">
-                      <section class="spectrum-hero" aria-labelledby="spectrum-hero-title">
-                        <div class="spectrum-heading">
-                          <h2 id="spectrum-hero-title" tabindex="-1">Ship exchange</h2>
-                          <p>Select a hull to inspect.</p>
+                  <div class="spectrum-deck" data-stage="browse" data-view="hangar">
+                    <div class="spectrum-scene spectrum-hangar" data-sg-scene="hangar">
+                      <div class="spectrum-roster">
+                        <h2>Ship exchange</h2>
+                        <ul class="spectrum-fleet" data-sg-fleet=""></ul>
+                      </div>
+                      <div class="spectrum-bay">
+                        <div class="spectrum-model">
+                          <span class="spectrum-bay-label">Hangar 04</span>
+                          <img data-sg-model-image="" src="../../../assets/web-development/spectrum-galaxy/kestrel.webp" alt="" width="480" height="330" />
+                          <canvas data-sg-canvas=""></canvas>
                         </div>
-                        <div class="spectrum-hangar">
-                          <div class="spectrum-roster">
-                            <p class="spectrum-kicker">Select a hull</p>
-                            <div data-sg-roster=""></div>
-                          </div>
-                          <div class="spectrum-bay">
-                            <div class="spectrum-feature">
-                              <p class="spectrum-hull-name" data-sg-feature-name="">Kestrel I-7</p>
-                              <div class="spectrum-feature-model">
-                                <img data-sg-feature-image="" src="../../../assets/web-development/spectrum-galaxy/kestrel.webp" alt="" width="480" height="330" />
-                              </div>
-                              <div class="spectrum-model-controls">
-                                <button type="button" data-sg-rotate="-1" aria-label="Rotate ship left">◀</button>
-                                <span id="spectrum-hangar-hint">Drag to rotate</span>
-                                <button type="button" data-sg-rotate="1" aria-label="Rotate ship right">▶</button>
-                              </div>
-                            </div>
-                            <div class="spectrum-hangar-action">
-                              <strong class="spectrum-price" data-sg-feature-price="">28,400 CR</strong>
-                              <button class="spectrum-button" type="button" data-sg-action="inspect">Inspect ship <span aria-hidden="true">↗</span></button>
-                            </div>
-                          </div>
+                        <div class="spectrum-purchase">
+                          <div><strong data-sg-hull="">Kestrel I-7</strong><span data-sg-price="">28,400 CR</span></div>
+                          <span class="spectrum-action spectrum-add"><span data-sg-add-label="">Add to cart</span><span aria-hidden="true">+</span></span>
                         </div>
-                      </section>
-                      <section class="spectrum-catalog" aria-labelledby="spectrum-fleet-title">
-                        <h2 id="spectrum-fleet-title" tabindex="-1">Fleet registry</h2>
-                        <div class="spectrum-ship-grid" data-sg-ships=""></div>
-                      </section>
-                      <footer class="spectrum-footer">
-                        <span>Spectrum Galaxy · Demo terminal</span>
-                        <button type="button" data-sg-action="home">Back to hangar <span aria-hidden="true">↑</span></button>
-                      </footer>
+                      </div>
                     </div>
-                    <section class="spectrum-panel spectrum-detail" data-sg-view="detail" aria-labelledby="spectrum-ship-title" hidden="hidden">
-                      <button class="spectrum-back" type="button" data-sg-action="catalog"><span aria-hidden="true">←</span> Back to fleet</button>
-                      <div class="spectrum-detail-lead">
-                        <div>
-                          <p class="spectrum-kicker" data-sg-kind=""></p>
-                          <h2 id="spectrum-ship-title" tabindex="-1"></h2>
-                          <p class="spectrum-detail-desc" data-sg-description=""></p>
-                          <p class="spectrum-detail-meta" data-sg-meta=""></p>
-                          <button class="spectrum-button" type="button" data-sg-action="add"><span>Add to cart</span><span data-sg-detail-price=""></span></button>
-                          <p class="spectrum-added" data-sg-added="" hidden="hidden">Ship added. <button type="button" data-sg-action="cart">View cart <span aria-hidden="true">↗</span></button></p>
-                        </div>
-                        <div class="spectrum-viewer">
-                          <div class="spectrum-model">
-                            <img data-sg-fallback="" alt="" width="480" height="330" />
-                            <canvas data-sg-canvas="" tabindex="0" role="img" aria-describedby="spectrum-model-hint"></canvas>
-                          </div>
-                          <div class="spectrum-model-controls">
-                            <button type="button" data-sg-rotate="-1" aria-label="Rotate ship left"><span aria-hidden="true">←</span></button>
-                            <span id="spectrum-model-hint">Drag to rotate</span>
-                            <button type="button" data-sg-rotate="1" aria-label="Rotate ship right"><span aria-hidden="true">→</span></button>
-                          </div>
-                        </div>
+                    <div class="spectrum-scene spectrum-order" data-sg-scene="cart">
+                      <div class="spectrum-scene-heading"><h2>Your cart</h2><span>Reserved hulls</span></div>
+                      <ul class="spectrum-lines" data-sg-lines=""></ul>
+                      <div class="spectrum-total"><span>Total <strong data-sg-total="">0 CR</strong></span><span class="spectrum-action">Checkout <span aria-hidden="true">→</span></span></div>
+                    </div>
+                    <div class="spectrum-scene spectrum-payment" data-sg-scene="payment">
+                      <div class="spectrum-transfer">
+                        <p>Secure credit transfer</p>
+                        <h2>SpaceKassa</h2>
+                        <strong data-sg-payment="">0 CR</strong>
+                        <div class="spectrum-meter"><span></span></div>
+                        <p>Authorizing payment…</p>
                       </div>
-                      <h3>Technical specifications</h3>
-                      <dl class="spectrum-facts" data-sg-facts=""></dl>
-                      <h3>Onboard systems</h3>
-                      <ol class="spectrum-systems" data-sg-systems=""></ol>
-                    </section>
-                    <section class="spectrum-panel spectrum-order" data-sg-view="cart" aria-labelledby="spectrum-cart-title" hidden="hidden">
-                      <button class="spectrum-back" type="button" data-sg-action="catalog"><span aria-hidden="true">←</span> Back to fleet</button>
-                      <h2 id="spectrum-cart-title" tabindex="-1">Your cart</h2>
-                      <div data-sg-cart=""></div>
-                    </section>
-                    <section class="spectrum-panel spectrum-order" data-sg-view="payment" aria-labelledby="spectrum-pay-title" hidden="hidden">
-                      <button class="spectrum-back" type="button" data-sg-action="cart"><span aria-hidden="true">←</span> Back to cart</button>
-                      <h2 id="spectrum-pay-title" tabindex="-1">SpaceKassa</h2>
-                      <p class="spectrum-muted">Simulated payment in galactic credits.</p>
-                      <div class="spectrum-pay-summary" data-sg-payment=""></div>
-                      <button class="spectrum-button" type="button" data-sg-action="pay">Pay <span data-sg-pay-amount=""></span></button>
-                    </section>
-                    <section class="spectrum-panel spectrum-order spectrum-confirmation" data-sg-view="confirmation" aria-labelledby="spectrum-confirmation-title" hidden="hidden">
+                    </div>
+                    <div class="spectrum-scene spectrum-confirmation" data-sg-scene="receipt">
                       <div class="spectrum-ticket">
-                        <p class="spectrum-kicker">Spectrum Galaxy · Transfer receipt</p>
-                        <h2 id="spectrum-confirmation-title" tabindex="-1">Transfer complete.</h2>
-                        <p data-sg-confirmation=""></p>
-                        <dl><div><dt>Transfer reference</dt><dd data-sg-reference=""></dd></div><div><dt>Paid via SpaceKassa</dt><dd data-sg-paid=""></dd></div></dl>
+                        <div class="spectrum-check"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-9"/></svg></div>
+                        <div>
+                          <p>SpaceKassa receipt</p>
+                          <h2>Transfer complete</h2>
+                          <p data-sg-receipt=""></p>
+                        </div>
                       </div>
-                      <button class="spectrum-button" type="button" data-sg-action="home">Return to hangar <span aria-hidden="true">↗</span></button>
-                    </section>
+                    </div>
                   </div>
+                  <footer class="spectrum-status">
+                    <span data-sg-status="">Browsing fleet</span>
+                    <ol class="spectrum-steps"><li data-sg-step="">Hangar</li><li data-sg-step="">Cart</li><li data-sg-step="">Payment</li><li data-sg-step="">Receipt</li></ol>
+                  </footer>
+                  <div class="spectrum-flight"><img data-sg-flight="" alt="" width="74" height="48" /></div>
                 </div>
               </foreignObject>
             </svg>
@@ -353,7 +310,7 @@
   <script src="../../../assets/cookie-cursor.js?v=4" defer></script>
   <script src="../../../assets/web-development.js?v=13" defer></script>
   <script src="../../../assets/landing-screen.js?v=8" defer></script>
-  <script type="module" src="../../../assets/spectrum-galaxy.js?v=3"></script>
+  <script type="module" src="../../../assets/spectrum-galaxy.js?v=4"></script>
   <script type="module" src="../../../assets/service-question-model.js?v=1"></script>
   <script src="../../../assets/contact-robot.js?v=7" defer></script>
   <script src="../../../assets/contact-fire.js?v=2" defer></script>

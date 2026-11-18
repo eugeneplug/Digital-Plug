@@ -6,84 +6,108 @@
 }
 
 .hoodwars-screen {
-  --hoodwars-ink: #10121b;
-  --hoodwars-paper: #f2e6cb;
-  --hoodwars-gold: #e5c17f;
-  --hoodwars-rule: #bc965b55;
+  --hoodwars-ink: #101013;
+  --hoodwars-paper: #efe7da;
+  --hoodwars-muted: #c7b8ad;
+  --hoodwars-gold: #dbbf8e;
+  --hoodwars-rule: #a886545e;
+  --hoodwars-display: Cinzel, Georgia, serif;
   display: grid;
-  grid-template-rows: 59px minmax(0, 1fr);
+  grid-template-rows: 62px minmax(0, 1fr);
   background: var(--hoodwars-ink);
   color: var(--hoodwars-paper);
-  font: 21px/1.3 Georgia, serif;
+  font: 20px/1.38 Georgia, serif;
   color-scheme: dark;
 }
 
 .hoodwars-screen :focus-visible {
-  outline: 2px solid #ffe3a5;
+  outline: 2px solid #f2cf91;
   outline-offset: -3px;
 }
 
 .hoodwars-bar {
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 18px 12px;
-  border-bottom: 1px solid var(--hoodwars-rule);
-  background: #12121b;
+  gap: 14px;
+  padding-inline: 23px 20px;
+  border-bottom: 3px double var(--hoodwars-rule);
+  background: linear-gradient(#1a1719, #100e12);
+  box-shadow: 0 5px 20px #0707098a;
 }
 
 .hoodwars-bar button {
   min-height: 48px;
   background: transparent;
-  font-weight: 700;
 }
 
 .hoodwars-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   padding: 0;
   color: var(--hoodwars-gold);
-  font-family: Cinzel, Georgia, serif;
-  font-size: 20px;
+  font: 700 22px/1 var(--hoodwars-display);
 }
 
 .hoodwars-emblem {
   position: relative;
+  isolation: isolate;
   display: grid;
-  width: 34px;
-  aspect-ratio: 1;
+  width: 30px;
+  height: 38px;
+  flex: none;
   place-items: center;
-  border: 3px double #a68158;
-  border-radius: 50%;
-  background: radial-gradient(circle at 36% 24%, #5d4351, #221926 76%);
-  color: #f3d699;
-  font: 700 17px/1 Cinzel, Georgia, serif;
+  color: #e3c590;
+  font: 700 21px/1 var(--hoodwars-display);
+}
+
+.hoodwars-emblem::before,
+.hoodwars-emblem::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  clip-path: polygon(50% 0, 83% 15%, 100% 36%, 100% 67%, 50% 100%, 0 67%, 0 36%, 17% 15%);
+  content: "";
+}
+
+.hoodwars-emblem::before {
+  background: linear-gradient(140deg, #e3c590, #775b46 65%, #b08e60);
 }
 
 .hoodwars-emblem::after {
-  position: absolute;
-  top: -.23em;
-  right: -.21em;
-  color: #e6c98d;
-  font-size: .69em;
-  content: "✦";
+  inset: 1px;
+  background: radial-gradient(ellipse at 38% 26%, #482c31, #171319 74%);
 }
 
 .hoodwars-bar nav {
   display: flex;
   align-items: center;
+  gap: 4px;
 }
 
 .hoodwars-bar nav button {
-  padding-inline: 12px;
-  color: #eadcc3;
-  font-size: 20px;
+  position: relative;
+  padding-inline: 10px;
+  color: var(--hoodwars-muted);
+  font: 700 17px/1 var(--hoodwars-display);
+  transition: color .25s ease, background .25s ease;
 }
 
 .hoodwars-bar nav button:is(:hover, [aria-current="location"]) {
-  color: var(--hoodwars-gold);
-  box-shadow: inset 0 -1px var(--hoodwars-gold);
+  background: linear-gradient(0deg, #ae82532c, transparent 75%);
+  color: #f1d5a7;
+}
+
+.hoodwars-bar nav button[aria-current="location"]::after {
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+  left: 10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ebca93, transparent);
+  content: "";
 }
 
 .hoodwars-deck {
@@ -93,167 +117,234 @@
   overscroll-behavior-y: contain;
   touch-action: pan-y;
   scrollbar-width: thin;
-  scrollbar-color: #947055 #18121e;
+  scrollbar-color: #887050 #141215;
   scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hoodwars-deck { scroll-behavior: auto; }
-}
-
-.hoodwars-view {
-  position: relative;
-  min-height: 391px;
-  padding: 26px 28px;
-  border-bottom: 1px solid var(--hoodwars-rule);
-  background: radial-gradient(ellipse at 70% 20%, #272538, #15131f 70%);
 }
 
 .hoodwars-deck [hidden] {
   display: none;
 }
 
+.hoodwars-view {
+  position: relative;
+  min-height: 388px;
+  padding: 28px 33px;
+  border-bottom: 1px solid var(--hoodwars-rule);
+}
+
 .hoodwars-view h2 {
   margin: 0;
-  color: #fff2d8;
-  font: 700 43px/1.05 Cinzel, Georgia, serif;
-  letter-spacing: -.045em;
+  color: #f4e8d3;
+  font: 700 41px/1.04 var(--hoodwars-display);
+  letter-spacing: -.042em;
 }
 
 .hoodwars-view p {
-  margin: 8px 0 0;
+  margin: 9px 0 0;
 }
 
 .hoodwars-view .hoodwars-kicker {
-  margin: 0 0 7px;
   color: var(--hoodwars-gold);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font: 700 15px/1.2 var(--hoodwars-display);
+  letter-spacing: .11em;
 }
 
 .hoodwars-home {
   isolation: isolate;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 28px;
+  align-items: center;
   overflow: hidden;
+  background: #14151a;
+}
+
+.hoodwars-home::before,
+.hoodwars-home::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
 }
 
 .hoodwars-home::before {
-  position: absolute;
   z-index: -1;
   inset: 0;
   background:
-    linear-gradient(90deg, #0b0b1673, #0b0b1629 40%, transparent 66%),
-    linear-gradient(0deg, #090913e0, #09091338 31%, transparent 62%);
-  content: "";
+    linear-gradient(88deg, #0b0a0eef, #100e16ad 39%, #17172124 72%),
+    linear-gradient(0deg, #160e15e5, #3223310d 34%, #0b0b1122 73%, #0b0a0ea8);
+}
+
+.hoodwars-home::after {
+  inset: 12px 15px;
+  border: 1px solid #b2976a61;
+  outline: 1px solid #b2976a28;
+  outline-offset: 4px;
 }
 
 .hoodwars-castle {
   position: absolute;
-  z-index: -2;
+  z-index: -3;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform-origin: center 38%;
-  animation: hoodwars-castle-breathe 18s ease-in-out infinite alternate;
+  filter: saturate(.66) brightness(.84);
+  transform-origin: 72% 50%;
+  animation: hoodwars-castle-breathe 20s ease-in-out infinite alternate;
 }
 
-.hoodwars-home h2 {
-  font-size: 58px;
-  text-shadow: 0 2px 18px #0e0c16;
+.hoodwars-mist {
+  position: absolute;
+  z-index: -2;
+  inset: 44% -12% 0;
+  background:
+    radial-gradient(ellipse at 30% 78%, #42333d6b, transparent 55%),
+    radial-gradient(ellipse at 74% 92%, #ad85935e, transparent 58%);
+  animation: hoodwars-mist 16s ease-in-out infinite alternate;
 }
 
-.hoodwars-hero-copy > p:not(.hoodwars-kicker) {
-  color: #f5e8cc;
+.hoodwars-hero-copy {
+  position: relative;
+  width: min(100%, 365px);
+  padding-bottom: 1px;
 }
 
-.hoodwars-button {
-  display: inline-flex;
-  min-height: 46px;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 15px;
-  padding: 6px 16px;
-  border: 1px solid #deb774;
-  border-radius: 4px;
-  background: #e6c88f;
-  color: #2d1a11;
-  font: 700 20px/1.1 Georgia, serif;
-  transition: background-color .25s ease, color .25s ease;
+.hoodwars-hero-copy h2 {
+  margin-top: 7px;
+  color: #f7ead4;
+  font-size: 64px;
+  letter-spacing: -.061em;
+  text-shadow: 0 3px 20px #08070e;
 }
 
-.hoodwars-button:hover {
-  background: #fff0c5;
-}
-
-.hoodwars-button--outline {
-  background: transparent;
-  color: var(--hoodwars-gold);
-}
-
-.hoodwars-button--outline:hover {
-  background: #e6c88f;
-  color: #2d1a11;
+.hoodwars-hero-copy > p:last-of-type {
+  color: #e0cbb5;
+  font-size: 21px;
+  font-style: italic;
+  text-shadow: 0 2px 6px #08070e;
 }
 
 .hoodwars-hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 9px;
+  margin-top: 5px;
 }
 
-.hoodwars-home .hoodwars-button--outline:not(:hover) {
-  background: #14101bc7;
+.hoodwars-button {
+  display: inline-flex;
+  min-height: 45px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 14px;
+  padding: 7px 12px;
+  border: 1px solid #ad8757;
+  background: linear-gradient(#52282c, #321821);
+  box-shadow: inset 0 0 0 2px #1d111550;
+  color: #ffe8bd;
+  font: 700 16px/1.1 var(--hoodwars-display);
+  transition: border-color .25s, background-color .25s, color .25s, box-shadow .25s;
+}
+
+.hoodwars-button:hover {
+  border-color: #e8c88e;
+  box-shadow: inset 0 0 0 2px #e9c18b38, 0 0 20px #9b5b4e38;
+  color: #fff4da;
+}
+
+.hoodwars-button--outline {
+  background: #16121aca;
+  box-shadow: none;
+  color: var(--hoodwars-gold);
 }
 
 .hoodwars-origin {
+  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 148px;
+  grid-template-columns: minmax(0, 1fr) 177px;
   align-items: center;
-  gap: 29px;
-  background: radial-gradient(ellipse at 80% 50%, #3a3047, #17131f 74%);
+  gap: 23px;
+  background: radial-gradient(ellipse at 77% 52%, #33232a, #151219 63%, #100f14);
+}
+
+.hoodwars-origin p:not(.hoodwars-kicker),
+.hoodwars-houses > p,
+.hoodwars-admission-content > div > p {
+  color: var(--hoodwars-muted);
+}
+
+.hoodwars-origin .hoodwars-kicker {
+  margin: 0 0 10px;
+}
+
+.hoodwars-tracery {
+  position: relative;
+  display: grid;
+  height: 253px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #9c795264;
+  border-radius: 50% 50% 2px 2px / 37% 37% 2px 2px;
+  background:
+    linear-gradient(90deg, transparent 49.5%, #b28a5844 49.5% 50.5%, transparent 50.5%),
+    radial-gradient(ellipse at 50% 53%, #6e403556, transparent 70%),
+    linear-gradient(#2b1d24, #120f15);
+  box-shadow: 0 17px 29px #09070ba6;
+}
+
+.hoodwars-tracery::before,
+.hoodwars-tracery::after {
+  position: absolute;
+  inset: 7px;
+  border: 1px solid #b99c694d;
+  border-radius: inherit;
+  pointer-events: none;
+  content: "";
+}
+
+.hoodwars-tracery::after {
+  inset: 16px 26px;
+  border-color: #b99c6935;
 }
 
 .hoodwars-emblem--large {
-  width: 145px;
-  border-width: 6px;
-  box-shadow: 0 15px 40px #0c0a147d, inset 0 0 24px #a375682c;
-  font-size: 70px;
+  width: 98px;
+  height: 119px;
+  font-size: 58px;
+  text-shadow: 0 2px 4px #150d13;
 }
 
 .hoodwars-emblem--large::after {
-  top: -.35em;
-  right: -.25em;
-  font-size: .47em;
+  inset: 2px;
+}
+
+.hoodwars-houses {
+  background: radial-gradient(ellipse at 52% -5%, #33262c, #141218 79%);
 }
 
 .hoodwars-house-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  margin: 13px 0 0;
+  gap: 10px;
+  margin: 15px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .hoodwars-house-grid li {
-  --house-color: #7d3545;
-  padding: 8px 12px;
-  border: 1px solid #edcf9233;
-  border-radius: 6px;
-  background: linear-gradient(125deg, var(--house-color), #1a1924 135%);
+  --house-color: #4d272e;
+  --house-ink: #f1c5be;
+  position: relative;
+  padding: 10px 13px 10px 16px;
+  overflow: hidden;
+  border: 1px solid #b3986e53;
+  background: linear-gradient(105deg, var(--house-color), #1b181f 100%);
+  box-shadow: inset 3px 0 #b3986e66, inset 0 0 0 3px #120f164d;
 }
 
-.hoodwars-house-grid li:nth-child(2) { --house-color: #785927; }
-.hoodwars-house-grid li:nth-child(3) { --house-color: #294568; }
-.hoodwars-house-grid li:nth-child(4) { --house-color: #285449; }
+.hoodwars-house-grid li:nth-child(2) { --house-color: #493922; --house-ink: #ead3a4; }
+.hoodwars-house-grid li:nth-child(3) { --house-color: #263248; --house-ink: #c2d3ed; }
+.hoodwars-house-grid li:nth-child(4) { --house-color: #263c33; --house-ink: #c1ddc7; }
 
 .hoodwars-house-grid strong,
 .hoodwars-house-grid span {
@@ -261,64 +352,70 @@
 }
 
 .hoodwars-house-grid strong {
-  font: 700 21px/1.2 Cinzel, Georgia, serif;
+  color: var(--house-ink);
+  font: 700 20px/1.25 var(--hoodwars-display);
 }
 
 .hoodwars-house-grid span {
+  margin-top: 3px;
+  color: var(--hoodwars-paper);
   font-size: 18px;
-  color: #f7e5cc;
+}
+
+.hoodwars-admission {
+  background: radial-gradient(ellipse at 78% 53%, #3d282b, #151119 76%);
 }
 
 .hoodwars-admission-content {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   align-items: center;
-  gap: 20px;
+  gap: 29px;
 }
 
 .hoodwars-form {
-  margin-top: 13px;
+  margin-top: 15px;
 }
 
 .hoodwars-form label {
   display: block;
   margin-bottom: 5px;
   color: var(--hoodwars-gold);
-  font-size: 17px;
+  font: 700 16px/1.3 var(--hoodwars-display);
 }
 
 .hoodwars-form input {
   width: 100%;
-  height: 46px;
-  padding-inline: 10px;
-  border: 1px solid #ddbf82a8;
-  border-radius: 4px;
-  background: #11121b;
-  color: #fff1d2;
+  height: 45px;
+  padding-inline: 11px;
+  border: 1px solid #ab8759;
+  background: #151116;
+  color: #f8e6c8;
   font: inherit;
 }
 
 .hoodwars-form [role="alert"] {
-  color: #ffcaa7;
-  font-size: 16px;
+  color: #ffb4ac;
+  font-size: 17px;
 }
 
 .hoodwars-envelope {
   position: relative;
   display: grid;
-  aspect-ratio: 1.4;
+  width: 100%;
+  aspect-ratio: 1.42;
   place-items: center;
-  border: 1px solid #a87e4b;
-  border-radius: 7px;
-  background: linear-gradient(145deg, #f5e2b8, #bc9865);
-  box-shadow: 0 17px 24px #09070b95;
-  transform: rotate(-10deg);
+  border: 1px solid #d0aa78;
+  background: linear-gradient(31deg, transparent 49%, #85613a61 50%, transparent 51%),
+    linear-gradient(-31deg, #a57b4a 49%, #85613a61 50%, #c99f66 51%);
+  box-shadow: 0 17px 33px #0b070bb3;
+  transform: rotate(-9deg);
 }
 
 .hoodwars-envelope::before {
   position: absolute;
-  inset: 1px 0 38%;
-  background: linear-gradient(155deg, #f4dfb4, #d3b58a);
+  inset: 2px 1px 34%;
+  background: linear-gradient(150deg, #e4c69a, #bc925a);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   content: "";
 }
@@ -329,56 +426,34 @@
   width: 47px;
   aspect-ratio: 1;
   place-items: center;
-  border: 3px double #b85456;
-  border-radius: 50%;
-  background: radial-gradient(circle at 34% 30%, #b14d56, #671b2a 76%);
-  box-shadow: 0 3px 7px #3d142d70;
+  border: 3px double #b35e57;
+  border-radius: 44% 52% 48% 46%;
+  background: radial-gradient(circle at 34% 30%, #9e4249, #531924 76%);
+  box-shadow: 0 4px 8px #3d142d85;
   color: #f7cf9b;
-  font: 700 25px/1 Cinzel, Georgia, serif;
-}
-
-.hoodwars-footer {
-  display: flex;
-  min-height: 68px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 9px 26px;
-  background: #110f19;
-  color: var(--hoodwars-gold);
-  font: 700 17px/1.2 Cinzel, Georgia, serif;
-}
-
-.hoodwars-footer button {
-  min-height: 42px;
-  background: transparent;
-  font: 700 18px Georgia, serif;
-}
-
-.hoodwars-footer button:hover {
-  text-decoration: underline;
+  font: 700 23px/1 var(--hoodwars-display);
 }
 
 .hoodwars-parchment {
   position: relative;
-  margin-top: 13px;
-  padding: 21px 28px;
-  border: 3px double #987347;
-  border-radius: 5px;
-  background: radial-gradient(ellipse at 50% 35%, #fff1ce 14%, #f0ddaf 64%, #d1ad75);
-  color: #362014;
-  box-shadow: 0 10px 30px #08060b75;
-  animation: hoodwars-letter-in .45s ease both;
+  margin-top: 16px;
+  padding: 19px 27px;
+  border: 4px double #98714a;
+  background: radial-gradient(ellipse at 50% 35%, #f3e0b8 17%, #e2c798 67%, #c49b62);
+  color: #3d261f;
+  box-shadow: 0 10px 27px #08060bab, inset 0 0 13px #7956364d;
+  animation: hoodwars-letter-in .5s ease both;
 }
 
 .hoodwars-parchment h3 {
-  margin: 0;
-  color: #4b251d;
-  font: 700 35px/1.05 Cinzel, Georgia, serif;
+  margin: 6px 0 0;
+  color: #502928;
+  font: 700 31px/1.05 var(--hoodwars-display);
 }
 
 .hoodwars-parchment .hoodwars-kicker {
-  color: #6e4724;
+  margin: 0;
+  color: #68452e;
 }
 
 .hoodwars-addressee {
@@ -392,29 +467,61 @@
 
 .hoodwars-parchment .hoodwars-seal {
   position: absolute;
-  right: 25px;
+  right: 26px;
   bottom: 17px;
 }
 
 .hoodwars-button--paper {
-  min-height: 38px;
-  margin-top: 10px;
-  border-color: #976b42;
+  min-height: 37px;
+  margin-top: 12px;
   background: transparent;
-  font-size: 17px;
+  box-shadow: none;
+  color: #5b2b25;
+}
+
+.hoodwars-button--paper:hover {
+  border-color: #6e4724;
+  color: #32201a;
+}
+
+.hoodwars-footer {
+  display: flex;
+  min-height: 67px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 8px 33px;
+  background: #121015;
+  color: var(--hoodwars-gold);
+  font: 700 16px/1.2 var(--hoodwars-display);
+}
+
+.hoodwars-footer button {
+  min-height: 42px;
+  background: transparent;
+  font: inherit;
+}
+
+.hoodwars-footer button:hover {
+  color: #fff0ce;
 }
 
 @keyframes hoodwars-letter-in {
-  from { opacity: .35; transform: translateY(6px); }
+  from { opacity: .25; transform: translateY(9px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes hoodwars-castle-breathe {
   from { transform: scale(1.01); }
-  to { transform: scale(1.035) translateY(-.5%); }
+  to { transform: scale(1.045) translateY(-.6%); }
 }
 
-/* Keep the projected screen still while its controls are in use. */
-.hoodwars-laptop:is(:hover, :focus-within) {
-  animation-play-state: paused;
+@keyframes hoodwars-mist {
+  from { opacity: .4; transform: translateX(-4%); }
+  to { opacity: .87; transform: translateX(7%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hoodwars-deck { scroll-behavior: auto; }
+  .hoodwars-screen * { animation: none; transition: none; }
 }
