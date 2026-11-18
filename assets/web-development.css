@@ -1038,6 +1038,15 @@
   max-width: 38ch;
 }
 
+.landing-page .dev-hero-copy > .dev-demo-note {
+  max-width: 48ch;
+  margin-top: 11px;
+  color: #657181;
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
 .landing-page .dev-hero-copy .dev-offer-terms {
   max-width: 440px;
   margin-top: clamp(20px, 2.7vw, 32px);
