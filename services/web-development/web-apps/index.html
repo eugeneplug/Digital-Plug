@@ -11,9 +11,11 @@
   <link rel="stylesheet" href="../../../assets/project-panel.css?v=7">
   <link rel="stylesheet" href="../../../assets/footer.css?v=11">
   <link rel="stylesheet" href="../../../assets/services.css?v=22">
-  <link rel="stylesheet" href="../../../assets/web-development.css?v=48">
+  <link rel="stylesheet" href="../../../assets/web-development.css?v=49">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"/services/"},{"@type":"ListItem","position":3,"name":"Разработка сайтов","item":"/services/web-development/"},{"@type":"ListItem","position":4,"name":"SaaS-платформа или веб-сервис","item":"/services/web-development/web-apps/"}]}</script>
   <link rel="stylesheet" href="../../../assets/contact-form.css?v=6">
+  <link rel="stylesheet" href="../../../assets/landing-screen.css?v=6">
+  <link rel="stylesheet" href="../../../assets/saas-dashboard.css?v=1">
 </head>
 <body class="services-page landing-page">
   <div class="viewport services-viewport">
@@ -47,10 +49,81 @@
               <div><dt>Гарантия</dt><dd>12 месяцев</dd></div>
             </dl>
             <div class="dev-actions"><button class="dev-button dev-button--primary" type="button" data-panel="project" data-service-request="Разработка сайта" data-service-topic="SaaS-платформа или веб-сервис" data-service-brief aria-label="Обсудить проект: SaaS-платформа или веб-сервис">Обсудить проект <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button></div>
+            <p class="dev-demo-note">* Демонстрационный дашборд с вымышленными данными.</p>
           </div>
-          <div class="dev-hero-art" aria-hidden="true">
-            <svg class="dev-laptop" viewBox="100 138 1100 970" fill="none" aria-hidden="true">
+          <div class="dev-hero-art saas-dashboard-art">
+            <svg class="dev-laptop saas-dashboard-laptop" viewBox="100 138 1100 970" fill="none" role="img" aria-label="Демонстрационный дашборд аналитики. Счётчики, графики, источники заказов и вращающийся глобус">
               <image class="dev-laptop-image" href="../../../assets/web-development/laptop-complete.png" width="1317" height="1194"/>
+              <defs>
+                <clipPath id="saas-laptop-screen"><path d="M439 317L1020 256Q1059 251 1063 286L1090 687Q1095 729 1052 729L518 724Q484 724 478 696L417 354Q410 323 439 317Z"/></clipPath>
+              </defs>
+              <foreignObject x="0" y="0" width="1317" height="1194" clip-path="url(#saas-laptop-screen)">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="laptop-screen saas-dashboard">
+                  <aside class="saas-sidebar">
+                    <div class="saas-brand"><span class="saas-brand-symbol"></span><strong>pulse</strong></div>
+                    <div class="saas-menu">
+                      <span class="saas-menu-current"><svg viewBox="0 0 24 24"><path d="M4 14h6v7H4zM14 3h6v18h-6zM4 3h6v7H4z"/></svg>Обзор</span>
+                      <span><svg viewBox="0 0 24 24" fill="none"><path d="m4 17 5-6 4 3 7-9M15 5h5v5"/></svg>Кампании</span>
+                      <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>Аудитория</span>
+                    </div>
+                    <div class="saas-system"><span class="saas-system-ring"></span><strong>Система<br />работает</strong></div>
+                  </aside>
+
+                  <div class="saas-dashboard-main">
+                    <header class="saas-dashboard-header">
+                      <div><h2>Обзор</h2><span>Аналитика за сутки</span></div>
+                      <span class="saas-live-indicator">LIVE</span>
+                    </header>
+
+                    <div class="saas-kpis">
+                      <article class="saas-kpi saas-kpi--revenue">
+                        <div class="saas-kpi-heading"><h3>Выручка</h3><span>₽</span></div>
+                        <strong class="saas-metric" data-saas-revenue="">284&#8239;760</strong>
+                        <div class="saas-kpi-detail"><span data-saas-growth="revenue">↗ 12,8%</span><small>₽</small></div>
+                        <svg class="saas-chart" viewBox="0 0 164 67" fill="none" aria-hidden="true"><path class="saas-chart-grid" d="M1 10H163M1 33H163M1 56H163"/><path class="saas-chart-previous" data-saas-previous="revenue"/><path class="saas-chart-area" data-saas-area="revenue"/><path class="saas-chart-line" data-saas-line="revenue"/><circle class="saas-chart-tip" data-saas-tip="revenue" r="2.8"/></svg>
+                        <div class="saas-chart-labels"><span>00:00</span><span>12:00</span><span>24:00</span></div>
+                      </article>
+                      <article class="saas-kpi saas-kpi--orders">
+                        <div class="saas-kpi-heading"><h3>Заказы</h3><span>↗</span></div>
+                        <strong class="saas-metric" data-saas-orders="">184</strong>
+                        <div class="saas-kpi-detail"><span data-saas-growth="orders">↗ 9,5%</span><small>шт.</small></div>
+                        <svg class="saas-chart" viewBox="0 0 164 67" fill="none" aria-hidden="true"><path class="saas-chart-grid" d="M1 10H163M1 33H163M1 56H163"/><path class="saas-chart-previous" data-saas-previous="orders"/><path class="saas-chart-area" data-saas-area="orders"/><path class="saas-chart-line" data-saas-line="orders"/><circle class="saas-chart-tip" data-saas-tip="orders" r="2.8"/></svg>
+                        <div class="saas-chart-labels"><span>00:00</span><span>12:00</span><span>24:00</span></div>
+                      </article>
+                      <article class="saas-kpi saas-kpi--conversion">
+                        <div class="saas-kpi-heading"><h3>Конверсия</h3><span>%</span></div>
+                        <strong class="saas-metric" data-saas-conversion="">6,4%</strong>
+                        <div class="saas-kpi-detail"><span data-saas-growth="conversion">↗ 5,6%</span><small>CR</small></div>
+                        <svg class="saas-chart" viewBox="0 0 164 67" fill="none" aria-hidden="true"><path class="saas-chart-grid" d="M1 10H163M1 33H163M1 56H163"/><path class="saas-chart-previous" data-saas-previous="conversion"/><path class="saas-chart-area" data-saas-area="conversion"/><path class="saas-chart-line" data-saas-line="conversion"/><circle class="saas-chart-tip" data-saas-tip="conversion" r="2.8"/></svg>
+                        <div class="saas-chart-labels"><span>00:00</span><span>12:00</span><span>24:00</span></div>
+                      </article>
+                    </div>
+
+                    <div class="saas-dashboard-bottom">
+                      <section class="saas-sources">
+                        <div class="saas-panel-heading"><h3>Источники</h3><span data-saas-visits="">2&#8239;875 сессий</span></div>
+                        <table class="saas-source-table">
+                          <thead><tr><th>Источник</th><th>Сессии</th><th>Заказы</th></tr></thead>
+                          <tbody>
+                            <tr><td><span class="saas-source-dot"></span>Поиск</td><td><span class="saas-cell-bar"></span><span data-saas-source-visits="">1&#8239;428</span></td><td data-saas-source-orders="">86</td></tr>
+                            <tr><td><span class="saas-source-dot"></span>Соцсети</td><td><span class="saas-cell-bar"></span><span data-saas-source-visits="">759</span></td><td data-saas-source-orders="">48</td></tr>
+                            <tr><td><span class="saas-source-dot"></span>Рассылка</td><td><span class="saas-cell-bar"></span><span data-saas-source-visits="">426</span></td><td data-saas-source-orders="">34</td></tr>
+                            <tr><td><span class="saas-source-dot"></span>Прямые</td><td><span class="saas-cell-bar"></span><span data-saas-source-visits="">262</span></td><td data-saas-source-orders="">16</td></tr>
+                          </tbody>
+                        </table>
+                      </section>
+                      <section class="saas-audience">
+                        <div class="saas-panel-heading"><h3>Аудитория</h3><span class="saas-audience-signal"></span></div>
+                        <div class="saas-globe-stage">
+                          <canvas class="saas-globe" width="400" height="300"></canvas>
+                          <div class="saas-online"><strong data-saas-online="">207</strong><span>онлайн</span></div>
+                        </div>
+                        <div class="saas-audience-footer"><span>География сессий</span><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </foreignObject>
             </svg>
           </div>
         </section>
@@ -245,6 +318,7 @@
   <script src="../../../assets/cookie-cursor.js?v=4" defer></script>
   <script src="../../../assets/web-development.js?v=13" defer></script>
   <script src="../../../assets/landing-screen.js?v=5" defer></script>
+  <script src="../../../assets/saas-dashboard.js?v=1" defer></script>
   <script type="module" src="../../../assets/service-question-model.js?v=1"></script>
   <script src="../../../assets/contact-robot.js?v=7" defer></script>
   <script src="../../../assets/contact-fire.js?v=2" defer></script>
