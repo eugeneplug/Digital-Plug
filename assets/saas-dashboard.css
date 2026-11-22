@@ -276,6 +276,10 @@
 .saas-chart-previous { stroke: #8397a26e; stroke-width: 1.2; stroke-dasharray: 2 3; }
 .saas-chart-area { fill: var(--chart-color); fill-opacity: .08; }
 .saas-chart-tip { fill: var(--chart-color); stroke: #1e2027; stroke-width: 1; }
+.saas-chart-bars { fill: var(--saas-cyan); fill-opacity: .84; }
+.saas-chart-bars rect:nth-child(3n) { fill-opacity: .63; }
+.saas-kpi-detail .is-declining { color: #f49b88; }
+
 .saas-chart-labels { color: var(--saas-muted); font-size: 9px; }
 
 .saas-dashboard-bottom {

@@ -4,8 +4,8 @@
 
   const art = dashboard.closest('.dev-hero-art');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const number = new Intl.NumberFormat('ru-RU');
-  const decimal = new Intl.NumberFormat('ru-RU', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const number = new Intl.NumberFormat('en-US');
+  const decimal = new Intl.NumberFormat('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const field = name => dashboard.querySelector('[data-saas-' + name + ']');
   const metrics = {
     revenue: field('revenue'),
@@ -20,18 +20,58 @@
     orders: row.querySelector('[data-saas-source-orders]'),
     bar: row.querySelector('.saas-cell-bar'),
   }));
-  const charts = ['revenue', 'orders', 'conversion'].map((name, index) => {
-    const values = Array.from({ length: 31 }, (_, point) =>
-      25 + point * .8 + Math.sin(point * .57 + index * 2) * 9 + Math.sin(point * 1.8 + index) * 5);
+  const profiles = [
+    {
+      name: 'revenue',
+      type: 'area',
+      count: 31,
+      samples: [20, 27, 35, 52, 71, 57, 40, 29, 34, 58, 73, 81, 62, 47, 31, 39, 54, 72, 88, 70, 53, 37, 28, 46, 65, 79, 71, 51, 35, 43, 60, 76, 81, 62, 40, 29, 46, 66, 74, 55, 37, 22, 36, 57, 69, 48],
+    },
+    {
+      name: 'orders',
+      type: 'bars',
+      count: 20,
+      samples: [82, 64, 39, 21, 35, 71, 89, 56, 27, 14, 34, 58, 31, 20, 48, 76, 61, 43, 26, 17, 44, 81, 52, 24, 66, 36, 18, 59, 87, 42, 23, 54, 33, 72, 49, 20, 63],
+    },
+    {
+      name: 'conversion',
+      type: 'curve',
+      count: 25,
+      samples: [73, 79, 83, 81, 70, 54, 39, 29, 31, 44, 60, 69, 65, 54, 42, 33, 32, 40, 50, 53, 45, 32, 24, 22, 30, 44, 58, 63, 55, 40, 27, 24, 33, 47, 54, 49, 36, 26, 29, 42, 56],
+    },
+  ];
+  const changes = [
+    { visits: 24, orders: 2 },
+    { visits: -31, orders: -2 },
+    { visits: 44, orders: 3 },
+    { visits: -18, orders: -1 },
+    { visits: 20, orders: 1 },
+    { visits: -39, orders: -3 },
+    { visits: 27, orders: 2 },
+  ];
+  const charts = profiles.map(profile => {
+    const { name, type, count, samples } = profile;
+    const values = samples.slice(0, count);
+    const bars = dashboard.querySelector('[data-saas-bars="' + name + '"]');
+    const columns = type === 'bars' ? values.map((_, index) => {
+      const column = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      column.setAttribute('x', (2 + index * 162 / count).toFixed(2));
+      column.setAttribute('width', (162 / count - 2).toFixed(2));
+      column.setAttribute('rx', '1');
+      bars.append(column);
+      return column;
+    }) : [];
     return {
+      ...profile,
       line: dashboard.querySelector('[data-saas-line="' + name + '"]'),
       area: dashboard.querySelector('[data-saas-area="' + name + '"]'),
       tip: dashboard.querySelector('[data-saas-tip="' + name + '"]'),
       previous: dashboard.querySelector('[data-saas-previous="' + name + '"]'),
       growth: dashboard.querySelector('[data-saas-growth="' + name + '"]'),
+      columns,
       from: values,
       to: values,
-      past: values.map((value, point) => value * .68 + Math.sin(point * .7) * 6 + 8),
+      past: values.map((_, point) => samples[(point + 7) % samples.length] * .76 + 8),
     };
   });
 
@@ -54,30 +94,50 @@
     if (node.textContent !== value) node.textContent = value;
   }
 
-  function pathFor(values) {
-    return values.map((value, index) => {
-      const x = 1 + index * 162 / (values.length - 1);
-      const y = 61 - value * .56;
-      return (index ? 'L' : 'M') + x.toFixed(2) + ' ' + y.toFixed(2);
-    }).join('');
+  function pathFor(values, curved = false) {
+    const points = values.map((value, index) => ({
+      x: 1 + index * 162 / (values.length - 1),
+      y: 61 - value * .56,
+    }));
+    if (!curved) {
+      return points.map((point, index) =>
+        (index ? 'L' : 'M') + point.x.toFixed(2) + ' ' + point.y.toFixed(2)).join('');
+    }
+
+    let path = 'M' + points[0].x.toFixed(2) + ' ' + points[0].y.toFixed(2);
+    for (let index = 1; index < points.length; index++) {
+      const previous = points[Math.max(0, index - 2)];
+      const start = points[index - 1];
+      const end = points[index];
+      const next = points[Math.min(points.length - 1, index + 1)];
+      const controlStartX = start.x + (end.x - previous.x) / 6;
+      const controlStartY = start.y + (end.y - previous.y) / 6;
+      const controlEndX = end.x - (next.x - start.x) / 6;
+      const controlEndY = end.y - (next.y - start.y) / 6;
+      path += 'C' + [controlStartX, controlStartY, controlEndX, controlEndY, end.x, end.y]
+        .map(value => value.toFixed(2)).join(' ');
+    }
+    return path;
   }
 
-  for (const chart of charts) chart.previous.setAttribute('d', pathFor(chart.past));
+  for (const chart of charts) {
+    chart.previous.setAttribute('d', pathFor(chart.past, chart.type === 'curve'));
+  }
 
   function advance() {
     const source = updateIndex % rows.length;
-    const orders = updateIndex % 3 === 0 ? 2 : 1;
+    const change = changes[updateIndex % changes.length];
     before = after;
     after = {
       sources: before.sources.map((row, index) => index === source
-        ? { visits: row.visits + 15 + updateIndex * 7 % 18, orders: row.orders + orders }
+        ? { visits: row.visits + change.visits, orders: row.orders + change.orders }
         : row),
-      revenue: before.revenue + orders * (1470 + updateIndex % 4 * 215),
+      revenue: before.revenue + change.orders * (1470 + updateIndex % 4 * 215),
       online: 207 + Math.round(24 * Math.sin(updateIndex * .7) + 14 * Math.sin(updateIndex * 1.8)),
     };
-    charts.forEach((chart, index) => {
+    charts.forEach(chart => {
       chart.from = chart.to;
-      const value = 53 + 13 * Math.sin(updateIndex * .84 + index) + 6 * Math.sin(updateIndex * 1.7 + index);
+      const value = chart.samples[(chart.count + updateIndex) % chart.samples.length];
       chart.to = chart.to.slice(1).concat(value);
     });
     rows.forEach((row, index) => row.classList.toggle('is-updated', index === source));
@@ -102,9 +162,9 @@
     text(metrics.revenue, number.format(revenue));
     text(metrics.orders, number.format(orders));
     text(metrics.conversion, decimal.format(conversion) + '%');
-    text(metrics.visits, number.format(visits) + ' сессий');
+    text(metrics.visits, number.format(visits) + ' sessions');
     text(metrics.online, number.format(interpolate(before.online, after.online)));
-    const growth = [100 * (revenue / 252446 - 1), 100 * (orders / 168 - 1), 100 * (conversion / 6.04 - 1)];
+    const growth = [100 * (revenue / 252446 - 1), 100 * (orders / 205 - 1), 100 * (conversion / 6.9 - 1)];
 
     sources.forEach((source, index) => {
       text(cells[index].visits, number.format(source.visits));
@@ -114,12 +174,22 @@
 
     charts.forEach((chart, index) => {
       const values = chart.to.map((value, point) => chart.from[point] + (value - chart.from[point]) * ratio);
-      const line = pathFor(values);
-      chart.line.setAttribute('d', line);
-      chart.area.setAttribute('d', line + 'L163 65H1Z');
-      chart.tip.setAttribute('cx', '163');
-      chart.tip.setAttribute('cy', (61 - values.at(-1) * .56).toFixed(2));
-      text(chart.growth, '↗ ' + decimal.format(growth[index]) + '%');
+      if (chart.type === 'bars') {
+        chart.columns.forEach((column, point) => {
+          const height = values[point] * .56;
+          column.setAttribute('y', (61 - height).toFixed(2));
+          column.setAttribute('height', height.toFixed(2));
+        });
+      } else {
+        const line = pathFor(values, chart.type === 'curve');
+        chart.line.setAttribute('d', line);
+        chart.area.setAttribute('d', line + 'L163 65H1Z');
+        chart.tip.setAttribute('cx', '163');
+        chart.tip.setAttribute('cy', (61 - values.at(-1) * .56).toFixed(2));
+      }
+      const declining = growth[index] < 0;
+      text(chart.growth, (declining ? '↘ -' : '↗ +') + decimal.format(Math.abs(growth[index])) + '%');
+      chart.growth.classList.toggle('is-declining', declining);
     });
 
     if (elapsed - changeStart > 1350) rows.forEach(row => row.classList.remove('is-updated'));
