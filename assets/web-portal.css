@@ -266,8 +266,9 @@
 .portal-newspaper-art {
   container-type: inline-size;
   isolation: isolate;
-  min-height: 0;
-  padding-block: 16px;
+  align-self: stretch;
+  min-height: 180px;
+  padding-block: 0;
   perspective: 900px;
 }
 
@@ -465,7 +466,7 @@
 }
 
 @media (max-width: 540px) {
-  .portal-newspaper-art { min-height: 0; padding-block: 14px 25px; }
+  .portal-newspaper-art { min-height: 180px; padding-block: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
