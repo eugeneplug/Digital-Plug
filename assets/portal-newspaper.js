@@ -42,6 +42,28 @@
     part.node.replaceChildren(fragment);
   }
   art.dataset.newspaperState = 'waiting';
+  const paper = art.querySelector('.portal-newspaper');
+
+  function fitPaper() {
+    const style = getComputedStyle(art);
+    const width = art.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    const height = art.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+    // Reserve the tilted corners and the second sheet when fitting the illustration.
+    const paperWidth = paper.offsetWidth + paper.offsetHeight * .14 + 16;
+    const paperHeight = paper.offsetHeight + paper.offsetWidth * .14 + 16;
+    const scale = Math.max(0, Math.min(1, width / paperWidth, height / paperHeight));
+    paper.style.setProperty('--portal-newspaper-scale', scale.toFixed(4));
+  }
+
+  if ('ResizeObserver' in window) {
+    const sizeObserver = new ResizeObserver(fitPaper);
+    sizeObserver.observe(art);
+    sizeObserver.observe(paper);
+  } else {
+    window.addEventListener('resize', fitPaper);
+  }
+  fitPaper();
+
 
   function render() {
     for (const part of parts) {
